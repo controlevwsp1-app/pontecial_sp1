@@ -348,6 +348,8 @@ function renderTable() {
       <td style="text-align:right;font-weight:600;color:#185FA5;">${fmtBRL(l.volume_carbank)}</td>
       <td style="text-align:center;color:var(--gray-600);">${l.contratos_geral||0}</td>
       <td style="text-align:right;color:var(--gray-600);">${fmtBRL(l.volume_geral)}</td>
+      <td style="text-align:center;">${prodQtdBadge(l.prod_qtd, l.contratos_carbank)}</td>
+      <td style="text-align:right;">${prodValorBadge(l.prod_valor, l.volume_carbank)}</td>
       <td>
         <button class="btn btn-icon btn-danger btn-sm" onclick="confirmarExclusao(${l.id})" title="${inativo?'Reativar':'Desativar'}">
           ${inativo?'↩':'✕'}
@@ -559,6 +561,43 @@ function porteBadgeStr(porte) {
   return porte || '—';
 }
 
+function getProdCor(pct) {
+  if (pct > 15)  return { cor:'#185FA5', label:'Azul',    bg:'#E6F1FB' };
+  if (pct >= 10) return { cor:'#1D9E75', label:'Verde',   bg:'#E1F5EE' };
+  if (pct >= 6)  return { cor:'#BA7517', label:'Amarelo', bg:'#FAEEDA' };
+  if (pct >= 1)  return { cor:'#D85A30', label:'Laranja', bg:'#FAECE7' };
+  return           { cor:'#E24B4A', label:'Vermelho', bg:'#FCEBEB' };
+}
+
+function prodQtdBadge(qtd, meta) {
+  if (qtd === null || qtd === undefined || qtd === '') return '<span style="color:#aaa;font-size:11px;">—</span>';
+  const pct = meta > 0 ? Math.round(qtd/meta*100) : 0;
+  const { cor, bg } = getProdCor(pct);
+  return `<span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:${cor};background:${bg};padding:2px 7px;border-radius:6px;">
+    ${qtd}
+    <span style="font-size:10px;font-weight:400;opacity:.85;">(${pct}%)</span>
+  </span>`;
+}
+
+function prodValorBadge(valor, metaVol) {
+  if (valor === null || valor === undefined || valor === '') return '<span style="color:#aaa;font-size:11px;">—</span>';
+  const pct = metaVol > 0 ? Math.round(valor/metaVol*100) : 0;
+  const { cor, bg } = getProdCor(pct);
+  return `<span style="font-size:12px;font-weight:600;color:${cor};background:${bg};padding:2px 7px;border-radius:6px;" title="${pct}% do potencial">
+    ${fmtBRL(valor)}
+  </span>`;
+}
+
+function atualizarTipoUpload() {
+  const tipo = document.querySelector('input[name="tipo"]:checked')?.value || 'base';
+  const modoDiv = document.getElementById('modo-importacao');
+  if (modoDiv) modoDiv.style.display = tipo === 'base' ? 'block' : 'none';
+  resetDropZone();
+  document.getElementById('preview-box').style.display  = 'none';
+  document.getElementById('btn-importar').style.display = 'none';
+  parsedData = [];
+}
+
 function fmtBRL(n) {
   if (!n) return 'R$ 0';
   return 'R$ ' + Number(n).toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:0});
@@ -613,8 +652,15 @@ function handleFile(file) {
       const wb   = XLSX.read(e.target.result, { type:'array' });
       const ws   = wb.Sheets[wb.SheetNames[0]];
       const rows = XLSX.utils.sheet_to_json(ws, { defval:'' });
-      parsedData = processarPlanilha(rows);
-      mostrarPreview(parsedData, file.name);
+      const tipo = document.querySelector('input[name="tipo"]:checked')?.value || 'base';
+
+      if (tipo === 'analitico') {
+        parsedData = processarAnalitico(rows);
+        mostrarPreviewAnalitico(parsedData, file.name);
+      } else {
+        parsedData = processarPlanilha(rows);
+        mostrarPreview(parsedData, file.name);
+      }
     } catch(err) {
       showToast('Erro ao ler planilha: ' + err.message, 'error');
       resetDropZone();
@@ -623,6 +669,167 @@ function handleFile(file) {
   reader.readAsArrayBuffer(file);
 }
 
+function processarAnalitico(rows) {
+  if (!rows.length) return [];
+  const keys = Object.keys(rows[0]);
+  const findCol = (...names) => keys.find(k => names.some(n => k.toUpperCase().includes(n.toUpperCase()))) || '';
+
+  const colDealer = findCol('DEALER');
+  const colValor  = findCol('VLR FINANCIADO','VALOR FINANCIADO','VLR FIN');
+  const colGCM    = findCol('GCM');
+  const colMes    = findCol('PAGAMENTO','DATA','MES');
+
+  // Agrupa por dealer_cod
+  const grouped = {};
+  rows.forEach(r => {
+    const dealerRaw = String(r[colDealer]||'');
+    const parts     = dealerRaw.split('-');
+    const cod       = parts[0].trim();
+    const nome      = parts.slice(1).join('-').trim();
+    if (!cod || cod === 'nan') return;
+
+    if (!grouped[cod]) {
+      grouped[cod] = { dealer_cod:cod, dealer_nome:nome,
+                       gcm: String(r[colGCM]||''), qtd:0, valor:0, mes:'' };
+    }
+    grouped[cod].qtd++;
+    grouped[cod].valor += parseFloat(r[colValor]||0)||0;
+
+    // Pega o mês do primeiro registro
+    if (!grouped[cod].mes && r[colMes]) {
+      const d = new Date(r[colMes]);
+      if (!isNaN(d)) {
+        grouped[cod].mes = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+      }
+    }
+  });
+
+  return Object.values(grouped).map(g => ({...g, valor: Math.round(g.valor*100)/100}));
+}
+
+function mostrarPreviewAnalitico(data, filename) {
+  document.getElementById('drop-zone').innerHTML = `
+    <div style="font-size:28px;margin-bottom:8px;">✅</div>
+    <div style="font-size:14px;font-weight:600;color:#854D0E;">${filename}</div>
+    <div style="font-size:12px;color:var(--gray-600);margin-top:4px;">${data.length} dealers · ${data.reduce((s,d)=>s+d.qtd,0)} contratos</div>
+    <div style="font-size:11px;color:var(--gray-400);margin-top:6px;cursor:pointer;text-decoration:underline;" onclick="document.getElementById('file-input').click()">Trocar arquivo</div>
+    <input type="file" id="file-input" accept=".xlsx,.xlsm" style="display:none" onchange="handleFile(this.files[0])"/>`;
+
+  const totalQtd   = data.reduce((s,d)=>s+d.qtd,0);
+  const totalValor = data.reduce((s,d)=>s+d.valor,0);
+  const mes        = data[0]?.mes || '—';
+
+  document.getElementById('preview-metrics').innerHTML = `
+    <div class="metric" style="padding:10px;"><div class="metric-label">Dealers</div><div class="metric-value" style="font-size:20px;">${data.length}</div></div>
+    <div class="metric" style="padding:10px;"><div class="metric-label">Contratos</div><div class="metric-value" style="font-size:20px;color:#854D0E;">${totalQtd}</div></div>
+    <div class="metric" style="padding:10px;"><div class="metric-label">Val. Financiado</div><div class="metric-value" style="font-size:16px;color:#854D0E;">${fmtK(totalValor)}</div></div>
+    <div class="metric" style="padding:10px;"><div class="metric-label">Mês ref.</div><div class="metric-value" style="font-size:16px;">${mes}</div></div>`;
+
+  document.getElementById('preview-sample').innerHTML = `
+    <div style="font-size:11px;font-weight:600;color:var(--gray-600);margin-bottom:6px;">DEALERS PROCESSADOS:</div>
+    <table style="width:100%;border-collapse:collapse;font-size:11px;">
+      <thead><tr style="background:var(--gray-50);">
+        <th style="padding:4px 8px;text-align:left;border-bottom:1px solid var(--gray-200);">Cód.</th>
+        <th style="padding:4px 8px;text-align:left;border-bottom:1px solid var(--gray-200);">Nome</th>
+        <th style="padding:4px 8px;text-align:left;border-bottom:1px solid var(--gray-200);">GCM</th>
+        <th style="padding:4px 8px;text-align:center;border-bottom:1px solid var(--gray-200);">Qtd</th>
+        <th style="padding:4px 8px;text-align:right;border-bottom:1px solid var(--gray-200);">Val. Financiado</th>
+      </tr></thead>
+      <tbody>${data.map(d=>`<tr>
+        <td style="padding:4px 8px;border-bottom:1px solid var(--gray-100);font-weight:600;color:#854D0E;">${d.dealer_cod}</td>
+        <td style="padding:4px 8px;border-bottom:1px solid var(--gray-100);max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${d.dealer_nome}</td>
+        <td style="padding:4px 8px;border-bottom:1px solid var(--gray-100);font-size:10px;">${d.gcm.split(' ')[0]}</td>
+        <td style="padding:4px 8px;border-bottom:1px solid var(--gray-100);text-align:center;font-weight:600;">${d.qtd}</td>
+        <td style="padding:4px 8px;border-bottom:1px solid var(--gray-100);text-align:right;font-weight:600;color:#854D0E;">${fmtBRL(d.valor)}</td>
+      </tr>`).join('')}</tbody>
+    </table>`;
+
+  document.getElementById('preview-status').textContent = `${data.length} dealers · ${mes}`;
+  document.getElementById('preview-box').style.display  = 'block';
+  document.getElementById('btn-importar').style.display = 'block';
+  document.getElementById('btn-importar').style.background = '#854D0E';
+  document.getElementById('btn-importar').style.borderColor = '#854D0E';
+  document.getElementById('btn-importar').textContent = '↑ Importar produção para o banco';
+}
+
+async function executarImportAnalitico() {
+  const logEl = document.getElementById('import-log');
+  const logContent = document.getElementById('log-content');
+  logEl.style.display = 'block';
+  logContent.textContent = '';
+  document.getElementById('btn-importar').disabled = true;
+
+  const log = msg => { logContent.textContent += msg + '\n'; logContent.scrollTop = logContent.scrollHeight; };
+
+  log('Importando planilha analítica...');
+  log(`Total de dealers: ${parsedData.length}`);
+  log('─'.repeat(40));
+
+  let ok = 0, semMatch = 0;
+  const mes = parsedData[0]?.mes || '';
+
+  for (const dealer of parsedData) {
+    // Busca loja pelo dealer_cod
+    const { data: lojas } = await sb.from('lojas')
+      .select('id, razao_social, dealer_cod')
+      .eq('dealer_cod', dealer.dealer_cod)
+      .limit(10);
+
+    if (lojas && lojas.length > 0) {
+      // Atualiza todas as lojas com esse dealer_cod
+      for (const loja of lojas) {
+        await sb.from('lojas').update({
+          prod_qtd:   dealer.qtd,
+          prod_valor: dealer.valor,
+          prod_mes:   mes,
+        }).eq('id', loja.id);
+      }
+      log(`✅ ${dealer.dealer_cod} - ${dealer.dealer_nome.slice(0,35)} → ${dealer.qtd} contratos / ${fmtBRL(dealer.valor)}`);
+      ok++;
+    } else {
+      // Tenta por nome
+      const nomeBusca = dealer.dealer_nome.toUpperCase().slice(0,20);
+      const { data: porNome } = await sb.from('lojas')
+        .select('id, razao_social')
+        .ilike('razao_social', `%${nomeBusca}%`)
+        .limit(5);
+
+      if (porNome && porNome.length > 0) {
+        for (const loja of porNome) {
+          // Aproveita para salvar o dealer_cod
+          await sb.from('lojas').update({
+            dealer_cod: dealer.dealer_cod,
+            prod_qtd:   dealer.qtd,
+            prod_valor: dealer.valor,
+            prod_mes:   mes,
+          }).eq('id', loja.id);
+        }
+        log(`🔍 ${dealer.dealer_cod} - ${dealer.dealer_nome.slice(0,35)} → encontrado por nome (${porNome[0].razao_social.slice(0,30)})`);
+        ok++;
+      } else {
+        log(`⚠️  ${dealer.dealer_cod} - ${dealer.dealer_nome.slice(0,35)} → não encontrado na base`);
+        semMatch++;
+      }
+    }
+  }
+
+  // Salva também na tabela de histórico
+  const histData = parsedData.map(d => ({
+    dealer_cod:  d.dealer_cod,
+    dealer_nome: d.dealer_nome,
+    gcm:         d.gcm,
+    mes:         d.mes || mes,
+    qtd:         d.qtd,
+    valor:       d.valor,
+  }));
+  await sb.from('producao').upsert(histData, { onConflict: 'dealer_cod,mes' }).catch(() => {});
+
+  log('─'.repeat(40));
+  log(`✅ ${ok} dealers atualizados, ${semMatch} sem correspondência.`);
+  showToast(`${ok} dealers importados ✓`, 'success');
+  document.getElementById('btn-importar').disabled = false;
+  await loadLojas();
+}
 function processarPlanilha(rows) {
   // Detecta colunas automaticamente pelo cabeçalho
   if (!rows.length) return [];
@@ -774,7 +981,12 @@ async function executarImport() {
   if (!sb)           { showToast('Supabase não configurado','error'); return; }
   if (!parsedData.length) { showToast('Nenhum dado para importar','error'); return; }
 
-  const modo = document.querySelector('input[name="modo"]:checked').value;
+  const tipo = document.querySelector('input[name="tipo"]:checked')?.value || 'base';
+
+  if (tipo === 'analitico') {
+    await executarImportAnalitico();
+    return;
+  }
   const logEl = document.getElementById('log-content');
   document.getElementById('import-log').style.display = 'block';
   document.getElementById('btn-importar').disabled = true;
@@ -1251,13 +1463,13 @@ function pausarGeocodificacao() {
   else geoLog('▶ Retomando...');
 }
 
-// ── Mapa com coordenadas reais ──
+// ── Mapa (scatter por MR, sem geocodificação) ──
 function refreshMapa() {
   if (!mapInstance) return;
   mapMarkers.forEach(m => m.remove());
   mapMarkers = [];
 
-  const active = allLojas.filter(l => l.ativo !== false);
+  const active    = allLojas.filter(l => l.ativo !== false);
   const filterMR  = document.getElementById('mapa-mr-filter')?.value  || '';
   const filterGCM = document.getElementById('mapa-gcm-filter')?.value || '';
 
@@ -1267,42 +1479,39 @@ function refreshMapa() {
     return true;
   });
 
-  // Separa lojas com e sem coordenadas reais
-  const comCoords    = toPlot.filter(l => l.lat && l.lng);
-  const semCoords    = toPlot.filter(l => !l.lat || !l.lng);
-  const totalSemCoords = semCoords.length;
+  // Círculos de área por MR
+  Object.entries(MR_META).forEach(([mr, meta]) => {
+    const lojas = toPlot.filter(l => l.micro_regiao === mr);
+    if (!lojas.length || !meta.lat) return;
+    const c = L.circleMarker([meta.lat, meta.lng], {
+      radius: 20 + (lojas.length / 103) * 30,
+      fillColor: meta.cor, color: '#fff',
+      weight: 1.5, opacity: 1, fillOpacity: 0.10
+    }).addTo(mapInstance);
+    mapMarkers.push(c);
+  });
 
-  // Mostra aviso se houver lojas sem coordenadas
-  const avisoEl = document.getElementById('geo-aviso');
-  if (avisoEl) {
-    avisoEl.style.display = totalSemCoords > 0 ? 'block' : 'none';
-    avisoEl.textContent   = `⚠️ ${totalSemCoords} lojas sem coordenadas — vá em 📍 Geocodificar para posicioná-las corretamente.`;
-  }
+  // Pontos individuais com scatter por MR
+  toPlot.forEach(l => {
+    const meta   = MR_META[l.micro_regiao] || {};
+    if (!meta.lat) return;
+    const gcmCor = gcmColorMap[l.gcm] || meta.cor || '#888';
+    const sc     = meta.scatter || 0.025;
+    const jLat   = meta.lat + (Math.random() - 0.5) * sc;
+    const jLng   = meta.lng + (Math.random() - 0.5) * sc * 1.2;
 
-  // Círculos de área por MR (para lojas sem coords)
-  if (semCoords.length > 0) {
-    const mrsSemCoords = [...new Set(semCoords.map(l => l.micro_regiao))];
-    mrsSemCoords.forEach(mr => {
-      const meta = MR_META[mr] || {};
-      if (!meta.lat) return;
-      const c = L.circleMarker([meta.lat, meta.lng], {
-        radius: 18 + semCoords.filter(l=>l.micro_regiao===mr).length * 0.5,
-        fillColor: meta.cor, color: meta.cor,
-        weight: 1, opacity: 0.4, fillOpacity: 0.07,
-        dashArray: '4,4'
-      }).addTo(mapInstance);
-      mapMarkers.push(c);
-    });
-  }
+    // Calcula faixa de produção
+    const pct      = l.volume_carbank > 0 ? Math.round((l.prod_valor||0) / l.volume_carbank * 100) : -1;
+    const prodInfo = (l.prod_valor !== null && l.prod_valor !== undefined) ? getProdCor(pct) : null;
+    const alertar  = prodInfo && (prodInfo.label === 'Laranja' || prodInfo.label === 'Vermelho');
 
-  // Plota lojas COM coordenadas reais
-  comCoords.forEach(l => {
-    const meta = MR_META[l.micro_regiao] || {};
-    const cor  = gcmColorMap[l.gcm] || meta.cor || '#888';
-
-    const dot = L.circleMarker([l.lat, l.lng], {
-      radius: 6, fillColor: cor,
-      color: '#fff', weight: 1.5, opacity: 1, fillOpacity: 0.9
+    const dot = L.circleMarker([jLat, jLng], {
+      radius: 6,
+      fillColor: gcmCor,
+      color: alertar ? prodInfo.cor : '#fff',
+      weight: alertar ? 2.5 : 1.5,
+      opacity: 1,
+      fillOpacity: 0.88
     }).addTo(mapInstance);
 
     dot.bindPopup(`
@@ -1316,56 +1525,60 @@ function refreshMapa() {
           <div><span style="color:#aaa;">Contr. CB</span><br><strong style="color:#185FA5;">${l.contratos_carbank||0}</strong></div>
           <div><span style="color:#aaa;">Vol. CB</span><br><strong style="color:#185FA5;">${fmtBRL(l.volume_carbank)}</strong></div>
         </div>
-        <div style="background:${cor}20;color:${cor};font-size:11px;font-weight:600;padding:4px 8px;border-radius:6px;margin-bottom:4px;">${porteBadgeStr(l.porte)}</div>
-        ${l.gcm?`<div style="font-size:11px;font-weight:600;color:${cor};">👤 ${l.gcm}</div>`:''}
+        ${prodInfo ? `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:11px;margin-bottom:6px;">
+          <div><span style="color:#aaa;">Prod. Qtd</span><br><strong style="color:${prodInfo.cor};">${l.prod_qtd||0}</strong></div>
+          <div><span style="color:#aaa;">Val. Financiado</span><br><strong style="color:${prodInfo.cor};">${fmtBRL(l.prod_valor)}</strong></div>
+        </div>
+        <div style="background:${prodInfo.bg};color:${prodInfo.cor};font-size:11px;font-weight:700;padding:4px 8px;border-radius:6px;margin-bottom:4px;">
+          ${alertar ? '⚑ ' : ''}${pct >= 0 ? pct+'% do potencial · ' : ''}${prodInfo.label}
+        </div>` : ''}
+        <div style="background:${gcmCor}20;color:${gcmCor};font-size:11px;font-weight:600;padding:4px 8px;border-radius:6px;">${porteBadgeStr(l.porte)}</div>
+        ${l.gcm ? `<div style="margin-top:5px;font-size:11px;font-weight:600;color:${gcmCor};">👤 ${l.gcm}</div>` : ''}
       </div>`, { offset:[0,-3] });
 
-    dot.on('mouseover', function(){ this.setStyle({radius:8, weight:2}); });
-    dot.on('mouseout',  function(){ this.setStyle({radius:6, weight:1.5}); });
+    dot.on('mouseover', function(){ this.setStyle({radius:8, weight:2.5}); });
+    dot.on('mouseout',  function(){ this.setStyle({radius:6, weight: alertar ? 2.5 : 1.5}); });
     mapMarkers.push(dot);
-  });
 
-  // Plota lojas SEM coordenadas com scatter ao redor do centro da MR
-  semCoords.forEach(l => {
-    const meta = MR_META[l.micro_regiao] || {};
-    if (!meta.lat) return;
-    const cor  = gcmColorMap[l.gcm] || meta.cor || '#888';
-    const sc   = meta.scatter || 0.025;
-    const jLat = meta.lat + (Math.random()-.5)*sc;
-    const jLng = meta.lng + (Math.random()-.5)*sc*1.2;
-
-    const dot = L.circleMarker([jLat, jLng], {
-      radius: 5, fillColor: cor,
-      color: '#fff', weight: 1, opacity: 1, fillOpacity: 0.5,
-      dashArray: '2,2'
-    }).addTo(mapInstance);
-    dot.bindTooltip('📍 Posição aproximada — geocodifique para exatidão', {direction:'top'});
-    mapMarkers.push(dot);
+    // Bandeirinha para lojas Laranja e Vermelho
+    if (alertar) {
+      const flagIcon = L.divIcon({
+        className: '',
+        html: `<div style="position:relative;width:18px;height:22px;">
+          <div style="position:absolute;top:-18px;left:4px;width:0;height:0;
+            border-left:7px solid ${prodInfo.cor};
+            border-top:5px solid transparent;
+            border-bottom:5px solid transparent;"></div>
+          <div style="position:absolute;top:-23px;left:3px;width:1.5px;height:14px;
+            background:${prodInfo.cor};"></div>
+        </div>`,
+        iconSize: [18, 22],
+        iconAnchor: [3, 22],
+      });
+      const flag = L.marker([jLat, jLng], { icon: flagIcon, interactive: false }).addTo(mapInstance);
+      mapMarkers.push(flag);
+    }
   });
 
   // Legenda
   const legEl = document.getElementById('mapa-legend');
   if (legEl) {
-    const gcms = [...new Set(toPlot.map(l=>l.gcm).filter(Boolean))];
+    const gcms = [...new Set(toPlot.map(l => l.gcm).filter(Boolean))];
     legEl.innerHTML = gcms.length > 0
       ? gcms.map(g => `<span style="display:inline-flex;align-items:center;gap:5px;background:${gcmColorMap[g]}18;color:${gcmColorMap[g]};font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">
           <span style="width:8px;height:8px;border-radius:50%;background:${gcmColorMap[g]};"></span>${g.split(' ')[0]}
         </span>`).join('')
-      : Object.entries(MR_META).map(([mr,m])=>`<span style="display:inline-flex;align-items:center;gap:5px;background:${m.bg};color:${m.txt};font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">
+      : Object.entries(MR_META).map(([mr, m]) => `<span style="display:inline-flex;align-items:center;gap:5px;background:${m.bg};color:${m.txt};font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">
           <span style="width:8px;height:8px;border-radius:50%;background:${m.cor};"></span>${mr}
         </span>`).join('');
   }
 
   const mapGcmSel = document.getElementById('mapa-gcm-filter');
   if (mapGcmSel) {
-    const gcms = [...new Set(active.map(l=>l.gcm).filter(Boolean))].sort();
+    const gcms = [...new Set(active.map(l => l.gcm).filter(Boolean))].sort();
     const cur  = mapGcmSel.value;
     mapGcmSel.innerHTML = '<option value="">Todos os GCMs</option>' +
-      gcms.map(g=>`<option value="${g}" ${g===cur?'selected':''}>${g}</option>`).join('');
+      gcms.map(g => `<option value="${g}" ${g===cur?'selected':''}>${g}</option>`).join('');
   }
 }
-
-// Carrega status ao entrar na página geocode
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('[data-page="geocode"]')?.addEventListener('click', carregarStatusGeo);
-});
