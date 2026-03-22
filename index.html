@@ -41,6 +41,7 @@
     <button class="nav-tab" data-page="gcm"       onclick="switchPage('gcm')">GCMs</button>
     <button class="nav-tab" data-page="planilha"  onclick="switchPage('planilha')">Planilha</button>
     <button class="nav-tab" data-page="mapa"      onclick="switchPage('mapa')">Mapa</button>
+    <button class="nav-tab" data-page="upload"    onclick="switchPage('upload')" style="color:#D85A30;font-weight:600;">↑ Atualizar</button>
   </div>
   <div class="navbar-right">
     <span id="badge-total" class="badge-total" style="background:#FAEEDA;color:#854F0B;">— lojas ativas</span>
@@ -188,26 +189,128 @@
 <!-- MAPA -->
 <!-- ══════════════════════════════════════════════════════ -->
 <div id="page-mapa" class="page">
-  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;">
-    <select id="mapa-mr-filter" style="max-width:140px;">
-      <option value="">Todas as MRs</option>
-      <option>MR-L1</option><option>MR-L2</option><option>MR-L3</option><option>MR-L4</option>
-      <option>MR-N1</option><option>MR-N2</option>
-      <option>MR-G1</option><option>MR-G2</option>
-      <option>MR-M1</option><option>MR-M2</option><option>MR-M3</option>
-      <option>MR-S1</option><option>MR-C1</option>
-    </select>
-    <select id="mapa-gcm-filter" style="max-width:240px;">
-      <option value="">Todos os GCMs</option>
-    </select>
-    <span style="font-size:12px;color:var(--gray-600);">· Clique nos pontos para detalhes</span>
+  <!-- Barra de controles do mapa -->
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center;">
+
+    <!-- Modo normal -->
+    <div id="modo-normal" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+      <select id="mapa-mr-filter" style="max-width:140px;">
+        <option value="">Todas as MRs</option>
+        <option>MR-L1</option><option>MR-L2</option><option>MR-L3</option><option>MR-L4</option>
+        <option>MR-N1</option><option>MR-N2</option>
+        <option>MR-G1</option><option>MR-G2</option>
+        <option>MR-M1</option><option>MR-M2</option><option>MR-M3</option>
+        <option>MR-S1</option><option>MR-C1</option>
+      </select>
+      <select id="mapa-gcm-filter" style="max-width:220px;">
+        <option value="">Todos os GCMs</option>
+      </select>
+    </div>
+
+    <!-- Separador -->
+    <div style="width:1px;height:28px;background:var(--gray-200);margin:0 4px;"></div>
+
+    <!-- Botão comparar -->
+    <button id="btn-comparar" class="btn btn-ghost btn-sm" onclick="toggleComparacao()" style="gap:6px;border-color:#534AB7;color:#534AB7;">
+      ⇄ Comparar GCMs
+    </button>
+
+    <!-- Modo comparação (oculto inicialmente) -->
+    <div id="modo-comparacao" style="display:none;align-items:center;gap:8px;flex-wrap:wrap;">
+      <select id="gcm-comp-a" style="max-width:220px;border-color:#D85A30;"></select>
+      <span style="font-size:13px;font-weight:600;color:var(--gray-400);">vs</span>
+      <select id="gcm-comp-b" style="max-width:220px;border-color:#534AB7;"></select>
+      <button class="btn btn-sm" style="background:#534AB7;color:#fff;border:none;" onclick="aplicarComparacao()">Comparar</button>
+      <button class="btn btn-ghost btn-sm" onclick="toggleComparacao()">✕ Sair</button>
+    </div>
+
+    <span style="font-size:12px;color:var(--gray-500);margin-left:4px;">· Clique nos pontos para detalhes</span>
     <div style="margin-left:auto;display:flex;flex-wrap:wrap;gap:6px;" id="mapa-legend"></div>
   </div>
+
+  <!-- Painel de comparação (aparece abaixo quando ativo) -->
+  <div id="comp-panel" style="display:none;margin-bottom:12px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+      <div id="comp-card-a" class="card" style="border-top:3px solid #D85A30;"></div>
+      <div id="comp-card-overlap" class="card" style="border-top:3px solid #534AB7;"></div>
+      <div id="comp-card-b" class="card" style="border-top:3px solid #1D9E75;"></div>
+    </div>
+  </div>
+
   <div id="mapa-container"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- UPLOAD / ATUALIZAR DADOS -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="page-upload" class="page">
+
+  <div style="max-width:680px;margin:0 auto;">
+
+    <!-- Drop zone -->
+    <div id="drop-zone" style="border:2px dashed #D85A30;border-radius:16px;padding:48px 24px;text-align:center;cursor:pointer;transition:all .2s;background:#fff;margin-bottom:20px;"
+      onclick="document.getElementById('file-input').click()"
+      ondragover="event.preventDefault();this.style.background='#FAECE7'"
+      ondragleave="this.style.background='#fff'"
+      ondrop="handleDrop(event)">
+      <div style="font-size:40px;margin-bottom:12px;">📊</div>
+      <div style="font-size:16px;font-weight:600;color:#D85A30;margin-bottom:6px;">Arraste a planilha aqui</div>
+      <div style="font-size:13px;color:var(--gray-600);">ou clique para selecionar</div>
+      <div style="font-size:11px;color:var(--gray-400);margin-top:8px;">Aceita .xlsx e .xlsm</div>
+      <input type="file" id="file-input" accept=".xlsx,.xlsm" style="display:none" onchange="handleFile(this.files[0])"/>
+    </div>
+
+    <!-- Modo de importação -->
+    <div class="card" style="margin-bottom:16px;">
+      <div class="card-header"><span class="card-title">Modo de importação</span></div>
+      <div class="card-body">
+        <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;margin-bottom:14px;">
+          <input type="radio" name="modo" value="upsert" checked style="margin-top:3px;accent-color:#D85A30;"/>
+          <div>
+            <div style="font-weight:600;font-size:13px;">Atualizar (recomendado)</div>
+            <div style="font-size:12px;color:var(--gray-600);">Lojas novas são adicionadas. Lojas existentes têm os dados atualizados. Lojas desativadas (✕) permanecem desativadas.</div>
+          </div>
+        </label>
+        <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
+          <input type="radio" name="modo" value="replace" style="margin-top:3px;accent-color:#D85A30;"/>
+          <div>
+            <div style="font-weight:600;font-size:13px;">Substituir tudo</div>
+            <div style="font-size:12px;color:var(--gray-600);">⚠️ Apaga todos os dados atuais e importa do zero. Use no início de cada mês se quiser recomeçar limpo.</div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- Preview -->
+    <div id="preview-box" class="card" style="margin-bottom:16px;display:none;">
+      <div class="card-header">
+        <span class="card-title">Preview da planilha</span>
+        <span id="preview-status" style="font-size:12px;color:var(--gray-600);"></span>
+      </div>
+      <div class="card-body">
+        <div id="preview-metrics" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;"></div>
+        <div id="preview-sample" style="overflow-x:auto;font-size:12px;"></div>
+        <div id="preview-erros" style="margin-top:10px;"></div>
+      </div>
+    </div>
+
+    <!-- Botão importar -->
+    <button id="btn-importar" class="btn btn-primary" style="width:100%;padding:12px;font-size:14px;display:none;background:#D85A30;border-color:#D85A30;" onclick="executarImport()">
+      ↑ Importar para o banco de dados
+    </button>
+
+    <!-- Log -->
+    <div id="import-log" style="margin-top:16px;display:none;">
+      <div style="font-size:12px;font-weight:600;color:var(--gray-600);margin-bottom:6px;">LOG DE IMPORTAÇÃO</div>
+      <div id="log-content" style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:12px;font-size:12px;font-family:monospace;max-height:200px;overflow-y:auto;color:var(--gray-800);white-space:pre-wrap;"></div>
+    </div>
+
+  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script src="js/app.js"></script>
 <style>
   .leaflet-popup-content-wrapper{border-radius:10px!important;padding:0!important;box-shadow:0 4px 16px rgba(0,0,0,.15)!important;}
