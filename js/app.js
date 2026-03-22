@@ -1084,3 +1084,288 @@ function popupLoja(l, cor, gcmLabel) {
     ${porteBadge(l.porte)}
   </div>`;
 }
+
+// ============================================================
+// GEOCODIFICAÇÃO — busca coordenadas reais pelo endereço
+// ============================================================
+
+let geoRunning  = false;
+let geoPaused   = false;
+let geoAbort    = false;
+
+async function carregarStatusGeo() {
+  if (!sb) return;
+  const { data, error } = await sb.from('lojas')
+    .select('id, geocoded')
+    .eq('ativo', true);
+  if (error || !data) return;
+
+  const total   = data.length;
+  const done    = data.filter(l => l.geocoded).length;
+  const pending = total - done;
+  const pct     = total > 0 ? Math.round(done/total*100) : 0;
+
+  document.getElementById('geo-total').textContent   = total;
+  document.getElementById('geo-done').textContent    = done;
+  document.getElementById('geo-pending').textContent = pending;
+  document.getElementById('geo-progress-bar').style.width = pct + '%';
+  document.getElementById('geo-status-badge').textContent =
+    done === total ? '✅ Todas geocodificadas!' : `${pct}% concluído`;
+}
+
+function geoLog(msg) {
+  const el = document.getElementById('geo-log');
+  if (!el) return;
+  el.textContent += msg + '\n';
+  el.scrollTop = el.scrollHeight;
+}
+
+async function geocodeAddress(address, cep) {
+  // Tenta pelo CEP primeiro (mais preciso), depois pelo endereço completo
+  const queries = [
+    cep ? `${cep}, Brasil` : null,
+    address,
+    // Fallback simplificado
+    address.split(',').slice(0,3).join(',') + ', Brasil'
+  ].filter(Boolean);
+
+  for (const q of queries) {
+    try {
+      const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=1&countrycodes=br`;
+      const r = await fetch(url, {
+        headers: { 'User-Agent': 'CarbankSP/1.0 (carbank@sp.com.br)' }
+      });
+      const data = await r.json();
+      if (data && data.length > 0) {
+        return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon), query: q };
+      }
+    } catch(e) {
+      // continua para próxima tentativa
+    }
+    await sleep(300);
+  }
+  return null;
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function iniciarGeocodificacao() {
+  if (!sb) { showToast('Supabase não configurado', 'error'); return; }
+  if (geoRunning) return;
+
+  geoRunning = true;
+  geoAbort   = false;
+  geoPaused  = false;
+
+  document.getElementById('btn-geo-start').style.display = 'none';
+  document.getElementById('btn-geo-pause').style.display = 'inline-flex';
+  document.getElementById('geo-log').textContent = '';
+
+  geoLog('Buscando lojas sem coordenadas...');
+
+  // Busca lojas pendentes
+  const { data: lojas, error } = await sb.from('lojas')
+    .select('id, cnpj, razao_social, bairro, zona, cep')
+    .or('geocoded.is.null,geocoded.eq.false')
+    .eq('ativo', true)
+    .order('id');
+
+  if (error) { geoLog('❌ Erro: ' + error.message); geoRunning = false; return; }
+  if (!lojas || lojas.length === 0) {
+    geoLog('✅ Todas as lojas já possuem coordenadas!');
+    geoRunning = false;
+    document.getElementById('btn-geo-start').style.display = 'inline-flex';
+    document.getElementById('btn-geo-pause').style.display = 'none';
+    return;
+  }
+
+  geoLog(`${lojas.length} lojas para geocodificar. Iniciando...\n${'─'.repeat(40)}`);
+
+  // Busca lista de endereços do arquivo local
+  let enderecos = {};
+  try {
+    const r = await fetch('geocode_list.json');
+    const list = await r.json();
+    list.forEach(item => { enderecos[item.cnpj] = item; });
+  } catch(e) {
+    geoLog('⚠️ geocode_list.json não encontrado, usando CEP como fallback.');
+  }
+
+  let ok = 0, fail = 0, i = 0;
+
+  for (const loja of lojas) {
+    if (geoAbort) break;
+    while (geoPaused) { await sleep(500); }
+
+    i++;
+    const info    = enderecos[loja.cnpj];
+    const address = info ? info.address : `${loja.bairro}, ${loja.zona}, SP, Brasil`;
+    const cep     = info ? info.cep : (loja.cep || '');
+
+    document.getElementById('geo-current').textContent = `[${i}/${lojas.length}] ${loja.razao_social}`;
+
+    const coords = await geocodeAddress(address, cep);
+
+    if (coords) {
+      const { error: upErr } = await sb.from('lojas').update({
+        lat: coords.lat, lng: coords.lng, geocoded: true
+      }).eq('id', loja.id);
+
+      if (upErr) {
+        geoLog(`❌ [${i}] ${loja.razao_social} — erro ao salvar`);
+        fail++;
+      } else {
+        ok++;
+        geoLog(`✅ [${i}] ${loja.razao_social.slice(0,40)} → ${coords.lat.toFixed(4)}, ${coords.lng.toFixed(4)}`);
+        // Atualiza progresso
+        const total = lojas.length;
+        document.getElementById('geo-progress-bar').style.width = Math.round(i/total*100) + '%';
+      }
+    } else {
+      geoLog(`⚠️ [${i}] ${loja.razao_social.slice(0,40)} — não encontrado`);
+      // Marca como tentado para não ficar em loop
+      await sb.from('lojas').update({ geocoded: false }).eq('id', loja.id);
+      fail++;
+    }
+
+    // Respeita limite do Nominatim: 1 req/s
+    await sleep(1100);
+  }
+
+  geoLog(`\n${'─'.repeat(40)}`);
+  geoLog(`✅ Concluído! ${ok} geocodificadas, ${fail} não encontradas.`);
+  geoRunning = false;
+  geoAbort   = false;
+  document.getElementById('btn-geo-start').style.display = 'inline-flex';
+  document.getElementById('btn-geo-pause').style.display = 'none';
+  document.getElementById('btn-geo-start').textContent   = '▶ Continuar';
+  document.getElementById('geo-current').textContent     = '';
+  carregarStatusGeo();
+  showToast(`${ok} lojas geocodificadas ✓`, 'success');
+}
+
+function pausarGeocodificacao() {
+  geoPaused = !geoPaused;
+  document.getElementById('btn-geo-pause').textContent = geoPaused ? '▶ Retomar' : '⏸ Pausar';
+  if (geoPaused) geoLog('⏸ Pausado...');
+  else geoLog('▶ Retomando...');
+}
+
+// ── Mapa com coordenadas reais ──
+function refreshMapa() {
+  if (!mapInstance) return;
+  mapMarkers.forEach(m => m.remove());
+  mapMarkers = [];
+
+  const active = allLojas.filter(l => l.ativo !== false);
+  const filterMR  = document.getElementById('mapa-mr-filter')?.value  || '';
+  const filterGCM = document.getElementById('mapa-gcm-filter')?.value || '';
+
+  const toPlot = active.filter(l => {
+    if (filterMR  && l.micro_regiao !== filterMR)  return false;
+    if (filterGCM && l.gcm !== filterGCM)          return false;
+    return true;
+  });
+
+  // Separa lojas com e sem coordenadas reais
+  const comCoords    = toPlot.filter(l => l.lat && l.lng);
+  const semCoords    = toPlot.filter(l => !l.lat || !l.lng);
+  const totalSemCoords = semCoords.length;
+
+  // Mostra aviso se houver lojas sem coordenadas
+  const avisoEl = document.getElementById('geo-aviso');
+  if (avisoEl) {
+    avisoEl.style.display = totalSemCoords > 0 ? 'block' : 'none';
+    avisoEl.textContent   = `⚠️ ${totalSemCoords} lojas sem coordenadas — vá em 📍 Geocodificar para posicioná-las corretamente.`;
+  }
+
+  // Círculos de área por MR (para lojas sem coords)
+  if (semCoords.length > 0) {
+    const mrsSemCoords = [...new Set(semCoords.map(l => l.micro_regiao))];
+    mrsSemCoords.forEach(mr => {
+      const meta = MR_META[mr] || {};
+      if (!meta.lat) return;
+      const c = L.circleMarker([meta.lat, meta.lng], {
+        radius: 18 + semCoords.filter(l=>l.micro_regiao===mr).length * 0.5,
+        fillColor: meta.cor, color: meta.cor,
+        weight: 1, opacity: 0.4, fillOpacity: 0.07,
+        dashArray: '4,4'
+      }).addTo(mapInstance);
+      mapMarkers.push(c);
+    });
+  }
+
+  // Plota lojas COM coordenadas reais
+  comCoords.forEach(l => {
+    const meta = MR_META[l.micro_regiao] || {};
+    const cor  = gcmColorMap[l.gcm] || meta.cor || '#888';
+
+    const dot = L.circleMarker([l.lat, l.lng], {
+      radius: 6, fillColor: cor,
+      color: '#fff', weight: 1.5, opacity: 1, fillOpacity: 0.9
+    }).addTo(mapInstance);
+
+    dot.bindPopup(`
+      <div style="font-family:sans-serif;min-width:210px;">
+        <div style="background:${meta.bg||'#eee'};padding:8px 10px;border-radius:6px 6px 0 0;margin:-12px -12px 8px;">
+          <span style="background:${meta.cor};color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;">${l.micro_regiao}</span>
+          <div style="font-size:11px;font-weight:600;color:${meta.txt||'#333'};margin-top:4px;line-height:1.3;">${l.razao_social}</div>
+        </div>
+        <div style="font-size:11px;color:#777;margin-bottom:6px;">${l.bairro} · ${l.zona}</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:11px;margin-bottom:6px;">
+          <div><span style="color:#aaa;">Contr. CB</span><br><strong style="color:#185FA5;">${l.contratos_carbank||0}</strong></div>
+          <div><span style="color:#aaa;">Vol. CB</span><br><strong style="color:#185FA5;">${fmtBRL(l.volume_carbank)}</strong></div>
+        </div>
+        <div style="background:${cor}20;color:${cor};font-size:11px;font-weight:600;padding:4px 8px;border-radius:6px;margin-bottom:4px;">${porteBadgeStr(l.porte)}</div>
+        ${l.gcm?`<div style="font-size:11px;font-weight:600;color:${cor};">👤 ${l.gcm}</div>`:''}
+      </div>`, { offset:[0,-3] });
+
+    dot.on('mouseover', function(){ this.setStyle({radius:8, weight:2}); });
+    dot.on('mouseout',  function(){ this.setStyle({radius:6, weight:1.5}); });
+    mapMarkers.push(dot);
+  });
+
+  // Plota lojas SEM coordenadas com scatter ao redor do centro da MR
+  semCoords.forEach(l => {
+    const meta = MR_META[l.micro_regiao] || {};
+    if (!meta.lat) return;
+    const cor  = gcmColorMap[l.gcm] || meta.cor || '#888';
+    const sc   = meta.scatter || 0.025;
+    const jLat = meta.lat + (Math.random()-.5)*sc;
+    const jLng = meta.lng + (Math.random()-.5)*sc*1.2;
+
+    const dot = L.circleMarker([jLat, jLng], {
+      radius: 5, fillColor: cor,
+      color: '#fff', weight: 1, opacity: 1, fillOpacity: 0.5,
+      dashArray: '2,2'
+    }).addTo(mapInstance);
+    dot.bindTooltip('📍 Posição aproximada — geocodifique para exatidão', {direction:'top'});
+    mapMarkers.push(dot);
+  });
+
+  // Legenda
+  const legEl = document.getElementById('mapa-legend');
+  if (legEl) {
+    const gcms = [...new Set(toPlot.map(l=>l.gcm).filter(Boolean))];
+    legEl.innerHTML = gcms.length > 0
+      ? gcms.map(g => `<span style="display:inline-flex;align-items:center;gap:5px;background:${gcmColorMap[g]}18;color:${gcmColorMap[g]};font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">
+          <span style="width:8px;height:8px;border-radius:50%;background:${gcmColorMap[g]};"></span>${g.split(' ')[0]}
+        </span>`).join('')
+      : Object.entries(MR_META).map(([mr,m])=>`<span style="display:inline-flex;align-items:center;gap:5px;background:${m.bg};color:${m.txt};font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">
+          <span style="width:8px;height:8px;border-radius:50%;background:${m.cor};"></span>${mr}
+        </span>`).join('');
+  }
+
+  const mapGcmSel = document.getElementById('mapa-gcm-filter');
+  if (mapGcmSel) {
+    const gcms = [...new Set(active.map(l=>l.gcm).filter(Boolean))].sort();
+    const cur  = mapGcmSel.value;
+    mapGcmSel.innerHTML = '<option value="">Todos os GCMs</option>' +
+      gcms.map(g=>`<option value="${g}" ${g===cur?'selected':''}>${g}</option>`).join('');
+  }
+}
+
+// Carrega status ao entrar na página geocode
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('[data-page="geocode"]')?.addEventListener('click', carregarStatusGeo);
+});
