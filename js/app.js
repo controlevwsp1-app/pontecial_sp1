@@ -7,19 +7,19 @@ const SUPA_URL = CFG.supabaseUrl || '';
 const SUPA_KEY = CFG.supabaseKey || '';
 
 const MR_META = {
-  'MR-L1': { nome:'Brás · Moóca · Tatuapé · Carrão',                    zona:'Zona Leste',  cor:'#D85A30', bg:'#FAECE7', txt:'#712B13', lat:-23.548, lng:-46.590 },
-  'MR-L2': { nome:'São Lucas · Vila Matilde · Penha · Cangaíba',         zona:'Zona Leste',  cor:'#993C1D', bg:'#F5C4B3', txt:'#4A1B0C', lat:-23.565, lng:-46.545 },
-  'MR-L3': { nome:'Ermelino Matarazzo · São Mateus · Guaianazes',        zona:'Zona Leste',  cor:'#F0997B', bg:'#FAECE7', txt:'#712B13', lat:-23.553, lng:-46.490 },
-  'MR-L4': { nome:'São Miguel Paulista · Itaim Paulista · Itaquera',     zona:'Zona Leste',  cor:'#7F2B10', bg:'#F5C4B3', txt:'#4A1B0C', lat:-23.507, lng:-46.440 },
-  'MR-N1': { nome:'Santana · Tucuruvi · Vila Guilherme · Vila Maria',    zona:'Zona Norte',  cor:'#534AB7', bg:'#EEEDFE', txt:'#26215C', lat:-23.490, lng:-46.625 },
-  'MR-N2': { nome:'Casa Verde · Brasilândia · Freq. do Ó · Pirituba',    zona:'Zona Norte',  cor:'#7F77DD', bg:'#CECBF6', txt:'#26215C', lat:-23.470, lng:-46.680 },
-  'MR-G1': { nome:'Guarulhos',                                           zona:'Guarulhos',   cor:'#0F6E56', bg:'#E1F5EE', txt:'#04342C', lat:-23.460, lng:-46.534 },
-  'MR-G2': { nome:'Arujá · Santa Isabel',                                zona:'Guarulhos',   cor:'#1D9E75', bg:'#9FE1CB', txt:'#04342C', lat:-23.398, lng:-46.321 },
-  'MR-M1': { nome:'Mogi das Cruzes',                                     zona:'ABC/Leste',   cor:'#185FA5', bg:'#E6F1FB', txt:'#042C53', lat:-23.522, lng:-46.186 },
-  'MR-M2': { nome:'Suzano',                                              zona:'ABC/Leste',   cor:'#378ADD', bg:'#B5D4F4', txt:'#042C53', lat:-23.543, lng:-46.311 },
-  'MR-M3': { nome:'Itaquaquecetuba · Ferraz de Vasconcelos · Poá',       zona:'ABC/Leste',   cor:'#85B7EB', bg:'#E6F1FB', txt:'#042C53', lat:-23.487, lng:-46.348 },
-  'MR-S1': { nome:'Zona Sul · São Bernardo do Campo',                    zona:'Zona Sul',    cor:'#BA7517', bg:'#FAEEDA', txt:'#633806', lat:-23.660, lng:-46.680 },
-  'MR-C1': { nome:'Centro · Zona Oeste',                                 zona:'Centro',      cor:'#888780', bg:'#F1EFE8', txt:'#2C2C2A', lat:-23.550, lng:-46.645 },
+  'MR-L1': { nome:'Brás · Moóca · Tatuapé · Carrão',                    zona:'Zona Leste',  cor:'#D85A30', bg:'#FAECE7', txt:'#712B13', lat:-23.548, lng:-46.590, scatter:0.025 },
+  'MR-L2': { nome:'São Lucas · Vila Matilde · Penha · Cangaíba',         zona:'Zona Leste',  cor:'#993C1D', bg:'#F5C4B3', txt:'#4A1B0C', lat:-23.572, lng:-46.540, scatter:0.025 },
+  'MR-L3': { nome:'Ermelino Matarazzo · São Mateus · Guaianazes',        zona:'Zona Leste',  cor:'#F0997B', bg:'#FAECE7', txt:'#712B13', lat:-23.548, lng:-46.478, scatter:0.025 },
+  'MR-L4': { nome:'São Miguel Paulista · Itaim Paulista · Itaquera',     zona:'Zona Leste',  cor:'#7F2B10', bg:'#F5C4B3', txt:'#4A1B0C', lat:-23.506, lng:-46.438, scatter:0.025 },
+  'MR-N1': { nome:'Santana · Tucuruvi · Vila Guilherme · Vila Maria',    zona:'Zona Norte',  cor:'#534AB7', bg:'#EEEDFE', txt:'#26215C', lat:-23.492, lng:-46.628, scatter:0.022 },
+  'MR-N2': { nome:'Casa Verde · Brasilândia · Freq. do Ó · Pirituba',    zona:'Zona Norte',  cor:'#7F77DD', bg:'#CECBF6', txt:'#26215C', lat:-23.468, lng:-46.682, scatter:0.022 },
+  'MR-G1': { nome:'Guarulhos',                                           zona:'Guarulhos',   cor:'#0F6E56', bg:'#E1F5EE', txt:'#04342C', lat:-23.455, lng:-46.533, scatter:0.030 },
+  'MR-G2': { nome:'Arujá · Santa Isabel',                                zona:'Guarulhos',   cor:'#1D9E75', bg:'#9FE1CB', txt:'#04342C', lat:-23.398, lng:-46.321, scatter:0.018 },
+  'MR-M1': { nome:'Mogi das Cruzes',                                     zona:'ABC/Leste',   cor:'#185FA5', bg:'#E6F1FB', txt:'#042C53', lat:-23.522, lng:-46.188, scatter:0.025 },
+  'MR-M2': { nome:'Suzano',                                              zona:'ABC/Leste',   cor:'#378ADD', bg:'#B5D4F4', txt:'#042C53', lat:-23.542, lng:-46.312, scatter:0.020 },
+  'MR-M3': { nome:'Itaquaquecetuba · Ferraz de Vasconcelos · Poá',       zona:'ABC/Leste',   cor:'#85B7EB', bg:'#E6F1FB', txt:'#042C53', lat:-23.487, lng:-46.348, scatter:0.022 },
+  'MR-S1': { nome:'Zona Sul · São Bernardo do Campo',                    zona:'Zona Sul',    cor:'#BA7517', bg:'#FAEEDA', txt:'#633806', lat:-23.648, lng:-46.665, scatter:0.025 },
+  'MR-C1': { nome:'Centro · Zona Oeste',                                 zona:'Centro',      cor:'#888780', bg:'#F1EFE8', txt:'#2C2C2A', lat:-23.549, lng:-46.643, scatter:0.018 },
 };
 
 const GCM_COLORS = [
@@ -405,7 +405,7 @@ function initMapa() {
   if (mapaInitialized) return;
   mapaInitialized = true;
   mapInstance = L.map('mapa-container',{zoomControl:true,scrollWheelZoom:true})
-    .setView([-23.510, -46.510], 10);
+    .setView([-23.510, -46.430], 10);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
     attribution:'&copy; OpenStreetMap &copy; CARTO', maxZoom:18
   }).addTo(mapInstance);
@@ -442,8 +442,8 @@ function refreshMapa() {
   toPlot.forEach(l => {
     const meta = MR_META[l.micro_regiao]||{};
     const cor  = gcmColorMap[l.gcm]||meta.cor;
-    const jLat = meta.lat + (Math.random()-.5)*0.06;
-    const jLng = meta.lng + (Math.random()-.5)*0.07;
+    const jLat = meta.lat + (Math.random()-.5)*meta.scatter;
+    const jLng = meta.lng + (Math.random()-.5)*(meta.scatter*1.2);
 
     const dot = L.circleMarker([jLat,jLng],{
       radius:5, fillColor:cor, color:'#fff', weight:1, opacity:1, fillOpacity:0.88
@@ -572,3 +572,245 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (initSupabase()) await loadLojas();
   else await loadSeed();
 });
+
+// ============================================================
+// UPLOAD / PROCESSAR PLANILHA
+// ============================================================
+
+let parsedData = [];
+
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('drop-zone').style.background = '#fff';
+  const file = e.dataTransfer.files[0];
+  if (file) handleFile(file);
+}
+
+function handleFile(file) {
+  if (!file) return;
+  if (!file.name.match(/\.(xlsx|xlsm)$/i)) {
+    showToast('Use um arquivo .xlsx ou .xlsm', 'error'); return;
+  }
+  document.getElementById('drop-zone').innerHTML = `
+    <div style="font-size:32px;margin-bottom:8px;">⏳</div>
+    <div style="font-size:14px;font-weight:600;color:#D85A30;">Processando ${file.name}...</div>`;
+
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const wb   = XLSX.read(e.target.result, { type:'array' });
+      const ws   = wb.Sheets[wb.SheetNames[0]];
+      const rows = XLSX.utils.sheet_to_json(ws, { defval:'' });
+      parsedData = processarPlanilha(rows);
+      mostrarPreview(parsedData, file.name);
+    } catch(err) {
+      showToast('Erro ao ler planilha: ' + err.message, 'error');
+      resetDropZone();
+    }
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function processarPlanilha(rows) {
+  // Detecta colunas automaticamente pelo cabeçalho
+  if (!rows.length) return [];
+
+  const sample = rows[0];
+  const keys   = Object.keys(sample);
+
+  // Mapeia colunas pelos nomes (flexível)
+  const findCol = (...names) => keys.find(k => names.some(n => k.toUpperCase().includes(n.toUpperCase()))) || '';
+
+  const colCNPJ    = findCol('CNPJ');
+  const colGCM     = findCol('GCM');
+  const colRazao   = findCol('RAZÃO','RAZAO','SOCIAL');
+  const colBairro  = findCol('BAIRRO');
+  const colCEP     = findCol('CEP');
+  const colZona    = findCol('ZONA');
+  const colPorte   = findCol('PORTE');
+  const colContG   = findCol('CONTRATOS - GERAL','CONTRATOS GERAL');
+  const colVolG    = findCol('VOLUME - GERAL','VOLUME GERAL');
+  const colContCB  = findCol('CONTRATOS PERFIL','CONTRATOS CB');
+  const colVolCB   = findCol('VOLUME PERFIL','VOLUME CB');
+  const colStatus  = findCol('STATUS');
+
+  const MR_NOMES = {
+    'MR-L1':'Brás · Moóca · Tatuapé · Carrão',
+    'MR-L2':'São Lucas · Vila Matilde · Penha · Cangaíba',
+    'MR-L3':'Ermelino Matarazzo · São Mateus · Guaianazes',
+    'MR-L4':'São Miguel Paulista · Itaim Paulista · Itaquera',
+    'MR-N1':'Santana · Tucuruvi · Vila Guilherme · Vila Maria',
+    'MR-N2':'Casa Verde · Brasilândia · Freq. do Ó · Pirituba',
+    'MR-G1':'Guarulhos',
+    'MR-G2':'Arujá · Santa Isabel',
+    'MR-M1':'Mogi das Cruzes',
+    'MR-M2':'Suzano',
+    'MR-M3':'Itaquaquecetuba · Ferraz de Vasconcelos · Poá',
+    'MR-S1':'Zona Sul · São Bernardo do Campo',
+    'MR-C1':'Centro · Zona Oeste',
+    'MR-O1':'Zona Oeste',
+  };
+
+  function getMR(zona, cepStr) {
+    const p4 = parseInt((cepStr||'00000000').toString().padStart(8,'0').slice(0,4));
+    const z  = (zona||'').trim();
+    if (z === 'Zona Leste') {
+      if (p4 >= 300 && p4 <= 319) return 'MR-L1';
+      if (p4 >= 320 && p4 <= 359) return 'MR-L2';
+      if (p4 >= 360 && p4 <= 399) return 'MR-L3';
+      if (p4 >= 800 && p4 <= 849) return 'MR-L4';
+      return 'MR-L2';
+    }
+    if (z === 'Zona Norte')  return p4 >= 240 ? 'MR-N2' : 'MR-N1';
+    if (z === 'Guarulhos')   return 'MR-G1';
+    if (z === 'Arujá' || z === 'Santa Isabel') return 'MR-G2';
+    if (z === 'Mogi das Cruzes') return 'MR-M1';
+    if (z === 'Suzano')      return 'MR-M2';
+    if (z === 'Itaquaquecetuba' || z === 'Ferraz De Vasconcelos' || z === 'Poá') return 'MR-M3';
+    if (z === 'Zona Sul' || z === 'São Bernardo do Campo') return 'MR-S1';
+    if (z === 'Francisco Morato') return 'MR-N2';
+    return 'MR-C1';
+  }
+
+  function cleanCNPJ(v) {
+    const s = String(v||'').replace(/\D/g,'').padStart(14,'0');
+    return s.slice(-14);
+  }
+
+  const seen = new Set();
+  const result = [];
+
+  rows.forEach(r => {
+    const cnpj = cleanCNPJ(r[colCNPJ]);
+    if (!cnpj || cnpj === '00000000000000') return;
+    if (seen.has(cnpj)) return;
+    seen.add(cnpj);
+
+    const cepRaw = String(r[colCEP]||'0').replace(/\D/g,'').padStart(8,'0');
+    const zona   = String(r[colZona]||'');
+    const mr     = getMR(zona, cepRaw);
+
+    result.push({
+      cnpj,
+      gcm:              String(r[colGCM]||''),
+      razao_social:     String(r[colRazao]||''),
+      bairro:           String(r[colBairro]||''),
+      cep:              cepRaw,
+      zona,
+      micro_regiao:     mr,
+      micro_regiao_nome: MR_NOMES[mr] || mr,
+      porte:            String(r[colPorte]||''),
+      contratos_geral:  parseInt(r[colContG]||0)||0,
+      volume_geral:     parseFloat(r[colVolG]||0)||0,
+      contratos_carbank: parseInt(r[colContCB]||0)||0,
+      volume_carbank:   parseFloat(r[colVolCB]||0)||0,
+      status:           String(r[colStatus]||''),
+      ativo:            true,
+    });
+  });
+
+  return result;
+}
+
+function mostrarPreview(data, filename) {
+  document.getElementById('drop-zone').innerHTML = `
+    <div style="font-size:28px;margin-bottom:8px;">✅</div>
+    <div style="font-size:14px;font-weight:600;color:#1D9E75;">${filename}</div>
+    <div style="font-size:12px;color:var(--gray-600);margin-top:4px;">${data.length} lojas únicas processadas</div>
+    <div style="font-size:11px;color:var(--gray-400);margin-top:6px;cursor:pointer;text-decoration:underline;" onclick="document.getElementById('file-input').click()">Trocar arquivo</div>
+    <input type="file" id="file-input" accept=".xlsx,.xlsm" style="display:none" onchange="handleFile(this.files[0])"/>`;
+
+  // Metrics
+  const gcms  = new Set(data.map(d=>d.gcm).filter(Boolean)).size;
+  const mrs   = new Set(data.map(d=>d.micro_regiao)).size;
+  const volCB = data.reduce((s,d)=>s+(d.volume_carbank||0),0);
+  const contCB= data.reduce((s,d)=>s+(d.contratos_carbank||0),0);
+
+  document.getElementById('preview-metrics').innerHTML = `
+    <div class="metric" style="padding:10px;"><div class="metric-label">Lojas</div><div class="metric-value" style="font-size:20px;">${data.length}</div></div>
+    <div class="metric" style="padding:10px;"><div class="metric-label">GCMs</div><div class="metric-value" style="font-size:20px;">${gcms}</div></div>
+    <div class="metric" style="padding:10px;"><div class="metric-label">Micro Regiões</div><div class="metric-value" style="font-size:20px;">${mrs}</div></div>
+    <div class="metric" style="padding:10px;"><div class="metric-label">Vol. Carbank</div><div class="metric-value" style="font-size:16px;">${fmtK(volCB)}</div></div>`;
+
+  // Sample table
+  const sample = data.slice(0,5);
+  document.getElementById('preview-sample').innerHTML = `
+    <div style="font-size:11px;font-weight:600;color:var(--gray-600);margin-bottom:6px;">PRIMEIRAS 5 LINHAS:</div>
+    <table style="width:100%;border-collapse:collapse;font-size:11px;">
+      <thead><tr style="background:var(--gray-50);">
+        <th style="padding:4px 8px;text-align:left;border-bottom:1px solid var(--gray-200);">GCM</th>
+        <th style="padding:4px 8px;text-align:left;border-bottom:1px solid var(--gray-200);">Razão Social</th>
+        <th style="padding:4px 8px;text-align:left;border-bottom:1px solid var(--gray-200);">Bairro</th>
+        <th style="padding:4px 8px;text-align:left;border-bottom:1px solid var(--gray-200);">MR</th>
+        <th style="padding:4px 8px;text-align:right;border-bottom:1px solid var(--gray-200);">Vol CB</th>
+      </tr></thead>
+      <tbody>${sample.map(d=>`<tr>
+        <td style="padding:4px 8px;border-bottom:1px solid var(--gray-100);">${d.gcm}</td>
+        <td style="padding:4px 8px;border-bottom:1px solid var(--gray-100);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${d.razao_social}</td>
+        <td style="padding:4px 8px;border-bottom:1px solid var(--gray-100);">${d.bairro}</td>
+        <td style="padding:4px 8px;border-bottom:1px solid var(--gray-100);"><span class="mr-pill" style="background:${MR_META[d.micro_regiao]?.cor||'#888'};font-size:9px;">${d.micro_regiao}</span></td>
+        <td style="padding:4px 8px;border-bottom:1px solid var(--gray-100);text-align:right;">${fmtBRL(d.volume_carbank)}</td>
+      </tr>`).join('')}</tbody>
+    </table>`;
+
+  document.getElementById('preview-status').textContent = `${data.length} lojas · ${gcms} GCMs`;
+  document.getElementById('preview-box').style.display  = 'block';
+  document.getElementById('btn-importar').style.display = 'block';
+}
+
+async function executarImport() {
+  if (!sb)           { showToast('Supabase não configurado','error'); return; }
+  if (!parsedData.length) { showToast('Nenhum dado para importar','error'); return; }
+
+  const modo = document.querySelector('input[name="modo"]:checked').value;
+  const logEl = document.getElementById('log-content');
+  document.getElementById('import-log').style.display = 'block';
+  document.getElementById('btn-importar').disabled = true;
+  logEl.textContent = '';
+
+  const log = msg => { logEl.textContent += msg + '\n'; logEl.scrollTop = logEl.scrollHeight; };
+
+  log(`Modo: ${modo === 'replace' ? 'SUBSTITUIR TUDO' : 'ATUALIZAR'}`);
+  log(`Total de registros: ${parsedData.length}`);
+  log('─'.repeat(40));
+
+  try {
+    if (modo === 'replace') {
+      log('Apagando dados existentes...');
+      const { error } = await sb.from('lojas').delete().neq('id', 0);
+      if (error) throw error;
+      log('✓ Dados apagados.');
+    }
+
+    const BATCH = 100;
+    let total = 0;
+    for (let i = 0; i < parsedData.length; i += BATCH) {
+      const batch = parsedData.slice(i, i + BATCH);
+      const { error } = modo === 'replace'
+        ? await sb.from('lojas').insert(batch)
+        : await sb.from('lojas').upsert(batch, { onConflict:'cnpj', ignoreDuplicates:false });
+      if (error) throw error;
+      total += batch.length;
+      log(`✓ ${Math.min(i+BATCH, parsedData.length)} / ${parsedData.length} importadas...`);
+    }
+
+    log('─'.repeat(40));
+    log(`✅ Concluído! ${total} lojas importadas com sucesso.`);
+    showToast(`${total} lojas importadas ✓`, 'success');
+    document.getElementById('btn-importar').disabled = false;
+    setTimeout(() => { switchPage('dashboard'); loadLojas(); }, 1500);
+  } catch(e) {
+    log('❌ ERRO: ' + e.message);
+    showToast('Erro na importação: ' + e.message, 'error');
+    document.getElementById('btn-importar').disabled = false;
+  }
+}
+
+function resetDropZone() {
+  document.getElementById('drop-zone').innerHTML = `
+    <div style="font-size:40px;margin-bottom:12px;">📊</div>
+    <div style="font-size:16px;font-weight:600;color:#D85A30;margin-bottom:6px;">Arraste a planilha aqui</div>
+    <div style="font-size:13px;color:var(--gray-600);">ou clique para selecionar</div>
+    <div style="font-size:11px;color:var(--gray-400);margin-top:8px;">Aceita .xlsx e .xlsm</div>
+    <input type="file" id="file-input" accept=".xlsx,.xlsm" style="display:none" onchange="handleFile(this.files[0])"/>`;
+}
