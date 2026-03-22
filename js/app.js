@@ -1547,15 +1547,68 @@ function refreshMapa() {
     const pct      = l.volume_carbank > 0 ? Math.round((l.prod_valor||0) / l.volume_carbank * 100) : -1;
     const prodInfo = (l.prod_valor !== null && l.prod_valor !== undefined) ? getProdCor(pct) : null;
     const alertar  = prodInfo && (prodInfo.label === 'Laranja' || prodInfo.label === 'Vermelho');
+    const isVermelho = prodInfo && prodInfo.label === 'Vermelho';
+    const isLaranja  = prodInfo && prodInfo.label === 'Laranja';
 
-    const dot = L.circleMarker([jLat, jLng], {
-      radius: 6,
-      fillColor: gcmCor,
-      color: alertar ? prodInfo.cor : '#fff',
-      weight: alertar ? 2.5 : 1.5,
-      opacity: 1,
-      fillOpacity: 0.88
-    }).addTo(mapInstance);
+    let dot;
+
+    if (alertar) {
+      // Ponto pulsante com divIcon para Laranja e Vermelho
+      const size    = isVermelho ? 16 : 13;
+      const pulse   = isVermelho ? 28 : 22;
+      const speed   = isVermelho ? '1.2s' : '1.8s';
+      const cor     = prodInfo.cor;
+
+      const pulseIcon = L.divIcon({
+        className: '',
+        html: `<div style="position:relative;width:${pulse}px;height:${pulse}px;">
+          <style>
+            @keyframes cb-pulse {
+              0%   { transform:scale(1);   opacity:.7; }
+              70%  { transform:scale(2.2); opacity:0; }
+              100% { transform:scale(1);   opacity:0; }
+            }
+          </style>
+          <div style="
+            position:absolute;
+            top:50%;left:50%;
+            transform:translate(-50%,-50%);
+            width:${size}px;height:${size}px;
+            border-radius:50%;
+            background:${gcmCor};
+            border:2.5px solid ${cor};
+            z-index:2;
+          "></div>
+          <div style="
+            position:absolute;
+            top:50%;left:50%;
+            transform:translate(-50%,-50%);
+            width:${size}px;height:${size}px;
+            border-radius:50%;
+            background:${cor};
+            opacity:.6;
+            animation:cb-pulse ${speed} ease-out infinite;
+          "></div>
+        </div>`,
+        iconSize:   [pulse, pulse],
+        iconAnchor: [pulse/2, pulse/2],
+      });
+
+      dot = L.marker([jLat, jLng], { icon: pulseIcon, zIndexOffset: 100 }).addTo(mapInstance);
+
+    } else {
+      // Ponto normal para demais faixas
+      dot = L.circleMarker([jLat, jLng], {
+        radius:      6,
+        fillColor:   gcmCor,
+        color:       '#fff',
+        weight:      1.5,
+        opacity:     1,
+        fillOpacity: 0.88
+      }).addTo(mapInstance);
+      dot.on('mouseover', function(){ this.setStyle({radius:8}); });
+      dot.on('mouseout',  function(){ this.setStyle({radius:6}); });
+    }
 
     dot.bindPopup(`
       <div style="font-family:sans-serif;min-width:210px;">
@@ -1574,47 +1627,39 @@ function refreshMapa() {
           <div><span style="color:#aaa;">Val. Financiado</span><br><strong style="color:${prodInfo.cor};">${fmtBRL(l.prod_valor)}</strong></div>
         </div>
         <div style="background:${prodInfo.bg};color:${prodInfo.cor};font-size:11px;font-weight:700;padding:4px 8px;border-radius:6px;margin-bottom:4px;">
-          ${alertar ? '⚑ ' : ''}${pct >= 0 ? pct+'% do potencial · ' : ''}${prodInfo.label}
+          ${pct >= 0 ? pct+'% do potencial · ' : ''}${prodInfo.label}
         </div>` : ''}
         <div style="background:${gcmCor}20;color:${gcmCor};font-size:11px;font-weight:600;padding:4px 8px;border-radius:6px;">${porteBadgeStr(l.porte)}</div>
         ${l.gcm ? `<div style="margin-top:5px;font-size:11px;font-weight:600;color:${gcmCor};">👤 ${l.gcm}</div>` : ''}
       </div>`, { offset:[0,-3] });
 
-    dot.on('mouseover', function(){ this.setStyle({radius:8, weight:2.5}); });
-    dot.on('mouseout',  function(){ this.setStyle({radius:6, weight: alertar ? 2.5 : 1.5}); });
+    dot.on('mouseover', function(){ this.setStyle({radius: dotRadius+2, weight: ringWeight+1}); });
+    dot.on('mouseout',  function(){ this.setStyle({radius: dotRadius,   weight: ringWeight}); });
     mapMarkers.push(dot);
-
-    // Bandeirinha para lojas Laranja e Vermelho
-    if (alertar) {
-      const flagIcon = L.divIcon({
-        className: '',
-        html: `<div style="position:relative;width:18px;height:22px;">
-          <div style="position:absolute;top:-18px;left:4px;width:0;height:0;
-            border-left:7px solid ${prodInfo.cor};
-            border-top:5px solid transparent;
-            border-bottom:5px solid transparent;"></div>
-          <div style="position:absolute;top:-23px;left:3px;width:1.5px;height:14px;
-            background:${prodInfo.cor};"></div>
-        </div>`,
-        iconSize: [18, 22],
-        iconAnchor: [3, 22],
-      });
-      const flag = L.marker([jLat, jLng], { icon: flagIcon, interactive: false }).addTo(mapInstance);
-      mapMarkers.push(flag);
-    }
   });
 
   // Legenda
   const legEl = document.getElementById('mapa-legend');
   if (legEl) {
     const gcms = [...new Set(toPlot.map(l => l.gcm).filter(Boolean))];
-    legEl.innerHTML = gcms.length > 0
+    const gcmLeg = gcms.length > 0
       ? gcms.map(g => `<span style="display:inline-flex;align-items:center;gap:5px;background:${gcmColorMap[g]}18;color:${gcmColorMap[g]};font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">
           <span style="width:8px;height:8px;border-radius:50%;background:${gcmColorMap[g]};"></span>${g.split(' ')[0]}
         </span>`).join('')
       : Object.entries(MR_META).map(([mr, m]) => `<span style="display:inline-flex;align-items:center;gap:5px;background:${m.bg};color:${m.txt};font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">
           <span style="width:8px;height:8px;border-radius:50%;background:${m.cor};"></span>${mr}
         </span>`).join('');
+
+    legEl.innerHTML = `
+      <div style="display:flex;flex-wrap:wrap;gap:5px;">${gcmLeg}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:6px;padding-top:6px;border-top:1px solid var(--gray-200);align-items:center;">
+        <span style="font-size:10px;color:var(--gray-500);">Produção:</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;background:#E6F1FB;color:#185FA5;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;">● &gt;15%</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;background:#E1F5EE;color:#1D9E75;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;">● 10-15%</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;background:#FAEEDA;color:#BA7517;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;">● 6-9%</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;background:#FAECE7;color:#D85A30;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;">◎ 1-5% alerta</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;background:#FCEBEB;color:#E24B4A;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;">◉ 0% crítico</span>
+      </div>`;
   }
 
   const mapGcmSel = document.getElementById('mapa-gcm-filter');
