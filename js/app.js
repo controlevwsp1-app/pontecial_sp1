@@ -333,6 +333,11 @@ function renderTable() {
     const inativo = l.ativo===false;
     return `
     <tr class="${inativo?'inativo':''}" data-id="${l.id}">
+      <td style="text-align:center;">
+        ${l.dealer_cod
+          ? `<span style="background:#F3F0FF;color:#4C1D95;font-size:11px;font-weight:700;padding:2px 7px;border-radius:6px;">${l.dealer_cod}</span>`
+          : `<span style="color:#ccc;font-size:11px;">—</span>`}
+      </td>
       <td>
         <span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:${cor};">
           <span style="width:8px;height:8px;border-radius:50%;background:${cor};flex-shrink:0;"></span>
@@ -874,6 +879,7 @@ function processarPlanilha(rows) {
   const colContCB  = findCol('CONTRATOS PERFIL','CONTRATOS CB');
   const colVolCB   = findCol('VOLUME PERFIL','VOLUME CB');
   const colStatus  = findCol('STATUS');
+  const colDN      = findCol('DN','DEALER_COD','COD DN','CODIGO DN');
 
   const MR_NOMES = {
     'MR-L1':'Brás · Moóca · Tatuapé · Carrão',
@@ -946,6 +952,7 @@ function processarPlanilha(rows) {
       contratos_carbank: parseInt(r[colContCB]||0)||0,
       volume_carbank:   parseFloat(r[colVolCB]||0)||0,
       status:           String(r[colStatus]||''),
+      dealer_cod:       colDN && r[colDN] ? String(Math.round(parseFloat(r[colDN]))||'').trim() || null : null,
       ativo:            true,
     });
   });
