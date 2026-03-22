@@ -1546,68 +1546,53 @@ function refreshMapa() {
     // Calcula faixa de produção
     const pct      = l.volume_carbank > 0 ? Math.round((l.prod_valor||0) / l.volume_carbank * 100) : -1;
     const prodInfo = (l.prod_valor !== null && l.prod_valor !== undefined) ? getProdCor(pct) : null;
-    const alertar  = prodInfo && (prodInfo.label === 'Laranja' || prodInfo.label === 'Vermelho');
-    const isVermelho = prodInfo && prodInfo.label === 'Vermelho';
-    const isLaranja  = prodInfo && prodInfo.label === 'Laranja';
+    const isZero   = prodInfo && prodInfo.label === 'Vermelho';
+    const ringCor  = prodInfo ? prodInfo.cor : '#fff';
 
     let dot;
 
-    if (alertar) {
-      // Ponto pulsante com divIcon para Laranja e Vermelho
-      const size    = isVermelho ? 16 : 13;
-      const pulse   = isVermelho ? 28 : 22;
-      const speed   = isVermelho ? '1.2s' : '1.8s';
-      const cor     = prodInfo.cor;
-
+    if (isZero) {
+      // Ponto pulsante APENAS para lojas zeradas (0%)
       const pulseIcon = L.divIcon({
         className: '',
-        html: `<div style="position:relative;width:${pulse}px;height:${pulse}px;">
+        html: `<div style="position:relative;width:26px;height:26px;">
           <style>
             @keyframes cb-pulse {
-              0%   { transform:scale(1);   opacity:.7; }
-              70%  { transform:scale(2.2); opacity:0; }
-              100% { transform:scale(1);   opacity:0; }
+              0%   { transform:translate(-50%,-50%) scale(1);   opacity:.7; }
+              70%  { transform:translate(-50%,-50%) scale(2.4); opacity:0; }
+              100% { transform:translate(-50%,-50%) scale(1);   opacity:0; }
             }
           </style>
           <div style="
-            position:absolute;
-            top:50%;left:50%;
+            position:absolute;top:50%;left:50%;
             transform:translate(-50%,-50%);
-            width:${size}px;height:${size}px;
-            border-radius:50%;
-            background:${gcmCor};
-            border:2.5px solid ${cor};
-            z-index:2;
+            width:14px;height:14px;border-radius:50%;
+            background:${gcmCor};border:2.5px solid #E24B4A;z-index:2;
           "></div>
           <div style="
-            position:absolute;
-            top:50%;left:50%;
-            transform:translate(-50%,-50%);
-            width:${size}px;height:${size}px;
-            border-radius:50%;
-            background:${cor};
-            opacity:.6;
-            animation:cb-pulse ${speed} ease-out infinite;
+            position:absolute;top:50%;left:50%;
+            width:14px;height:14px;border-radius:50%;
+            background:#E24B4A;opacity:.55;
+            animation:cb-pulse 1.2s ease-out infinite;
           "></div>
         </div>`,
-        iconSize:   [pulse, pulse],
-        iconAnchor: [pulse/2, pulse/2],
+        iconSize:   [26, 26],
+        iconAnchor: [13, 13],
       });
-
-      dot = L.marker([jLat, jLng], { icon: pulseIcon, zIndexOffset: 100 }).addTo(mapInstance);
+      dot = L.marker([jLat, jLng], { icon: pulseIcon, zIndexOffset: 200 }).addTo(mapInstance);
 
     } else {
-      // Ponto normal para demais faixas
+      // Todos os outros pontos: círculo com borda colorida pela faixa
       dot = L.circleMarker([jLat, jLng], {
-        radius:      6,
+        radius:      7,
         fillColor:   gcmCor,
-        color:       '#fff',
-        weight:      1.5,
+        color:       ringCor,
+        weight:      prodInfo ? 2.5 : 1.5,
         opacity:     1,
         fillOpacity: 0.88
       }).addTo(mapInstance);
-      dot.on('mouseover', function(){ this.setStyle({radius:8}); });
-      dot.on('mouseout',  function(){ this.setStyle({radius:6}); });
+      dot.on('mouseover', function(){ this.setStyle({radius:9}); });
+      dot.on('mouseout',  function(){ this.setStyle({radius:7}); });
     }
 
     dot.bindPopup(`
@@ -1654,11 +1639,11 @@ function refreshMapa() {
       <div style="display:flex;flex-wrap:wrap;gap:5px;">${gcmLeg}</div>
       <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:6px;padding-top:6px;border-top:1px solid var(--gray-200);align-items:center;">
         <span style="font-size:10px;color:var(--gray-500);">Produção:</span>
-        <span style="display:inline-flex;align-items:center;gap:4px;background:#E6F1FB;color:#185FA5;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;">● &gt;15%</span>
-        <span style="display:inline-flex;align-items:center;gap:4px;background:#E1F5EE;color:#1D9E75;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;">● 10-15%</span>
-        <span style="display:inline-flex;align-items:center;gap:4px;background:#FAEEDA;color:#BA7517;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;">● 6-9%</span>
-        <span style="display:inline-flex;align-items:center;gap:4px;background:#FAECE7;color:#D85A30;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;">◎ 1-5% alerta</span>
-        <span style="display:inline-flex;align-items:center;gap:4px;background:#FCEBEB;color:#E24B4A;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;">◉ 0% crítico</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;background:#E6F1FB;color:#185FA5;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;border:2px solid #185FA5;">● &gt;15%</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;background:#E1F5EE;color:#1D9E75;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;border:2px solid #1D9E75;">● 10-15%</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;background:#FAEEDA;color:#BA7517;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;border:2px solid #BA7517;">● 6-9%</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;background:#FAECE7;color:#D85A30;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;border:2px solid #D85A30;">● 1-5%</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;background:#FCEBEB;color:#E24B4A;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;border:2px solid #E24B4A;animation:cb-pulse-leg 1.2s ease-out infinite;">◉ 0% crítico</span>
       </div>`;
   }
 
