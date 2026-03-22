@@ -328,8 +328,8 @@ function renderTable() {
   const gcmCol = gcmColorMap;
 
   tbody.innerHTML = pageData.map(l => {
-    const meta   = MR_META[l.micro_regiao]||{};
-    const cor    = gcmCol[l.gcm]||'#888';
+    const meta    = MR_META[l.micro_regiao]||{};
+    const cor     = gcmCol[l.gcm]||'#888';
     const inativo = l.ativo===false;
     return `
     <tr class="${inativo?'inativo':''}" data-id="${l.id}">
@@ -344,17 +344,12 @@ function renderTable() {
       <td><span style="font-size:11px;color:var(--gray-600);">${l.zona}</span></td>
       <td><span class="mr-pill" style="background:${meta.cor||'#888'};">${l.micro_regiao}</span></td>
       <td>${porteBadge(l.porte)}</td>
+      <td style="text-align:center;background:#f0faf3;">${prodQtdBadge(l.prod_qtd, l.contratos_carbank)}</td>
+      <td style="text-align:right;background:#f0faf3;">${prodValorBadge(l.prod_valor, l.volume_carbank)}</td>
       <td style="text-align:center;font-weight:600;color:#185FA5;">${l.contratos_carbank||0}</td>
       <td style="text-align:right;font-weight:600;color:#185FA5;">${fmtBRL(l.volume_carbank)}</td>
       <td style="text-align:center;color:var(--gray-600);">${l.contratos_geral||0}</td>
       <td style="text-align:right;color:var(--gray-600);">${fmtBRL(l.volume_geral)}</td>
-      <td style="text-align:center;">${prodQtdBadge(l.prod_qtd, l.contratos_carbank)}</td>
-      <td style="text-align:right;">${prodValorBadge(l.prod_valor, l.volume_carbank)}</td>
-      <td>
-        <button class="btn btn-icon btn-danger btn-sm" onclick="confirmarExclusao(${l.id})" title="${inativo?'Reativar':'Desativar'}">
-          ${inativo?'↩':'✕'}
-        </button>
-      </td>
     </tr>`;
   }).join('');
 
