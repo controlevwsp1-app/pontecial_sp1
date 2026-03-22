@@ -1,6 +1,7 @@
 [
   {
     "cnpj": "93579280001000",
+    "dealer_cod": "60454",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "T CAR COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA GOMES CARDIM",
@@ -17,7 +18,8 @@
     "ativo": true
   },
   {
-    "cnpj": "217976390001100",
+    "cnpj": "17976390001100",
+    "dealer_cod": "60591",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "RZERO MULTIMARCAS VEICULOS LTDA",
     "bairro": "JARDIM MARINGA",
@@ -35,6 +37,7 @@
   },
   {
     "cnpj": "88294240001750",
+    "dealer_cod": "60592",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "REMO TOMASI NETO",
     "bairro": "JARDIM MARINGA",
@@ -51,7 +54,8 @@
     "ativo": true
   },
   {
-    "cnpj": "555433420001400",
+    "cnpj": "55433420001400",
+    "dealer_cod": "60600",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "MEDEIROS & MEDEIROS LTDA",
     "bairro": "VILA CALIFORNIA",
@@ -68,7 +72,8 @@
     "ativo": true
   },
   {
-    "cnpj": "278716620001930",
+    "cnpj": "78716620001930",
+    "dealer_cod": "60608",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "VEICULOS VIANA LTDA",
     "bairro": "JARDIM MARINGA",
@@ -85,7 +90,8 @@
     "ativo": true
   },
   {
-    "cnpj": "671172830001270",
+    "cnpj": "71172830001270",
+    "dealer_cod": "60611",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "ZOCCHI & LEAO MULTIMARCAS LTDA",
     "bairro": "JARDIM MARINGA",
@@ -102,7 +108,8 @@
     "ativo": true
   },
   {
-    "cnpj": "302222010001020",
+    "cnpj": "02222010001020",
+    "dealer_cod": "60623",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "EPM RENT A CAR LTDA",
     "bairro": "CHACARA SEIS DE OUTUBRO",
@@ -120,6 +127,7 @@
   },
   {
     "cnpj": "31120410001680",
+    "dealer_cod": "60682",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "BRITO & MAFEI VEICULOS LTDA",
     "bairro": "VILA GOMES CARDIM",
@@ -137,6 +145,7 @@
   },
   {
     "cnpj": "23886800001980",
+    "dealer_cod": "60690",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "DE LOPES AUTOMOVEIS LTDA",
     "bairro": "JARDIM MARINGA",
@@ -153,7 +162,8 @@
     "ativo": true
   },
   {
-    "cnpj": "337761030001050",
+    "cnpj": "37761030001050",
+    "dealer_cod": "60708",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "FD MOTORS MULTIMARCAS LTDA",
     "bairro": "JARDIM MARINGA",
@@ -170,7 +180,8 @@
     "ativo": true
   },
   {
-    "cnpj": "352888890001390",
+    "cnpj": "52888890001390",
+    "dealer_cod": "60880",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "PRIME LOCACAO E COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM ARICANDUVA",
@@ -188,6 +199,7 @@
   },
   {
     "cnpj": "50404470001080",
+    "dealer_cod": "61846",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "ALEX CAR VEICULOS LTDA",
     "bairro": "VILA REGENTE FEIJO",
@@ -204,7 +216,8 @@
     "ativo": true
   },
   {
-    "cnpj": "249940590001000",
+    "cnpj": "49940590001000",
+    "dealer_cod": "61876",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "JR COMERCIO DE VEICULOS E INTERMEDIACAO LTDA",
     "bairro": "VILA REGENTE FEIJO",
@@ -221,7 +234,8 @@
     "ativo": true
   },
   {
-    "cnpj": "300337600001660",
+    "cnpj": "00337600001660",
+    "dealer_cod": "61894",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "JB MOTORS LTDA",
     "bairro": "JARDIM MARINGA",
@@ -238,7 +252,8 @@
     "ativo": true
   },
   {
-    "cnpj": "323103900001920",
+    "cnpj": "23103900001920",
+    "dealer_cod": "62150",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "FORMULA MOTORS VEICULOS LTDA",
     "bairro": "CHACARA CALIFORNIA",
@@ -255,7 +270,8 @@
     "ativo": true
   },
   {
-    "cnpj": "340120660001130",
+    "cnpj": "40120660001130",
+    "dealer_cod": "63194",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "FF AUTOMOTIVE LTDA",
     "bairro": "VILA CARRAO",
@@ -272,7 +288,8 @@
     "ativo": true
   },
   {
-    "cnpj": "459698610001100",
+    "cnpj": "59698610001100",
+    "dealer_cod": "65358",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "IFISCAR AUTOMOVEIS LTDA",
     "bairro": "CHACARA MAFALDA",
@@ -289,7 +306,8 @@
     "ativo": true
   },
   {
-    "cnpj": "168891050001830",
+    "cnpj": "68891050001830",
+    "dealer_cod": "66311",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "FONTES COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM MARINGA",
@@ -306,7 +324,8 @@
     "ativo": true
   },
   {
-    "cnpj": "353707520001290",
+    "cnpj": "53707520001290",
+    "dealer_cod": "66512",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "BER CAR COMERCIO DE AUTOMOVEIS LTDA",
     "bairro": "VILA CARRAO",
@@ -323,7 +342,8 @@
     "ativo": true
   },
   {
-    "cnpj": "448074350001180",
+    "cnpj": "48074350001180",
+    "dealer_cod": "67187",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "FIIORI MULTIMARCAS LTDA",
     "bairro": "JARDIM MARINGA",
@@ -340,7 +360,8 @@
     "ativo": true
   },
   {
-    "cnpj": "215811000001290",
+    "cnpj": "15811000001290",
+    "dealer_cod": "67204",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "GIRO COMERCIAL LTDA",
     "bairro": "VILA GOMES CARDIM",
@@ -357,7 +378,8 @@
     "ativo": true
   },
   {
-    "cnpj": "426904310001770",
+    "cnpj": "26904310001770",
+    "dealer_cod": "67402",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "CALU COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA REGENTE FEIJO",
@@ -374,7 +396,8 @@
     "ativo": true
   },
   {
-    "cnpj": "179364680001950",
+    "cnpj": "79364680001950",
+    "dealer_cod": "67701",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "MS CAR COMERCIO E LOCACAO DE VEICULOS LTDA",
     "bairro": "JARDIM MARINGA",
@@ -391,7 +414,8 @@
     "ativo": true
   },
   {
-    "cnpj": "329114180001470",
+    "cnpj": "29114180001470",
+    "dealer_cod": "67993",
     "gcm": "ADILSON VIEIRA DE LIMA",
     "razao_social": "NASSAR MOTORS LTDA",
     "bairro": "VILA SANTA TERESA ZONA LESTE",
@@ -409,6 +433,7 @@
   },
   {
     "cnpj": "74453710001260",
+    "dealer_cod": "60501",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "CEMAR MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "IPIRANGA",
@@ -426,6 +451,7 @@
   },
   {
     "cnpj": "80373610001140",
+    "dealer_cod": "60598",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "A M AUTOMOVEIS",
     "bairro": "VILA MONTE ALEGRE",
@@ -442,7 +468,8 @@
     "ativo": true
   },
   {
-    "cnpj": "745523810001580",
+    "cnpj": "45523810001580",
+    "dealer_cod": "60653",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "MV CAR VEICULOS MULTIMARCAS LTDA",
     "bairro": "VILA MASCOTE",
@@ -460,6 +487,7 @@
   },
   {
     "cnpj": "71271920001400",
+    "dealer_cod": "60827",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "J J ALIANCA VEICULOS LTDA",
     "bairro": "SANTO AMARO",
@@ -477,6 +505,7 @@
   },
   {
     "cnpj": "80815870001120",
+    "dealer_cod": "60828",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "MARC SERVICOS DE BLINDAGENS LTDA",
     "bairro": "VILA CORDEIRO",
@@ -493,7 +522,8 @@
     "ativo": true
   },
   {
-    "cnpj": "262015180001870",
+    "cnpj": "62015180001870",
+    "dealer_cod": "60829",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "PIETRO MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "IPIRANGA",
@@ -511,6 +541,7 @@
   },
   {
     "cnpj": "52857770001630",
+    "dealer_cod": "60840",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "AUTO MOEMA IMPORTS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA UBERABINHA",
@@ -528,6 +559,7 @@
   },
   {
     "cnpj": "94588360001090",
+    "dealer_cod": "60867",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "VMARC MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "SANTO AMARO",
@@ -544,7 +576,8 @@
     "ativo": true
   },
   {
-    "cnpj": "329734250001730",
+    "cnpj": "29734250001730",
+    "dealer_cod": "60882",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "ANGLES PRIME VEICULOS LTDA",
     "bairro": "SANTO AMARO",
@@ -561,7 +594,8 @@
     "ativo": true
   },
   {
-    "cnpj": "271294880001080",
+    "cnpj": "71294880001080",
+    "dealer_cod": "60884",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "MAXX CAR COMERCIO DE VEICULOS LTDA",
     "bairro": "CIDADE MONCOES",
@@ -578,7 +612,8 @@
     "ativo": true
   },
   {
-    "cnpj": "346611200001510",
+    "cnpj": "46611200001510",
+    "dealer_cod": "60976",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "A MATOS COMERCIO DE VEICULOS LTDA",
     "bairro": "CAMPO BELO",
@@ -595,7 +630,8 @@
     "ativo": true
   },
   {
-    "cnpj": "157481960001740",
+    "cnpj": "57481960001740",
+    "dealer_cod": "60977",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "M VAZ COMERCIO DE VEICULOS LTDA",
     "bairro": "CAMPO BELO",
@@ -612,7 +648,8 @@
     "ativo": true
   },
   {
-    "cnpj": "292931960001310",
+    "cnpj": "92931960001310",
+    "dealer_cod": "61443",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "NATTA MOTORS COMERCIO E CONSULTORIA LTDA",
     "bairro": "VILA OLIMPIA",
@@ -629,7 +666,8 @@
     "ativo": true
   },
   {
-    "cnpj": "195113580001070",
+    "cnpj": "95113580001070",
+    "dealer_cod": "62569",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "MF MOTORS PREMIUM INTERMEDIACAO E COMERCIO DE VEICULOS LTDA",
     "bairro": "PLANALTO PAULISTA",
@@ -646,14 +684,15 @@
     "ativo": true
   },
   {
-    "cnpj": "445280290001160",
+    "cnpj": "45280290001160",
+    "dealer_cod": "63061",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "G11 COMERCIO DE VEICULOS LTDA",
     "bairro": "RETIRO MORUMBI",
     "cep": "05692130",
     "zona": "Zona Oeste",
-    "micro_regiao": "MR-O1",
-    "micro_regiao_nome": "Zona Oeste",
+    "micro_regiao": "MR-C1",
+    "micro_regiao_nome": "Centro · Zona Oeste",
     "porte": "B. 2-5 GRAVAMES",
     "contratos_geral": 5,
     "volume_geral": 737834.09,
@@ -664,6 +703,7 @@
   },
   {
     "cnpj": "83008190001860",
+    "dealer_cod": "63167",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "NEW MOTORS MOEMA COMERCIO DE VEICULOS LTDA",
     "bairro": "INDIANOPOLIS",
@@ -681,6 +721,7 @@
   },
   {
     "cnpj": "40016690001590",
+    "dealer_cod": "63188",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "AUTOMIAMI COMERCIAL LTDA",
     "bairro": "ITAIM BIBI",
@@ -697,7 +738,8 @@
     "ativo": true
   },
   {
-    "cnpj": "152782120001020",
+    "cnpj": "52782120001020",
+    "dealer_cod": "63208",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "GRIFFE MOTORS COMERCIO DE VEICULOS LTDA",
     "bairro": "INDIANOPOLIS",
@@ -714,7 +756,8 @@
     "ativo": true
   },
   {
-    "cnpj": "252513760001080",
+    "cnpj": "52513760001080",
+    "dealer_cod": "63836",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "PARK MOTORS COMERCIO DE VEICULOS LTDA",
     "bairro": "IBIRAPUERA",
@@ -732,6 +775,7 @@
   },
   {
     "cnpj": "33224450001860",
+    "dealer_cod": "64110",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "VIMARA AUTOMOVEIS LTDA",
     "bairro": "JARDIM DAS FLORES",
@@ -748,7 +792,8 @@
     "ativo": true
   },
   {
-    "cnpj": "429600020001720",
+    "cnpj": "29600020001720",
+    "dealer_cod": "64171",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "DW CARROS LTDA",
     "bairro": "IPIRANGA",
@@ -765,7 +810,8 @@
     "ativo": true
   },
   {
-    "cnpj": "440248950001700",
+    "cnpj": "40248950001700",
+    "dealer_cod": "65030",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "VICK BLINDADOS COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM EUROPA",
@@ -782,7 +828,8 @@
     "ativo": true
   },
   {
-    "cnpj": "252856210001900",
+    "cnpj": "52856210001900",
+    "dealer_cod": "66227",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "PDK MOTORS LTDA",
     "bairro": "CHACARA SANTO ANTONIO ZONA SUL",
@@ -800,6 +847,7 @@
   },
   {
     "cnpj": "46659410001030",
+    "dealer_cod": "66584",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "EURO COMERCIO E INTERMEDIACAO DE VEICULOS LTDA",
     "bairro": "CIDADE MAE DO CEU",
@@ -817,6 +865,7 @@
   },
   {
     "cnpj": "82601230001730",
+    "dealer_cod": "67405",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "AUTO BRASILIENSE COMERCIO DE VEICULOS LTDA",
     "bairro": "CHACARA SANTO ANTONIO ZONA SUL",
@@ -834,6 +883,7 @@
   },
   {
     "cnpj": "74453710002070",
+    "dealer_cod": "67868",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "CEMAR MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "SANTO AMARO",
@@ -850,7 +900,8 @@
     "ativo": true
   },
   {
-    "cnpj": "452440440001030",
+    "cnpj": "52440440001030",
+    "dealer_cod": "69298",
     "gcm": "ANA CRISTINA NOGUEIRA MARTIN",
     "razao_social": "LUQUE MOTORS COMERCIO E INTERMEDIACAO LTDA",
     "bairro": "SANTO AMARO",
@@ -868,6 +919,7 @@
   },
   {
     "cnpj": "52861040001280",
+    "dealer_cod": "60734",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "A MIZUTA LTDA",
     "bairro": "VILA JUNDIAI",
@@ -884,7 +936,8 @@
     "ativo": true
   },
   {
-    "cnpj": "166996330001700",
+    "cnpj": "66996330001700",
+    "dealer_cod": "60128",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "AUTO VALE AUTOS LTDA",
     "bairro": "VILA MOGILAR",
@@ -901,7 +954,8 @@
     "ativo": true
   },
   {
-    "cnpj": "285024530001350",
+    "cnpj": "85024530001350",
+    "dealer_cod": "60929",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "C3 VEICULOS LTDA",
     "bairro": "CENTRO",
@@ -919,6 +973,7 @@
   },
   {
     "cnpj": "88243620001090",
+    "dealer_cod": "61235",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "D S COMERCIO DE VEICULOS LTDA",
     "bairro": "ALTO IPIRANGA",
@@ -935,7 +990,8 @@
     "ativo": true
   },
   {
-    "cnpj": "456809990001030",
+    "cnpj": "56809990001030",
+    "dealer_cod": "65758",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "DAVID SANTOS RIBEIRO",
     "bairro": "VILA MOGILAR",
@@ -953,6 +1009,7 @@
   },
   {
     "cnpj": "82435710001690",
+    "dealer_cod": "60727",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "DML MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA JUNDIAI",
@@ -969,7 +1026,8 @@
     "ativo": true
   },
   {
-    "cnpj": "274176790001750",
+    "cnpj": "74176790001750",
+    "dealer_cod": "67750",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "EWERTON COMERCIO DE VEICULOS LTDA",
     "bairro": "ALTO IPIRANGA",
@@ -986,7 +1044,8 @@
     "ativo": true
   },
   {
-    "cnpj": "272316720001640",
+    "cnpj": "72316720001640",
+    "dealer_cod": "61820",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "FGF GIANNELLA MULTIMARCAS LTDA",
     "bairro": "JARDIM ARMENIA",
@@ -1003,7 +1062,8 @@
     "ativo": true
   },
   {
-    "cnpj": "376410330001200",
+    "cnpj": "76410330001200",
+    "dealer_cod": "60112",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "GARAGE 3 AUTOMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA MOGILAR",
@@ -1020,7 +1080,8 @@
     "ativo": true
   },
   {
-    "cnpj": "557105470001720",
+    "cnpj": "57105470001720",
+    "dealer_cod": "68965",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "GRC MOTORS VEICULOS LTDA",
     "bairro": "MOGI MODERNO",
@@ -1037,7 +1098,8 @@
     "ativo": true
   },
   {
-    "cnpj": "394000390001310",
+    "cnpj": "94000390001310",
+    "dealer_cod": "60129",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "MOGI PLUS COMERCIO DE VEICULOS LTDA",
     "bairro": "CENTRO",
@@ -1054,7 +1116,8 @@
     "ativo": true
   },
   {
-    "cnpj": "299540550001120",
+    "cnpj": "99540550001120",
+    "dealer_cod": "63950",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "JHOWCAR VEICULOS LTDA",
     "bairro": "VILA VITORIA",
@@ -1071,7 +1134,8 @@
     "ativo": true
   },
   {
-    "cnpj": "470182000001350",
+    "cnpj": "70182000001350",
+    "dealer_cod": "67116",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "JR MULTIMARCAS E SERVICOS LTDA",
     "bairro": "ALTO IPIRANGA",
@@ -1088,7 +1152,8 @@
     "ativo": true
   },
   {
-    "cnpj": "570488230001040",
+    "cnpj": "70488230001040",
+    "dealer_cod": "64241",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "KABECA MULTIMARCAS LTDA",
     "bairro": "CENTRO",
@@ -1105,7 +1170,8 @@
     "ativo": true
   },
   {
-    "cnpj": "341125440001670",
+    "cnpj": "41125440001670",
+    "dealer_cod": "65033",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "L CRISPIM OLIVEIRA AUTOMOVEIS",
     "bairro": "VILA SUISSA",
@@ -1123,6 +1189,7 @@
   },
   {
     "cnpj": "82883960001260",
+    "dealer_cod": "60715",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "LEANDRO SILVA VEICULOS",
     "bairro": "VILA MOGILAR",
@@ -1139,7 +1206,8 @@
     "ativo": true
   },
   {
-    "cnpj": "492202070001600",
+    "cnpj": "92202070001600",
+    "dealer_cod": "67763",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "LEME VEICULOS E INTERMEDIACOES LTDA",
     "bairro": "CENTRO",
@@ -1156,7 +1224,8 @@
     "ativo": true
   },
   {
-    "cnpj": "499496560001440",
+    "cnpj": "99496560001440",
+    "dealer_cod": "65787",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "AUTOMULT COMERCIO DE VEICULOS MOTOCICLETAS E SERVICOS LTDA",
     "bairro": "ALTO IPIRANGA",
@@ -1173,7 +1242,8 @@
     "ativo": true
   },
   {
-    "cnpj": "489878680001530",
+    "cnpj": "89878680001530",
+    "dealer_cod": "68773",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "LIP CAR VEICULOS MULTIMARCAS LTDA",
     "bairro": "VILA BRASILEIRA",
@@ -1190,7 +1260,8 @@
     "ativo": true
   },
   {
-    "cnpj": "348427940001520",
+    "cnpj": "48427940001520",
+    "dealer_cod": "65749",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "MARCELO DE PAULA MENEZES",
     "bairro": "ALTO IPIRANGA",
@@ -1207,7 +1278,8 @@
     "ativo": true
   },
   {
-    "cnpj": "510800820001620",
+    "cnpj": "10800820001620",
+    "dealer_cod": "68864",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "MAXXAUTO COMERCIAL AUTOMOTIVA LTDA",
     "bairro": "CENTRO",
@@ -1224,7 +1296,8 @@
     "ativo": true
   },
   {
-    "cnpj": "746612570001200",
+    "cnpj": "46612570001200",
+    "dealer_cod": "60736",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "MIZUTA MOTORS COMERCIO E PARTICIPACOES LTDA",
     "bairro": "CENTRO",
@@ -1241,7 +1314,8 @@
     "ativo": true
   },
   {
-    "cnpj": "312270140001760",
+    "cnpj": "12270140001760",
+    "dealer_cod": "68161",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "MULTIPLICAR VEICULOS LTDA",
     "bairro": "MOGI MODERNO",
@@ -1258,7 +1332,8 @@
     "ativo": true
   },
   {
-    "cnpj": "263334020001000",
+    "cnpj": "63334020001000",
+    "dealer_cod": "65834",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "PARDIM PORTO COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA RUBENS",
@@ -1275,7 +1350,8 @@
     "ativo": true
   },
   {
-    "cnpj": "281800680001190",
+    "cnpj": "81800680001190",
+    "dealer_cod": "60152",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "RICARDO KAZUO DO NASCIMENTO",
     "bairro": "VILA JUNDIAI",
@@ -1292,7 +1368,8 @@
     "ativo": true
   },
   {
-    "cnpj": "146892220001780",
+    "cnpj": "46892220001780",
+    "dealer_cod": "65873",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "ROBERT CESAR DE MATOS",
     "bairro": "MOGI MODERNO",
@@ -1309,7 +1386,8 @@
     "ativo": true
   },
   {
-    "cnpj": "262317860001410",
+    "cnpj": "62317860001410",
+    "dealer_cod": "60518",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "ROGERIO XAVIER ALVAREZ",
     "bairro": "VILA JUNDIAI",
@@ -1326,7 +1404,8 @@
     "ativo": true
   },
   {
-    "cnpj": "454563130001970",
+    "cnpj": "54563130001970",
+    "dealer_cod": "60604",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "V MAIS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA JUNDIAI",
@@ -1343,7 +1422,8 @@
     "ativo": true
   },
   {
-    "cnpj": "112953630001180",
+    "cnpj": "12953630001180",
+    "dealer_cod": "65753",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "WALTER KAZUO MUKOTAKA",
     "bairro": "MOGI MODERNO",
@@ -1360,7 +1440,8 @@
     "ativo": true
   },
   {
-    "cnpj": "209105450001420",
+    "cnpj": "09105450001420",
+    "dealer_cod": "60146",
     "gcm": "CARLOS VINICIUS BRUSTOLIN SILVA",
     "razao_social": "XKM MOTORS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA INDUSTRIAL",
@@ -1377,7 +1458,8 @@
     "ativo": true
   },
   {
-    "cnpj": "140994620001120",
+    "cnpj": "40994620001120",
+    "dealer_cod": "60430",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "BANCI MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "TUCURUVI",
@@ -1394,7 +1476,8 @@
     "ativo": true
   },
   {
-    "cnpj": "271375400001780",
+    "cnpj": "71375400001780",
+    "dealer_cod": "60435",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "BBS VEICULOS AUTOS E NEGOCIOS LTDA",
     "bairro": "VILA MARIA",
@@ -1411,7 +1494,8 @@
     "ativo": true
   },
   {
-    "cnpj": "195346340001520",
+    "cnpj": "95346340001520",
+    "dealer_cod": "60444",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "KFK MULTIMARCAS LTDA",
     "bairro": "IMIRIM",
@@ -1428,7 +1512,8 @@
     "ativo": true
   },
   {
-    "cnpj": "192578040001070",
+    "cnpj": "92578040001070",
+    "dealer_cod": "60465",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "VGR MULTIMARCAS VEICULOS LTDA",
     "bairro": "VILA NILO",
@@ -1445,7 +1530,8 @@
     "ativo": true
   },
   {
-    "cnpj": "298684170001520",
+    "cnpj": "98684170001520",
+    "dealer_cod": "60859",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "L F D ALVES COMERCIO DE VEICULOS",
     "bairro": "IMIRIM",
@@ -1462,7 +1548,8 @@
     "ativo": true
   },
   {
-    "cnpj": "311151230001000",
+    "cnpj": "11151230001000",
+    "dealer_cod": "60961",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "VELOCITTA VEICULOS LTDA",
     "bairro": "IMIRIM",
@@ -1479,7 +1566,8 @@
     "ativo": true
   },
   {
-    "cnpj": "455611920001430",
+    "cnpj": "55611920001430",
+    "dealer_cod": "61089",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "NOVA RAKI COMPRA E VENDA DE VEICULOS LTDA",
     "bairro": "VILA MARIZA MAZZEI",
@@ -1496,7 +1584,8 @@
     "ativo": true
   },
   {
-    "cnpj": "289321330001150",
+    "cnpj": "89321330001150",
+    "dealer_cod": "61463",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "GJR VEICULOS NACIONAIS E IMPORTADOS LTDA",
     "bairro": "VILA PALMEIRAS",
@@ -1514,6 +1603,7 @@
   },
   {
     "cnpj": "35238570001840",
+    "dealer_cod": "61517",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "PRIMO S CAR VEICULOS LTDA",
     "bairro": "IMIRIM",
@@ -1530,7 +1620,8 @@
     "ativo": true
   },
   {
-    "cnpj": "379151270001400",
+    "cnpj": "79151270001400",
+    "dealer_cod": "62548",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "BEE BLACK MOTORS COMPRA E VENDA DE VEICULOS LTDA",
     "bairro": "VILA MARIA BAIXA",
@@ -1547,7 +1638,8 @@
     "ativo": true
   },
   {
-    "cnpj": "408581610001350",
+    "cnpj": "08581610001350",
+    "dealer_cod": "63064",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "TOM CAR AUTOMOVEIS LTDA",
     "bairro": "VILA GUILHERME",
@@ -1565,6 +1657,7 @@
   },
   {
     "cnpj": "34492980001000",
+    "dealer_cod": "63205",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "MARONNA COMERCIO DE VEICULOS LTDA",
     "bairro": "IMIRIM",
@@ -1582,6 +1675,7 @@
   },
   {
     "cnpj": "19123880001600",
+    "dealer_cod": "63775",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "M V M CAR LTDA",
     "bairro": "VILA GUILHERME",
@@ -1598,7 +1692,8 @@
     "ativo": true
   },
   {
-    "cnpj": "334115640001760",
+    "cnpj": "34115640001760",
+    "dealer_cod": "63814",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "P2 MULTIMARCAS DE VEICULOS LTDA",
     "bairro": "VILA OLGA CECILIA",
@@ -1615,7 +1710,8 @@
     "ativo": true
   },
   {
-    "cnpj": "165958500001100",
+    "cnpj": "65958500001100",
+    "dealer_cod": "66721",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "GOMIDE VEICULOS LTDA",
     "bairro": "VILA ARCADIA",
@@ -1633,6 +1729,7 @@
   },
   {
     "cnpj": "55604780001900",
+    "dealer_cod": "66759",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "AUTO GT VEICULOS LTDA",
     "bairro": "VILA GUSTAVO",
@@ -1650,6 +1747,7 @@
   },
   {
     "cnpj": "40111030001080",
+    "dealer_cod": "66792",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "VONO E NETO COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA MARIA ALTA",
@@ -1667,6 +1765,7 @@
   },
   {
     "cnpj": "71188850001770",
+    "dealer_cod": "66797",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "M R ARO AUTOMOVEIS",
     "bairro": "AGUA FRIA",
@@ -1684,6 +1783,7 @@
   },
   {
     "cnpj": "74852600001430",
+    "dealer_cod": "66807",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "CARLOS CAMILO MARTINS VEICULOS",
     "bairro": "IMIRIM",
@@ -1701,6 +1801,7 @@
   },
   {
     "cnpj": "94636450001350",
+    "dealer_cod": "66812",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "CLODOALDO D MACHADO COM DE VEICULOS LTDA",
     "bairro": "CARANDIRU",
@@ -1717,7 +1818,8 @@
     "ativo": true
   },
   {
-    "cnpj": "137087470001400",
+    "cnpj": "37087470001400",
+    "dealer_cod": "66813",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "AUTOVIVO AUTOMOVEIS LTDA",
     "bairro": "IMIRIM",
@@ -1734,7 +1836,8 @@
     "ativo": true
   },
   {
-    "cnpj": "330906290001290",
+    "cnpj": "30906290001290",
+    "dealer_cod": "66833",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "GALAXY AUTOMOVEIS LTDA",
     "bairro": "PARQUE PERUCHE",
@@ -1751,7 +1854,8 @@
     "ativo": true
   },
   {
-    "cnpj": "199159700001450",
+    "cnpj": "99159700001450",
+    "dealer_cod": "66875",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "FERNANDES MONTEIRO COMERCIO DE VEICULOS LTDA",
     "bairro": "TUCURUVI",
@@ -1769,6 +1873,7 @@
   },
   {
     "cnpj": "37868610001350",
+    "dealer_cod": "66908",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "TEIXEIRA E NILZA COMERCIO DE AUTOMOVEIS LTDA",
     "bairro": "VILA BANDEIRANTES",
@@ -1786,6 +1891,7 @@
   },
   {
     "cnpj": "11209080001000",
+    "dealer_cod": "66934",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "ARAUJOS VEICULOS MULTIMARCAS LTDA",
     "bairro": "VILA GUACA",
@@ -1802,7 +1908,8 @@
     "ativo": true
   },
   {
-    "cnpj": "462938140001620",
+    "cnpj": "62938140001620",
+    "dealer_cod": "67022",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "EDINHO COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA GUILHERME",
@@ -1819,7 +1926,8 @@
     "ativo": true
   },
   {
-    "cnpj": "435583290001850",
+    "cnpj": "35583290001850",
+    "dealer_cod": "67038",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "E R AUTOMOVEIS LTDA",
     "bairro": "TUCURUVI",
@@ -1837,6 +1945,7 @@
   },
   {
     "cnpj": "33075870001740",
+    "dealer_cod": "67360",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "HMA COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM BRASIL ZONA NORTE",
@@ -1853,7 +1962,8 @@
     "ativo": true
   },
   {
-    "cnpj": "297997580001130",
+    "cnpj": "97997580001130",
+    "dealer_cod": "67389",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "ALEXANDRE E PATRICIA COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA PALMEIRAS",
@@ -1870,7 +1980,8 @@
     "ativo": true
   },
   {
-    "cnpj": "382182950001400",
+    "cnpj": "82182950001400",
+    "dealer_cod": "67392",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "MARCOS CIGLIONI JUNIOR AUTOMOVEIS LTDA",
     "bairro": "VILA GUILHERME",
@@ -1887,7 +1998,8 @@
     "ativo": true
   },
   {
-    "cnpj": "190565280001000",
+    "cnpj": "90565280001000",
+    "dealer_cod": "67600",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "VANESSA CIOLFI MEDEIROS COMERCIO DE AUTOMOVEIS",
     "bairro": "VILA PALMEIRAS",
@@ -1904,7 +2016,8 @@
     "ativo": true
   },
   {
-    "cnpj": "458776350001000",
+    "cnpj": "58776350001000",
+    "dealer_cod": "67634",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "CAIO HENRIQUE ALVES MORAIS",
     "bairro": "CASA VERDE MEDIA",
@@ -1921,7 +2034,8 @@
     "ativo": true
   },
   {
-    "cnpj": "344468200001230",
+    "cnpj": "44468200001230",
+    "dealer_cod": "67719",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "RF MOTORS LTDA",
     "bairro": "MOINHO VELHO",
@@ -1938,7 +2052,8 @@
     "ativo": true
   },
   {
-    "cnpj": "190543140001030",
+    "cnpj": "90543140001030",
+    "dealer_cod": "67784",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "BIG BUSINESS COMERCIO DE VEICULOS LTDA",
     "bairro": "IMIRIM",
@@ -1955,7 +2070,8 @@
     "ativo": true
   },
   {
-    "cnpj": "227793440001830",
+    "cnpj": "27793440001830",
+    "dealer_cod": "67785",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "RODRIGO DE LIMA SANTOS",
     "bairro": "MOINHO VELHO",
@@ -1972,7 +2088,8 @@
     "ativo": true
   },
   {
-    "cnpj": "413274940001090",
+    "cnpj": "13274940001090",
+    "dealer_cod": "68071",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "AUTO NORTE MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM JAPAO",
@@ -1990,6 +2107,7 @@
   },
   {
     "cnpj": "40781770001610",
+    "dealer_cod": "68138",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "D B LOSI VEICULOS",
     "bairro": "MOINHO VELHO",
@@ -2006,7 +2124,8 @@
     "ativo": true
   },
   {
-    "cnpj": "108915140001380",
+    "cnpj": "08915140001380",
+    "dealer_cod": "68212",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "NOBEL MULTIMARCAS LTDA",
     "bairro": "VILA GUILHERME",
@@ -2023,7 +2142,8 @@
     "ativo": true
   },
   {
-    "cnpj": "336571460001630",
+    "cnpj": "36571460001630",
+    "dealer_cod": "68219",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "BELLINI COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA ALBERTINA",
@@ -2040,7 +2160,8 @@
     "ativo": true
   },
   {
-    "cnpj": "343259830001580",
+    "cnpj": "43259830001580",
+    "dealer_cod": "68840",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "SUPREMO AUTOMOVEIS LTDA",
     "bairro": "VILA MARIA ALTA",
@@ -2057,7 +2178,8 @@
     "ativo": true
   },
   {
-    "cnpj": "415234970001000",
+    "cnpj": "15234970001000",
+    "dealer_cod": "68933",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "F R MOTORS COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM JAPAO",
@@ -2074,7 +2196,8 @@
     "ativo": true
   },
   {
-    "cnpj": "447528420001750",
+    "cnpj": "47528420001750",
+    "dealer_cod": "69100",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "SURY CARS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA NILO",
@@ -2091,7 +2214,8 @@
     "ativo": true
   },
   {
-    "cnpj": "244252110001340",
+    "cnpj": "44252110001340",
+    "dealer_cod": "69131",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "K2 MOTORS COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM JAPAO",
@@ -2108,7 +2232,8 @@
     "ativo": true
   },
   {
-    "cnpj": "237206450001020",
+    "cnpj": "37206450001020",
+    "dealer_cod": "69153",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "NEW PRIME AUTOS COMERCIO DE VEICULOS LTDA",
     "bairro": "CANGAIBA",
@@ -2125,7 +2250,8 @@
     "ativo": true
   },
   {
-    "cnpj": "453338140001860",
+    "cnpj": "53338140001860",
+    "dealer_cod": "69204",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "JELFERR MARCELO DE ASSIS CARVALHO",
     "bairro": "IMIRIM",
@@ -2142,7 +2268,8 @@
     "ativo": true
   },
   {
-    "cnpj": "494404450001810",
+    "cnpj": "94404450001810",
+    "dealer_cod": "69240",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "MAGOO COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA ALBERTINA",
@@ -2159,7 +2286,8 @@
     "ativo": true
   },
   {
-    "cnpj": "495967790001490",
+    "cnpj": "95967790001490",
+    "dealer_cod": "69323",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "91 MOTORS MULTIMARCAS LTDA",
     "bairro": "CARANDIRU",
@@ -2176,7 +2304,8 @@
     "ativo": true
   },
   {
-    "cnpj": "524608480001050",
+    "cnpj": "24608480001050",
+    "dealer_cod": "66822",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "B3 MOTORS MULTIMARCAS LTDA",
     "bairro": "IMIRIM",
@@ -2193,7 +2322,8 @@
     "ativo": true
   },
   {
-    "cnpj": "375689020001390",
+    "cnpj": "75689020001390",
+    "dealer_cod": "67410",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "RENAN FERREIRA RODRIGUES",
     "bairro": "IMIRIM",
@@ -2210,7 +2340,8 @@
     "ativo": true
   },
   {
-    "cnpj": "354779350001480",
+    "cnpj": "54779350001480",
+    "dealer_cod": "67886",
     "gcm": "CHRISTIAN ALEXANDRE PIRES FIGUEIREDO",
     "razao_social": "SP COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA PALMEIRAS",
@@ -2227,7 +2358,8 @@
     "ativo": true
   },
   {
-    "cnpj": "394908480001810",
+    "cnpj": "94908480001810",
+    "dealer_cod": "69480",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "A & D VEICULOS LTDA",
     "bairro": "CIDADE SERODIO",
@@ -2245,6 +2377,7 @@
   },
   {
     "cnpj": "57359430001860",
+    "dealer_cod": "69068",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "ANDREIA DE SENA PARIZZI",
     "bairro": "VILA FLORIDA",
@@ -2261,7 +2394,8 @@
     "ativo": true
   },
   {
-    "cnpj": "531828420001780",
+    "cnpj": "31828420001780",
+    "dealer_cod": "69069",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "B A DE OLIVEIRA VEICULOS",
     "bairro": "VILA FLORIDA",
@@ -2278,7 +2412,8 @@
     "ativo": true
   },
   {
-    "cnpj": "531844940001780",
+    "cnpj": "31844940001780",
+    "dealer_cod": "69076",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "CAIQUE DE MENDONCA SANTOS MOTORS LTDA",
     "bairro": "VILA FLORIDA",
@@ -2296,6 +2431,7 @@
   },
   {
     "cnpj": "21162150001060",
+    "dealer_cod": "69077",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "FLORICAR COMERCIO DE AUTOMOVEIS LTDA",
     "bairro": "VILA FLORIDA",
@@ -2312,7 +2448,8 @@
     "ativo": true
   },
   {
-    "cnpj": "446618960001250",
+    "cnpj": "46618960001250",
+    "dealer_cod": "69093",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "CHICAR S VEICULOS LTDA",
     "bairro": "VILA NOVA BONSUCESSO",
@@ -2329,7 +2466,8 @@
     "ativo": true
   },
   {
-    "cnpj": "441810510001320",
+    "cnpj": "41810510001320",
+    "dealer_cod": "69108",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "HS MOTORS LTDA",
     "bairro": "VILA FLORIDA",
@@ -2346,7 +2484,8 @@
     "ativo": true
   },
   {
-    "cnpj": "339166780001780",
+    "cnpj": "39166780001780",
+    "dealer_cod": "69136",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "ARIZONA AUTOMOVEIS LTDA",
     "bairro": "VILA HULDA",
@@ -2364,6 +2503,7 @@
   },
   {
     "cnpj": "33345110001380",
+    "dealer_cod": "69139",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "HIRO KAR VEICULOS LTDA",
     "bairro": "VILA HULDA",
@@ -2380,7 +2520,8 @@
     "ativo": true
   },
   {
-    "cnpj": "606814180001330",
+    "cnpj": "06814180001330",
+    "dealer_cod": "69141",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "STOCK MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "PONTE GRANDE",
@@ -2397,7 +2538,8 @@
     "ativo": true
   },
   {
-    "cnpj": "321472050001900",
+    "cnpj": "21472050001900",
+    "dealer_cod": "69144",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "AGM VENDA DE VEICULOS LTDA",
     "bairro": "VILA FLORIDA",
@@ -2414,7 +2556,8 @@
     "ativo": true
   },
   {
-    "cnpj": "305635930001650",
+    "cnpj": "05635930001650",
+    "dealer_cod": "69145",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "EF DE FREITAS MULTIMARCAS LTDA",
     "bairro": "CIDADE SERODIO",
@@ -2431,7 +2574,8 @@
     "ativo": true
   },
   {
-    "cnpj": "300397490001030",
+    "cnpj": "00397490001030",
+    "dealer_cod": "69150",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "CARRO CHICK COMERCIO E LOCACAO DE VEICULOS LTDA",
     "bairro": "VILA GALVAO",
@@ -2448,7 +2592,8 @@
     "ativo": true
   },
   {
-    "cnpj": "409589810001070",
+    "cnpj": "09589810001070",
+    "dealer_cod": "69169",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "MF MOTORS MULTIMARCAS LTDA",
     "bairro": "VILA AUGUSTA",
@@ -2465,7 +2610,8 @@
     "ativo": true
   },
   {
-    "cnpj": "511689180001850",
+    "cnpj": "11689180001850",
+    "dealer_cod": "69173",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "FORMULA MOTORS LTDA",
     "bairro": "VILA SAO JUDAS TADEU",
@@ -2482,7 +2628,8 @@
     "ativo": true
   },
   {
-    "cnpj": "354817340001140",
+    "cnpj": "54817340001140",
+    "dealer_cod": "69177",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "BREGA SHOP & MT GARAGE COMERCIAL E INTERMEDIACAO LTDA",
     "bairro": "JARDIM SAO JOSE",
@@ -2499,7 +2646,8 @@
     "ativo": true
   },
   {
-    "cnpj": "477378880001030",
+    "cnpj": "77378880001030",
+    "dealer_cod": "69178",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "ZANPIERI VEICULOS LTDA",
     "bairro": "JARDIM MOREIRA",
@@ -2516,7 +2664,8 @@
     "ativo": true
   },
   {
-    "cnpj": "294580370001400",
+    "cnpj": "94580370001400",
+    "dealer_cod": "69208",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "J L OLIVEIRA AUTOMOVEIS",
     "bairro": "JARDIM GUILHERMINO",
@@ -2533,7 +2682,8 @@
     "ativo": true
   },
   {
-    "cnpj": "483784240001100",
+    "cnpj": "83784240001100",
+    "dealer_cod": "69214",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "TKS MULTIMARCAS LTDA",
     "bairro": "JARDIM DOS PIMENTAS",
@@ -2550,7 +2700,8 @@
     "ativo": true
   },
   {
-    "cnpj": "444174360001560",
+    "cnpj": "44174360001560",
+    "dealer_cod": "69218",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "CARLOS ALBERTO DA SILVA",
     "bairro": "JARDIM NOVA CIDADE",
@@ -2567,7 +2718,8 @@
     "ativo": true
   },
   {
-    "cnpj": "354859020001400",
+    "cnpj": "54859020001400",
+    "dealer_cod": "69220",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "FANSHOP AUTOMOVEIS LTDA",
     "bairro": "PARQUE SAO MIGUEL",
@@ -2584,7 +2736,8 @@
     "ativo": true
   },
   {
-    "cnpj": "292948720001910",
+    "cnpj": "92948720001910",
+    "dealer_cod": "69221",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "JB DE ANDRADE COMERCIO DE VEICULOS",
     "bairro": "JARDIM ALBERTINA",
@@ -2601,7 +2754,8 @@
     "ativo": true
   },
   {
-    "cnpj": "456800130001970",
+    "cnpj": "56800130001970",
+    "dealer_cod": "69222",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "W CAR COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM ALBERTINA",
@@ -2618,7 +2772,8 @@
     "ativo": true
   },
   {
-    "cnpj": "110161800001160",
+    "cnpj": "10161800001160",
+    "dealer_cod": "69246",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "SENNA MULTIMARCAS LTDA",
     "bairro": "JARDIM ALBERTINA",
@@ -2635,7 +2790,8 @@
     "ativo": true
   },
   {
-    "cnpj": "359897080001000",
+    "cnpj": "59897080001000",
+    "dealer_cod": "69257",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "KLEVERSON J DA SILVA COMERCIO DE VEICULOS",
     "bairro": "JARDIM PRESIDENTE DUTRA",
@@ -2652,7 +2808,8 @@
     "ativo": true
   },
   {
-    "cnpj": "244300250001930",
+    "cnpj": "44300250001930",
+    "dealer_cod": "69272",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "RENOVA VEICULOS LTDA",
     "bairro": "JARDIM ALBERTINA",
@@ -2669,7 +2826,8 @@
     "ativo": true
   },
   {
-    "cnpj": "283561220001340",
+    "cnpj": "83561220001340",
+    "dealer_cod": "69282",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "J C VEICULOS LTDA",
     "bairro": "PARQUE PAULISTANO",
@@ -2687,6 +2845,7 @@
   },
   {
     "cnpj": "77925390001700",
+    "dealer_cod": "69289",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "MULTIMARCAS COMERCIO DE VECULOS LTDA",
     "bairro": "CIDADE SERODIO",
@@ -2704,6 +2863,7 @@
   },
   {
     "cnpj": "87724680001060",
+    "dealer_cod": "69312",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "J V DE SOUZA VEICULOS",
     "bairro": "CIDADE SERODIO",
@@ -2721,6 +2881,7 @@
   },
   {
     "cnpj": "95533350001010",
+    "dealer_cod": "69313",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "MARCELO HENRIQUE ROQUE DA SILVA",
     "bairro": "JARDIM PRESIDENTE DUTRA",
@@ -2737,7 +2898,8 @@
     "ativo": true
   },
   {
-    "cnpj": "307130800001930",
+    "cnpj": "07130800001930",
+    "dealer_cod": "69318",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "EDINEY VEICULOS MULTIMARCAS LTDA",
     "bairro": "CIDADE SERODIO",
@@ -2754,7 +2916,8 @@
     "ativo": true
   },
   {
-    "cnpj": "513093950001400",
+    "cnpj": "13093950001400",
+    "dealer_cod": "69332",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "ANTONIO ALVES DE LUNA VEICULOS LTDA",
     "bairro": "VILA FLORIDA",
@@ -2771,7 +2934,8 @@
     "ativo": true
   },
   {
-    "cnpj": "363909110001100",
+    "cnpj": "63909110001100",
+    "dealer_cod": "69334",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "J K VEICULOS LTDA",
     "bairro": "JARDIM ALBERTINA",
@@ -2788,7 +2952,8 @@
     "ativo": true
   },
   {
-    "cnpj": "231771700001410",
+    "cnpj": "31771700001410",
+    "dealer_cod": "69337",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "PRIME MULTIMARCAS LTDA",
     "bairro": "CIDADE SERODIO",
@@ -2805,7 +2970,8 @@
     "ativo": true
   },
   {
-    "cnpj": "743147900001160",
+    "cnpj": "43147900001160",
+    "dealer_cod": "69373",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "B CAR VEICULOS LTDA",
     "bairro": "MACEDO",
@@ -2822,7 +2988,8 @@
     "ativo": true
   },
   {
-    "cnpj": "465741880001820",
+    "cnpj": "65741880001820",
+    "dealer_cod": "69456",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "DM MULTIMARCAS COMERCIO DE CAMINHOES E VEICULOS LTDA",
     "bairro": "JARDIM BEIRUTE",
@@ -2839,7 +3006,8 @@
     "ativo": true
   },
   {
-    "cnpj": "144775150001910",
+    "cnpj": "44775150001910",
+    "dealer_cod": "69376",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "DMSUPREMA MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA HULDA",
@@ -2856,7 +3024,8 @@
     "ativo": true
   },
   {
-    "cnpj": "532791860001260",
+    "cnpj": "32791860001260",
+    "dealer_cod": "69378",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "FREITAS VEICULOS MULTIMARCAS LTDA",
     "bairro": "PARQUE JUREMA",
@@ -2873,7 +3042,8 @@
     "ativo": true
   },
   {
-    "cnpj": "328512660001340",
+    "cnpj": "28512660001340",
+    "dealer_cod": "69441",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "JAIDELSON ANTONIO DA SILVA",
     "bairro": "JARDIM ALBERTINA",
@@ -2890,7 +3060,8 @@
     "ativo": true
   },
   {
-    "cnpj": "224051050001630",
+    "cnpj": "24051050001630",
+    "dealer_cod": "69545",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "JR SIMOES MULTIMARCAS LTDA",
     "bairro": "JARDIM MONTE SANTO",
@@ -2907,7 +3078,8 @@
     "ativo": true
   },
   {
-    "cnpj": "157380130001300",
+    "cnpj": "57380130001300",
+    "dealer_cod": "69443",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "LUZIENE RODRIGUES DO CARMO",
     "bairro": "JARDIM NOVA TABOAO",
@@ -2924,7 +3096,8 @@
     "ativo": true
   },
   {
-    "cnpj": "502306320001100",
+    "cnpj": "02306320001100",
+    "dealer_cod": "69503",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "MMCAR PREMIUM LTDA",
     "bairro": "JARDIM PRESIDENTE DUTRA",
@@ -2941,7 +3114,8 @@
     "ativo": true
   },
   {
-    "cnpj": "130019170001520",
+    "cnpj": "30019170001520",
+    "dealer_cod": "69473",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "MMTS AUTOMOVEIS LTDA",
     "bairro": "COCAIA",
@@ -2958,7 +3132,8 @@
     "ativo": true
   },
   {
-    "cnpj": "314696490001800",
+    "cnpj": "14696490001800",
+    "dealer_cod": "69606",
     "gcm": "JANAINA DE SOUZA LIMA",
     "razao_social": "FALCAO MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM PRESIDENTE DUTRA",
@@ -2975,7 +3150,8 @@
     "ativo": true
   },
   {
-    "cnpj": "190970550001900",
+    "cnpj": "90970550001900",
+    "dealer_cod": "61255",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "SOVEL MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "CALMON VIANA",
@@ -2993,6 +3169,7 @@
   },
   {
     "cnpj": "93575460001790",
+    "dealer_cod": "62219",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "G P S MOTORS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA SAO JUDAS TADEU",
@@ -3009,7 +3186,8 @@
     "ativo": true
   },
   {
-    "cnpj": "372570310001320",
+    "cnpj": "72570310001320",
+    "dealer_cod": "66180",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "LIKE COMERCIO DE VEICULOS MULTIMARCA LTDA",
     "bairro": "JARDIM DONA BENTA",
@@ -3026,7 +3204,8 @@
     "ativo": true
   },
   {
-    "cnpj": "393515370001310",
+    "cnpj": "93515370001310",
+    "dealer_cod": "66217",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "MS BATISTA VEICULOS",
     "bairro": "CALMON VIANA",
@@ -3043,7 +3222,8 @@
     "ativo": true
   },
   {
-    "cnpj": "495477030001230",
+    "cnpj": "95477030001230",
+    "dealer_cod": "66277",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "AR MOTORS SPORT LTDA",
     "bairro": "VILA ACOREANA",
@@ -3060,7 +3240,8 @@
     "ativo": true
   },
   {
-    "cnpj": "103180980001830",
+    "cnpj": "03180980001830",
+    "dealer_cod": "66300",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "FAROL DE POA VEICULOS LTDA",
     "bairro": "CALMON VIANA",
@@ -3077,7 +3258,8 @@
     "ativo": true
   },
   {
-    "cnpj": "175762870001030",
+    "cnpj": "75762870001030",
+    "dealer_cod": "60180",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "LAUREN COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA ROMANOPOLIS",
@@ -3094,7 +3276,8 @@
     "ativo": true
   },
   {
-    "cnpj": "243581610001100",
+    "cnpj": "43581610001100",
+    "dealer_cod": "60201",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "SKINA CAR MULTIMARCAS COMERCIO E LOCACAO DE VEICULOS LTDA",
     "bairro": "JARDIM NOVA ITAQUA",
@@ -3111,7 +3294,8 @@
     "ativo": true
   },
   {
-    "cnpj": "306705350001300",
+    "cnpj": "06705350001300",
+    "dealer_cod": "61253",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "AUTOVOX MULTIMARCAS LTDA",
     "bairro": "VILA URSULINA",
@@ -3129,6 +3313,7 @@
   },
   {
     "cnpj": "20795600001090",
+    "dealer_cod": "61257",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "LUIZ A FERRARESI AUTOMOVEIS",
     "bairro": "JARDIM ALGARVE",
@@ -3146,6 +3331,7 @@
   },
   {
     "cnpj": "80592590001100",
+    "dealer_cod": "61313",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "NORTYCAR COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA VIRGINIA",
@@ -3163,6 +3349,7 @@
   },
   {
     "cnpj": "56584680001910",
+    "dealer_cod": "61582",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "ADAILTON ALEXANDRE DOS SANTOS",
     "bairro": "VILA CORREA",
@@ -3179,7 +3366,8 @@
     "ativo": true
   },
   {
-    "cnpj": "318839010001000",
+    "cnpj": "18839010001000",
+    "dealer_cod": "61897",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "3J MOTORS LTDA",
     "bairro": "VILA RIMAN",
@@ -3196,7 +3384,8 @@
     "ativo": true
   },
   {
-    "cnpj": "297134310001870",
+    "cnpj": "97134310001870",
+    "dealer_cod": "62083",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "RAFAEL FERREIRA RAMOS AUTOMOVEIS",
     "bairro": "VILA ZEFERINA",
@@ -3214,6 +3403,7 @@
   },
   {
     "cnpj": "29615660001050",
+    "dealer_cod": "62259",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "SHALLON COMERCIO E ESTACIONAMENTO DE VEICULOS LTDA",
     "bairro": "VILA FLORA REGINA",
@@ -3230,7 +3420,8 @@
     "ativo": true
   },
   {
-    "cnpj": "302851780001970",
+    "cnpj": "02851780001970",
+    "dealer_cod": "63872",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "ABM MAIA AUTOMOVEIS",
     "bairro": "VILA MONTE BELO",
@@ -3247,7 +3438,8 @@
     "ativo": true
   },
   {
-    "cnpj": "171666100001620",
+    "cnpj": "71666100001620",
+    "dealer_cod": "64415",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "PALESTRA FERRAZ MULTIMARCAS COMERCIO DE AUTOMOVEIS LTDA",
     "bairro": "VILA CORREA",
@@ -3264,7 +3456,8 @@
     "ativo": true
   },
   {
-    "cnpj": "196868650001810",
+    "cnpj": "96868650001810",
+    "dealer_cod": "64416",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "POA AUTOMARCAS LTDA",
     "bairro": "VILA CORREA",
@@ -3281,7 +3474,8 @@
     "ativo": true
   },
   {
-    "cnpj": "274935710001610",
+    "cnpj": "74935710001610",
+    "dealer_cod": "64591",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "INFINITY CAR ARUJA COMERCIO DE AUTOMOVEIS E SERVICOS LTDA",
     "bairro": "CENTRO",
@@ -3298,7 +3492,8 @@
     "ativo": true
   },
   {
-    "cnpj": "434959500001470",
+    "cnpj": "34959500001470",
+    "dealer_cod": "64627",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "UP MULTIMARCAS VEICULOS LTDA",
     "bairro": "VILA VIRGINIA",
@@ -3315,7 +3510,8 @@
     "ativo": true
   },
   {
-    "cnpj": "179881240001200",
+    "cnpj": "79881240001200",
+    "dealer_cod": "64782",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "CARROS CARS MULTIMARCAS LTDA",
     "bairro": "VILA VIRGINIA",
@@ -3333,6 +3529,7 @@
   },
   {
     "cnpj": "57363780001710",
+    "dealer_cod": "64924",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "MIRIAN LIRA PATRICIO DO NASCIMENTO",
     "bairro": "VILA URSULINA",
@@ -3350,6 +3547,7 @@
   },
   {
     "cnpj": "56071980001900",
+    "dealer_cod": "64945",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "OLIVEIRA COMERCIO DE AUTOMOVEIS MOTOCICLETAS E SERVICOS LTDA",
     "bairro": "VILA URSULINA",
@@ -3366,7 +3564,8 @@
     "ativo": true
   },
   {
-    "cnpj": "446262410001160",
+    "cnpj": "46262410001160",
+    "dealer_cod": "64948",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "FAMILIA CALLIENTE AUTOMARCAS LTDA",
     "bairro": "VILA ROMANOPOLIS",
@@ -3383,7 +3582,8 @@
     "ativo": true
   },
   {
-    "cnpj": "627790200001600",
+    "cnpj": "27790200001600",
+    "dealer_cod": "64987",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "CARISMA AUTOMOVEIS LTDA",
     "bairro": "SITIO PAREDAO",
@@ -3400,7 +3600,8 @@
     "ativo": true
   },
   {
-    "cnpj": "350994140001020",
+    "cnpj": "50994140001020",
+    "dealer_cod": "65297",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "L S VEICULOS LTDA",
     "bairro": "JARDIM PLANALTO",
@@ -3418,6 +3619,7 @@
   },
   {
     "cnpj": "95717800001020",
+    "dealer_cod": "66154",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "SATURNINO FREITAS DE BRITO",
     "bairro": "CAMPO DA VENDA",
@@ -3435,6 +3637,7 @@
   },
   {
     "cnpj": "82583100001120",
+    "dealer_cod": "66258",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "DEBORA AUTOMOVEIS LTDA",
     "bairro": "JARDIM NOSSA SENHORA D AJUDA",
@@ -3451,7 +3654,8 @@
     "ativo": true
   },
   {
-    "cnpj": "425181220001140",
+    "cnpj": "25181220001140",
+    "dealer_cod": "66264",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "M5 MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA FLORA REGINA",
@@ -3468,7 +3672,8 @@
     "ativo": true
   },
   {
-    "cnpj": "463867090001780",
+    "cnpj": "63867090001780",
+    "dealer_cod": "66359",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "J G DE SOUZA COMERCIO E SERVICOS",
     "bairro": "JARDIM SERRA DOURADA",
@@ -3485,7 +3690,8 @@
     "ativo": true
   },
   {
-    "cnpj": "424791370001100",
+    "cnpj": "24791370001100",
+    "dealer_cod": "66371",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "F C COMERCIO DE VEICULOS LTDA",
     "bairro": "CAMPO DA VENDA",
@@ -3502,7 +3708,8 @@
     "ativo": true
   },
   {
-    "cnpj": "235145540001020",
+    "cnpj": "35145540001020",
+    "dealer_cod": "66611",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "FULVIO MULTIMARCAS VEICULOS NOVOS E USADOS LTDA",
     "bairro": "VILA CORREA",
@@ -3519,7 +3726,8 @@
     "ativo": true
   },
   {
-    "cnpj": "237243520001950",
+    "cnpj": "37243520001950",
+    "dealer_cod": "67364",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "AJ1000 AUTOMOVEIS LTDA",
     "bairro": "VILA FLORA REGINA",
@@ -3536,7 +3744,8 @@
     "ativo": true
   },
   {
-    "cnpj": "397430780001310",
+    "cnpj": "97430780001310",
+    "dealer_cod": "67681",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "PELEGRINA & COSTA COMERCIO DE VEICULOS LTDA",
     "bairro": "BARBOSAS",
@@ -3553,7 +3762,8 @@
     "ativo": true
   },
   {
-    "cnpj": "405441970001440",
+    "cnpj": "05441970001440",
+    "dealer_cod": "67002",
     "gcm": "KARINA SILVA SANT ANNA",
     "razao_social": "LUCAS PORT VEICULOS LTDA",
     "bairro": "CENTRO",
@@ -3570,7 +3780,8 @@
     "ativo": true
   },
   {
-    "cnpj": "271335820001300",
+    "cnpj": "71335820001300",
+    "dealer_cod": "60344",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "DAG MULTIMARCAS VEICULOS LTDA",
     "bairro": "VILA HERMINIA",
@@ -3588,6 +3799,7 @@
   },
   {
     "cnpj": "82548350001800",
+    "dealer_cod": "60380",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "POMPEO AUTOMOVEIS LTDA",
     "bairro": "VILA HERMINIA",
@@ -3604,7 +3816,8 @@
     "ativo": true
   },
   {
-    "cnpj": "375595910001410",
+    "cnpj": "75595910001410",
+    "dealer_cod": "60505",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "MARTOS REIS REVENDA DE VEICULOS AUTOMOTORES LTDA",
     "bairro": "VILA HERMINIA",
@@ -3621,7 +3834,8 @@
     "ativo": true
   },
   {
-    "cnpj": "148751940001830",
+    "cnpj": "48751940001830",
+    "dealer_cod": "61275",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "GUIMARAEZ AUTOMARCAS LTDA",
     "bairro": "CHORA MENINO",
@@ -3639,6 +3853,7 @@
   },
   {
     "cnpj": "85638600001450",
+    "dealer_cod": "61384",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "RRW VEICULOS LTDA",
     "bairro": "VILA HERMINIA",
@@ -3656,6 +3871,7 @@
   },
   {
     "cnpj": "01643120001300",
+    "dealer_cod": "61392",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "PONT CAR MULTIMARCAS COMERCIO DE AUTOS LTDA",
     "bairro": "PONTE GRANDE",
@@ -3672,7 +3888,8 @@
     "ativo": true
   },
   {
-    "cnpj": "197470900001070",
+    "cnpj": "97470900001070",
+    "dealer_cod": "61396",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "R R WINCAR MULTIMARCAS LTDA",
     "bairro": "VILA AUGUSTA",
@@ -3690,6 +3907,7 @@
   },
   {
     "cnpj": "53711040002070",
+    "dealer_cod": "61413",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "CLAUDIA OLIVEIRA METRAM",
     "bairro": "VILA HERMINIA",
@@ -3706,7 +3924,8 @@
     "ativo": true
   },
   {
-    "cnpj": "218779930001540",
+    "cnpj": "18779930001540",
+    "dealer_cod": "61415",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "TJ VALENTE COMERCIO DE VEICULOS AUTOMOTORES LTDA",
     "bairro": "JARDIM JAPAO",
@@ -3723,7 +3942,8 @@
     "ativo": true
   },
   {
-    "cnpj": "538205690001600",
+    "cnpj": "38205690001600",
+    "dealer_cod": "61448",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "D2 MULTIMARCAS LTDA",
     "bairro": "VILA HERMINIA",
@@ -3740,7 +3960,8 @@
     "ativo": true
   },
   {
-    "cnpj": "501088290001800",
+    "cnpj": "01088290001800",
+    "dealer_cod": "61536",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "MATEO MULTIMARCAS LTDA",
     "bairro": "VILA HERMINIA",
@@ -3758,6 +3979,7 @@
   },
   {
     "cnpj": "88254710001400",
+    "dealer_cod": "61595",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "BOX 215 COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA HERMINIA",
@@ -3774,7 +3996,8 @@
     "ativo": true
   },
   {
-    "cnpj": "113958590001630",
+    "cnpj": "13958590001630",
+    "dealer_cod": "61747",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "SHUMACHER VEICULOS LTDA",
     "bairro": "VILA HERMINIA",
@@ -3792,6 +4015,7 @@
   },
   {
     "cnpj": "86652720001120",
+    "dealer_cod": "61926",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "OXXY MOTORS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA HERMINIA",
@@ -3808,7 +4032,8 @@
     "ativo": true
   },
   {
-    "cnpj": "483946410001020",
+    "cnpj": "83946410001020",
+    "dealer_cod": "64292",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "ESCALADA MULTIMARCAS LTDA",
     "bairro": "VILA HERMINIA",
@@ -3825,7 +4050,8 @@
     "ativo": true
   },
   {
-    "cnpj": "419235830001000",
+    "cnpj": "19235830001000",
+    "dealer_cod": "64644",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "ROBERTO S CAR LTDA",
     "bairro": "VILA HERMINIA",
@@ -3842,7 +4068,8 @@
     "ativo": true
   },
   {
-    "cnpj": "448269510001900",
+    "cnpj": "48269510001900",
+    "dealer_cod": "64891",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "PRADOS CAR MULTIMARCAS VEICULOS LTDA",
     "bairro": "VILA HERMINIA",
@@ -3859,7 +4086,8 @@
     "ativo": true
   },
   {
-    "cnpj": "325075110001900",
+    "cnpj": "25075110001900",
+    "dealer_cod": "64941",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "IMPERIO MULTIMARCAS ART COMERCIO DE VEICULOS LTDA",
     "bairro": "BELEM ESTACAO",
@@ -3876,7 +4104,8 @@
     "ativo": true
   },
   {
-    "cnpj": "485735950001090",
+    "cnpj": "85735950001090",
+    "dealer_cod": "64942",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "JTS INTERMEDIACOES E NEGOCIOS LTDA",
     "bairro": "VILA HERMINIA",
@@ -3893,7 +4122,8 @@
     "ativo": true
   },
   {
-    "cnpj": "462917400001250",
+    "cnpj": "62917400001250",
+    "dealer_cod": "66353",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "AUTO MEGA MOTORS LTDA",
     "bairro": "VILA MONUMENTO",
@@ -3910,7 +4140,8 @@
     "ativo": true
   },
   {
-    "cnpj": "510715390001720",
+    "cnpj": "10715390001720",
+    "dealer_cod": "66377",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "ZATAR IMPORTS COMERCIO DE VEICULOS LTDA",
     "bairro": "PAULICEIA",
@@ -3927,7 +4158,8 @@
     "ativo": true
   },
   {
-    "cnpj": "275026030001480",
+    "cnpj": "75026030001480",
+    "dealer_cod": "68863",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "PADILHA & BARROS VEICULOS LTDA",
     "bairro": "VILA HERMINIA",
@@ -3944,7 +4176,8 @@
     "ativo": true
   },
   {
-    "cnpj": "262552960001850",
+    "cnpj": "62552960001850",
+    "dealer_cod": "60437",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "TOTEM A U T COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA GUILHERME",
@@ -3961,7 +4194,8 @@
     "ativo": true
   },
   {
-    "cnpj": "302585510001100",
+    "cnpj": "02585510001100",
+    "dealer_cod": "61453",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "DIEGO BEZERRA DANTAS VEICULOS",
     "bairro": "VILA GUILHERME",
@@ -3978,7 +4212,8 @@
     "ativo": true
   },
   {
-    "cnpj": "504320470001000",
+    "cnpj": "04320470001000",
+    "dealer_cod": "66699",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "ACREDICAR AUTO PRIME LTDA",
     "bairro": "VILA GUILHERME",
@@ -3995,7 +4230,8 @@
     "ativo": true
   },
   {
-    "cnpj": "537191540001020",
+    "cnpj": "37191540001020",
+    "dealer_cod": "68021",
     "gcm": "LAZARO BATISTA DO NASCIMENTO",
     "razao_social": "MDS MOTORS INTERMEDIACAO E COMERCIO LTDA",
     "bairro": "VILA GUILHERME",
@@ -4012,7 +4248,8 @@
     "ativo": true
   },
   {
-    "cnpj": "133420740001580",
+    "cnpj": "33420740001580",
+    "dealer_cod": "66207",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "FELIPE S LIMA",
     "bairro": "PARQUE SUZANO",
@@ -4029,7 +4266,8 @@
     "ativo": true
   },
   {
-    "cnpj": "286967590001700",
+    "cnpj": "86967590001700",
+    "dealer_cod": "66376",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "GOMES AUTOMOVEIS COMERCIO E LOCACAO DE VEICULOS LTDA",
     "bairro": "CENTRO",
@@ -4046,7 +4284,8 @@
     "ativo": true
   },
   {
-    "cnpj": "104386160001000",
+    "cnpj": "04386160001000",
+    "dealer_cod": "67252",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "ALMEIDA E AMARAL VEICULOS LTDA",
     "bairro": "VILA FIGUEIRA",
@@ -4063,7 +4302,8 @@
     "ativo": true
   },
   {
-    "cnpj": "150305860001040",
+    "cnpj": "50305860001040",
+    "dealer_cod": "68222",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "MF TELLES COMERCIO DE VEICULOS LTDA",
     "bairro": "PARQUE SUZANO",
@@ -4081,6 +4321,7 @@
   },
   {
     "cnpj": "81074520001890",
+    "dealer_cod": "66245",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "SUZANPARK COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA COSTA",
@@ -4097,7 +4338,8 @@
     "ativo": true
   },
   {
-    "cnpj": "525896100001760",
+    "cnpj": "25896100001760",
+    "dealer_cod": "66149",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "EVOLUTIONS CAR LTDA",
     "bairro": "VILA LAVINIA",
@@ -4114,7 +4356,8 @@
     "ativo": true
   },
   {
-    "cnpj": "344663290001640",
+    "cnpj": "44663290001640",
+    "dealer_cod": "64946",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "THIAGO MARTINS DOS SANTOS VEICULOS LTDA",
     "bairro": "PARQUE SUZANO",
@@ -4131,7 +4374,8 @@
     "ativo": true
   },
   {
-    "cnpj": "497890400001530",
+    "cnpj": "97890400001530",
+    "dealer_cod": "64111",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "EMERSON FERREIRA MEIRELES",
     "bairro": "VILA LAVINIA",
@@ -4148,7 +4392,8 @@
     "ativo": true
   },
   {
-    "cnpj": "138486480001640",
+    "cnpj": "38486480001640",
+    "dealer_cod": "62229",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "SHIBAYAMA COMERCIO DE VEICULOS E MOTOS NOVOS E SEMINOVOS LTDA",
     "bairro": "PARQUE SUZANO",
@@ -4165,7 +4410,8 @@
     "ativo": true
   },
   {
-    "cnpj": "471506490001520",
+    "cnpj": "71506490001520",
+    "dealer_cod": "64939",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "RD MOTORS INTERMEDIACOES COMPRA E VENDA DE VEICULOS LTDA",
     "bairro": "CENTRO CIVICO",
@@ -4182,7 +4428,8 @@
     "ativo": true
   },
   {
-    "cnpj": "361138730001580",
+    "cnpj": "61138730001580",
+    "dealer_cod": "64230",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "ZACA INTERMEDIACOES E COMERCIO DE VEICULOS LTDA",
     "bairro": "MOGI MODERNO",
@@ -4199,7 +4446,8 @@
     "ativo": true
   },
   {
-    "cnpj": "227042810001040",
+    "cnpj": "27042810001040",
+    "dealer_cod": "62878",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "NEY CAR VEICULOS SUZANO LTDA",
     "bairro": "VILA FIGUEIRA",
@@ -4216,7 +4464,8 @@
     "ativo": true
   },
   {
-    "cnpj": "318747700001970",
+    "cnpj": "18747700001970",
+    "dealer_cod": "62052",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "N DOS SANTOS JUNIOR COMERCIO VEICULOS",
     "bairro": "CONJUNTO RESIDENCIAL IRAI",
@@ -4233,7 +4482,8 @@
     "ativo": true
   },
   {
-    "cnpj": "136466120001060",
+    "cnpj": "36466120001060",
+    "dealer_cod": "62168",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "ONE VIP PREMIUM VEICULOS LTDA",
     "bairro": "VILA AMORIM",
@@ -4250,7 +4500,8 @@
     "ativo": true
   },
   {
-    "cnpj": "276420680001200",
+    "cnpj": "76420680001200",
+    "dealer_cod": "61907",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "FBS VEICULOS LTDA",
     "bairro": "MOGI MODERNO",
@@ -4267,7 +4518,8 @@
     "ativo": true
   },
   {
-    "cnpj": "362927060001110",
+    "cnpj": "62927060001110",
+    "dealer_cod": "62217",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "FORTECAR MULTIMARCAS AUTOMOVEIS LTDA",
     "bairro": "VILA FIGUEIRA",
@@ -4284,7 +4536,8 @@
     "ativo": true
   },
   {
-    "cnpj": "185774650001750",
+    "cnpj": "85774650001750",
+    "dealer_cod": "62070",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "TAMAY TAYOMARA DOS SANTOS SIMOES ROLO",
     "bairro": "CENTRO",
@@ -4301,7 +4554,8 @@
     "ativo": true
   },
   {
-    "cnpj": "247796290001400",
+    "cnpj": "47796290001400",
+    "dealer_cod": "61362",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "AMC MOTORS COMERCIO E LOCACAO DE VEICULOS LTDA",
     "bairro": "PARQUE SUZANO",
@@ -4318,7 +4572,8 @@
     "ativo": true
   },
   {
-    "cnpj": "251365260001240",
+    "cnpj": "51365260001240",
+    "dealer_cod": "61850",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "FELIPE ALIANCA CAR LTDA",
     "bairro": "PARQUE SUZANO",
@@ -4335,7 +4590,8 @@
     "ativo": true
   },
   {
-    "cnpj": "166972240001340",
+    "cnpj": "66972240001340",
+    "dealer_cod": "61271",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "JAIRO AUGUSTO ROSA VEICULOS LTDA",
     "bairro": "CENTRO",
@@ -4352,7 +4608,8 @@
     "ativo": true
   },
   {
-    "cnpj": "147851860001460",
+    "cnpj": "47851860001460",
+    "dealer_cod": "61199",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "AUTOMOBILI MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "CENTRO",
@@ -4369,7 +4626,8 @@
     "ativo": true
   },
   {
-    "cnpj": "313139150001800",
+    "cnpj": "13139150001800",
+    "dealer_cod": "60789",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "AUTOMIX MOGI COMERCIO DE AUTOMOVEIS E SERVICOS LTDA",
     "bairro": "VILA LAVINIA",
@@ -4386,7 +4644,8 @@
     "ativo": true
   },
   {
-    "cnpj": "156301590001670",
+    "cnpj": "56301590001670",
+    "dealer_cod": "60219",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "AUTO SPIRIT MULTIMARCAS LTDA",
     "bairro": "PARQUE SUZANO",
@@ -4404,6 +4663,7 @@
   },
   {
     "cnpj": "72025570001540",
+    "dealer_cod": "60523",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "ANTONIO FERNANDES BRAGA VEICULOS",
     "bairro": "VILA FIGUEIRA",
@@ -4420,7 +4680,8 @@
     "ativo": true
   },
   {
-    "cnpj": "229222910001080",
+    "cnpj": "29222910001080",
+    "dealer_cod": "60151",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "INFINITY CAR MOGI COMERCIO DE AUTOMOVEIS E SERVICOS LTDA",
     "bairro": "VILA JUNDIAI",
@@ -4437,7 +4698,8 @@
     "ativo": true
   },
   {
-    "cnpj": "329281870001840",
+    "cnpj": "29281870001840",
+    "dealer_cod": "60203",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "TDM MULTIMARCAS VEICULOS LTDA",
     "bairro": "PARQUE SUZANO",
@@ -4455,6 +4717,7 @@
   },
   {
     "cnpj": "45208840001660",
+    "dealer_cod": "60149",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "PONTAL COMERCIAL LEVE LTDA",
     "bairro": "JARDIM SANTISTA",
@@ -4471,7 +4734,8 @@
     "ativo": true
   },
   {
-    "cnpj": "284704720001270",
+    "cnpj": "84704720001270",
+    "dealer_cod": "60133",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "GUI AUTOMOVEIS LTDA",
     "bairro": "MOGI MODERNO",
@@ -4488,7 +4752,8 @@
     "ativo": true
   },
   {
-    "cnpj": "202272710001910",
+    "cnpj": "02272710001910",
+    "dealer_cod": "61249",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "ART CAR MULTIMARCAS LTDA",
     "bairro": "JARDIM MONTE CRISTO",
@@ -4505,7 +4770,8 @@
     "ativo": true
   },
   {
-    "cnpj": "382182980001830",
+    "cnpj": "82182980001830",
+    "dealer_cod": "65801",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "SIDICAR COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA COSTA",
@@ -4522,7 +4788,8 @@
     "ativo": true
   },
   {
-    "cnpj": "499624220001370",
+    "cnpj": "99624220001370",
+    "dealer_cod": "63956",
     "gcm": "MAISA CARLA LEITE SATO",
     "razao_social": "SANTOS COMERCIO DE VEICULOS LTDA",
     "bairro": "CENTRO",
@@ -4540,6 +4807,7 @@
   },
   {
     "cnpj": "19389230001510",
+    "dealer_cod": "60388",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "CALEGARETTI VEICULOS PECAS E SERVICOS LTDA",
     "bairro": "ITAQUERA",
@@ -4556,7 +4824,8 @@
     "ativo": true
   },
   {
-    "cnpj": "429250890001470",
+    "cnpj": "29250890001470",
+    "dealer_cod": "60419",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "RP MULTIMARCAS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -4574,6 +4843,7 @@
   },
   {
     "cnpj": "45113380001690",
+    "dealer_cod": "60441",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "EMILIO EDMOND TEBCHERANI AUTOMOVEIS",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -4590,7 +4860,8 @@
     "ativo": true
   },
   {
-    "cnpj": "173210140001000",
+    "cnpj": "73210140001000",
+    "dealer_cod": "60607",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "MP2 IMPORTS VEICULOS LTDA",
     "bairro": "VILA MARIETA",
@@ -4607,7 +4878,8 @@
     "ativo": true
   },
   {
-    "cnpj": "408400900001430",
+    "cnpj": "08400900001430",
+    "dealer_cod": "60609",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "GLAVINA E COELHO COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM SILVA TELES",
@@ -4624,7 +4896,8 @@
     "ativo": true
   },
   {
-    "cnpj": "654901790001580",
+    "cnpj": "54901790001580",
+    "dealer_cod": "61266",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "SOUZACAR AUTOMOVEIS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -4642,6 +4915,7 @@
   },
   {
     "cnpj": "48431590001290",
+    "dealer_cod": "61750",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "CELSO TRAVASSO PIRES",
     "bairro": "ITAIM PAULISTA",
@@ -4658,7 +4932,8 @@
     "ativo": true
   },
   {
-    "cnpj": "314158750001880",
+    "cnpj": "14158750001880",
+    "dealer_cod": "61782",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "SHIFT MULTIMARCAS LTDA",
     "bairro": "VILA NORMA",
@@ -4675,7 +4950,8 @@
     "ativo": true
   },
   {
-    "cnpj": "343507150001960",
+    "cnpj": "43507150001960",
+    "dealer_cod": "61951",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "NETCARROS COMERCIO DE VEICULOS LTDA",
     "bairro": "VARZEA DA BARRA FUNDA",
@@ -4692,7 +4968,8 @@
     "ativo": true
   },
   {
-    "cnpj": "225564140001340",
+    "cnpj": "25564140001340",
+    "dealer_cod": "62078",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "DOUGLAS ALEXANDRE LEITE",
     "bairro": "VILA JACUI",
@@ -4709,7 +4986,8 @@
     "ativo": true
   },
   {
-    "cnpj": "121229270001830",
+    "cnpj": "21229270001830",
+    "dealer_cod": "62087",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "M Z MULTIMARCAS AUTOMOVEIS LTDA",
     "bairro": "VILA FORMOSA",
@@ -4726,7 +5004,8 @@
     "ativo": true
   },
   {
-    "cnpj": "667527910001140",
+    "cnpj": "67527910001140",
+    "dealer_cod": "62838",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "NIVECAR AUTOMOVEIS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -4743,7 +5022,8 @@
     "ativo": true
   },
   {
-    "cnpj": "286491120001970",
+    "cnpj": "86491120001970",
+    "dealer_cod": "62839",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "R ALVES VEICULOS MULTIMARCAS LTDA",
     "bairro": "VILA NORMA",
@@ -4760,7 +5040,8 @@
     "ativo": true
   },
   {
-    "cnpj": "245529640001000",
+    "cnpj": "45529640001000",
+    "dealer_cod": "63482",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "RRJ COMERCIO DE VEICULOS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -4777,7 +5058,8 @@
     "ativo": true
   },
   {
-    "cnpj": "271590900001140",
+    "cnpj": "71590900001140",
+    "dealer_cod": "63605",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "M SILVEIRA COMERCIO DE VEICULOS LTDA",
     "bairro": "ITAQUERA",
@@ -4794,7 +5076,8 @@
     "ativo": true
   },
   {
-    "cnpj": "408979340001920",
+    "cnpj": "08979340001920",
+    "dealer_cod": "63938",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "R CARS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA NORMA",
@@ -4812,6 +5095,7 @@
   },
   {
     "cnpj": "51537460001590",
+    "dealer_cod": "64098",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "SERPER VEICULOS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -4828,7 +5112,8 @@
     "ativo": true
   },
   {
-    "cnpj": "367060860001100",
+    "cnpj": "67060860001100",
+    "dealer_cod": "64607",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "JET MULTI MARCAS VEICULOS LTDA",
     "bairro": "JARDIM SILVA TELES",
@@ -4845,7 +5130,8 @@
     "ativo": true
   },
   {
-    "cnpj": "503191700001010",
+    "cnpj": "03191700001010",
+    "dealer_cod": "65813",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "LUFE CAR LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -4862,7 +5148,8 @@
     "ativo": true
   },
   {
-    "cnpj": "533734680001980",
+    "cnpj": "33734680001980",
+    "dealer_cod": "66516",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "NANDO CAR VEICULOS MULTIMARCAS LTDA",
     "bairro": "VILA AMERICANA",
@@ -4879,7 +5166,8 @@
     "ativo": true
   },
   {
-    "cnpj": "378286190001070",
+    "cnpj": "78286190001070",
+    "dealer_cod": "66592",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "KADOSH COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA CURUCA",
@@ -4896,7 +5184,8 @@
     "ativo": true
   },
   {
-    "cnpj": "361996230001820",
+    "cnpj": "61996230001820",
+    "dealer_cod": "66710",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "PHM COMERCIO DE VEICULOS E SERVICOS DE INTERMEDIACAO COMERCIAL LTDA",
     "bairro": "VILA NORMA",
@@ -4913,7 +5202,8 @@
     "ativo": true
   },
   {
-    "cnpj": "377872210001610",
+    "cnpj": "77872210001610",
+    "dealer_cod": "66716",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "MASETTI AUTOMOVEIS VEICULOS LTDA",
     "bairro": "CIDADE NOVA SAO MIGUEL",
@@ -4930,7 +5220,8 @@
     "ativo": true
   },
   {
-    "cnpj": "303948620001070",
+    "cnpj": "03948620001070",
+    "dealer_cod": "66717",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "MIRAILTON CALASANS DA FRAGA",
     "bairro": "JARDIM SILVA TELES",
@@ -4947,7 +5238,8 @@
     "ativo": true
   },
   {
-    "cnpj": "362118900001280",
+    "cnpj": "62118900001280",
+    "dealer_cod": "66722",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "COSMOS MULTIMARCAS NOVOS E SEMINOVOS LTDA",
     "bairro": "VILA CURUCA",
@@ -4965,6 +5257,7 @@
   },
   {
     "cnpj": "78077290001130",
+    "dealer_cod": "66723",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "CRISTINA MARTINS GUARNERI",
     "bairro": "VILA CARRAO",
@@ -4981,7 +5274,8 @@
     "ativo": true
   },
   {
-    "cnpj": "415704430001030",
+    "cnpj": "15704430001030",
+    "dealer_cod": "66724",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "EL CAR COMERCIO DE VEICULOS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -4998,7 +5292,8 @@
     "ativo": true
   },
   {
-    "cnpj": "352680200001220",
+    "cnpj": "52680200001220",
+    "dealer_cod": "66725",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "GAROTINHO MOTORS LTDA",
     "bairro": "JARDIM SORAIA",
@@ -5016,6 +5311,7 @@
   },
   {
     "cnpj": "53313980001620",
+    "dealer_cod": "66726",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "GILMODESTO VEICULOS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -5033,6 +5329,7 @@
   },
   {
     "cnpj": "94223470001050",
+    "dealer_cod": "66733",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "PIAUI COMERCIO DE VEICULOS MULTIMARCAS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -5049,7 +5346,8 @@
     "ativo": true
   },
   {
-    "cnpj": "345201740001050",
+    "cnpj": "45201740001050",
+    "dealer_cod": "66760",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "FREITAS BARRETO COMERCIO DE VEICULOS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -5067,6 +5365,7 @@
   },
   {
     "cnpj": "80787140001240",
+    "dealer_cod": "66761",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "FABIO ANTONIO VIEIRA VEICULOS",
     "bairro": "VILA AMERICANA",
@@ -5083,7 +5382,8 @@
     "ativo": true
   },
   {
-    "cnpj": "362607210001880",
+    "cnpj": "62607210001880",
+    "dealer_cod": "66799",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "M C SILVA AUTOMOVEIS",
     "bairro": "JARDIM SILVA TELES",
@@ -5100,7 +5400,8 @@
     "ativo": true
   },
   {
-    "cnpj": "382024470001160",
+    "cnpj": "82024470001160",
+    "dealer_cod": "66800",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "M F VEICULOS LTDA",
     "bairro": "JARDIM SILVA TELES",
@@ -5118,6 +5419,7 @@
   },
   {
     "cnpj": "36902180001030",
+    "dealer_cod": "66801",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "NOMAR COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA AMERICANA",
@@ -5135,6 +5437,7 @@
   },
   {
     "cnpj": "17838490001410",
+    "dealer_cod": "66802",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "VIDA NOVA AUTOMOVEIS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -5151,7 +5454,8 @@
     "ativo": true
   },
   {
-    "cnpj": "371575730001330",
+    "cnpj": "71575730001330",
+    "dealer_cod": "66818",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "PAULO PRUDENCIO ALENCAR AUTOMOVEIS",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -5168,7 +5472,8 @@
     "ativo": true
   },
   {
-    "cnpj": "247281550001070",
+    "cnpj": "47281550001070",
+    "dealer_cod": "66850",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "COMERCIO DE VEICULOS SMART J MULTIMARCAS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -5186,6 +5491,7 @@
   },
   {
     "cnpj": "43807720001570",
+    "dealer_cod": "67056",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "AUTOS RR LTDA",
     "bairro": "VILA NORMA",
@@ -5203,6 +5509,7 @@
   },
   {
     "cnpj": "77744620001050",
+    "dealer_cod": "67057",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "E D SANTOS COMERCIO DE VEICULOS",
     "bairro": "ITAIM PAULISTA",
@@ -5219,7 +5526,8 @@
     "ativo": true
   },
   {
-    "cnpj": "388221760001000",
+    "cnpj": "88221760001000",
+    "dealer_cod": "67060",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "NASSA MOTORS MULTIMARCAS LTDA",
     "bairro": "PARQUE MARIA LUIZA",
@@ -5236,7 +5544,8 @@
     "ativo": true
   },
   {
-    "cnpj": "375857330001450",
+    "cnpj": "75857330001450",
+    "dealer_cod": "67062",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "RENATINHUS CARS COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM ARUJA",
@@ -5253,7 +5562,8 @@
     "ativo": true
   },
   {
-    "cnpj": "441699200001030",
+    "cnpj": "41699200001030",
+    "dealer_cod": "67063",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "RAVI CAR VEICULOS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -5270,7 +5580,8 @@
     "ativo": true
   },
   {
-    "cnpj": "140419230001040",
+    "cnpj": "40419230001040",
+    "dealer_cod": "67111",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "IDEAL AUTOMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA VERA",
@@ -5287,7 +5598,8 @@
     "ativo": true
   },
   {
-    "cnpj": "106221060001800",
+    "cnpj": "06221060001800",
+    "dealer_cod": "67232",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "CENTRO AUTOMOTIVO MITSUNARI LTDA",
     "bairro": "VILA NOVA CURUCA",
@@ -5304,7 +5616,8 @@
     "ativo": true
   },
   {
-    "cnpj": "495310460001260",
+    "cnpj": "95310460001260",
+    "dealer_cod": "67534",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "I & R CAR LTDA",
     "bairro": "VILA DOUTOR EIRAS",
@@ -5321,7 +5634,8 @@
     "ativo": true
   },
   {
-    "cnpj": "464400150001710",
+    "cnpj": "64400150001710",
+    "dealer_cod": "67542",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "SAMUEL FERREIRA BATISTA COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA CURUCA",
@@ -5338,7 +5652,8 @@
     "ativo": true
   },
   {
-    "cnpj": "419486670001060",
+    "cnpj": "19486670001060",
+    "dealer_cod": "67725",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "COOPER MULTIMARCAS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -5355,7 +5670,8 @@
     "ativo": true
   },
   {
-    "cnpj": "360294080001330",
+    "cnpj": "60294080001330",
+    "dealer_cod": "67783",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "ALEXANDRE JOSE PAULO VEICULOS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -5372,7 +5688,8 @@
     "ativo": true
   },
   {
-    "cnpj": "382858230001830",
+    "cnpj": "82858230001830",
+    "dealer_cod": "67848",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "GUIVER CAR VEICULOS LTDA",
     "bairro": "VILA NORMA",
@@ -5389,7 +5706,8 @@
     "ativo": true
   },
   {
-    "cnpj": "451439440001560",
+    "cnpj": "51439440001560",
+    "dealer_cod": "67891",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "CARVALHO E SOARES COMERCIO DE VEICULOS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -5406,7 +5724,8 @@
     "ativo": true
   },
   {
-    "cnpj": "360655920001770",
+    "cnpj": "60655920001770",
+    "dealer_cod": "67932",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "E POMPEU JUNIOR AUTOMOVEIS",
     "bairro": "VILA AMERICANA",
@@ -5423,7 +5742,8 @@
     "ativo": true
   },
   {
-    "cnpj": "482213510001590",
+    "cnpj": "82213510001590",
+    "dealer_cod": "68075",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "VPR MOTORS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -5440,7 +5760,8 @@
     "ativo": true
   },
   {
-    "cnpj": "478461270001900",
+    "cnpj": "78461270001900",
+    "dealer_cod": "68173",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "HERRERA MOTTORS LTDA",
     "bairro": "CHACARA MAFALDA",
@@ -5457,7 +5778,8 @@
     "ativo": true
   },
   {
-    "cnpj": "537178480001000",
+    "cnpj": "37178480001000",
+    "dealer_cod": "68238",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "VILAR AUTO COMERCIO E CONSULTORIA AUTOMOTIVA LTDA",
     "bairro": "JARDIM LIDERANCA",
@@ -5474,7 +5796,8 @@
     "ativo": true
   },
   {
-    "cnpj": "522131820001820",
+    "cnpj": "22131820001820",
+    "dealer_cod": "68289",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "GARAGE JK AUTOMARCAS LTDA",
     "bairro": "VILA NORMA",
@@ -5491,7 +5814,8 @@
     "ativo": true
   },
   {
-    "cnpj": "467697010001900",
+    "cnpj": "67697010001900",
+    "dealer_cod": "68394",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "STILLO AUTOMOVEIS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -5508,7 +5832,8 @@
     "ativo": true
   },
   {
-    "cnpj": "233546670001980",
+    "cnpj": "33546670001980",
+    "dealer_cod": "68752",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "FM CARAPETO COMERCIO DE VEICULOS LTDA",
     "bairro": "PARQUE SANTO ANTONIO",
@@ -5525,7 +5850,8 @@
     "ativo": true
   },
   {
-    "cnpj": "492883250001000",
+    "cnpj": "92883250001000",
+    "dealer_cod": "68812",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "PEDRINHO COMERCIO DE VEICULOS MULTIMARCAS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -5542,7 +5868,8 @@
     "ativo": true
   },
   {
-    "cnpj": "629041830001270",
+    "cnpj": "29041830001270",
+    "dealer_cod": "68814",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "RICARDO DA CRUZ PEREIRA",
     "bairro": "ITAIM PAULISTA",
@@ -5559,7 +5886,8 @@
     "ativo": true
   },
   {
-    "cnpj": "528916700001490",
+    "cnpj": "28916700001490",
+    "dealer_cod": "68842",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "ISAACAR COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM SILVA TELES",
@@ -5576,7 +5904,8 @@
     "ativo": true
   },
   {
-    "cnpj": "524818290001570",
+    "cnpj": "24818290001570",
+    "dealer_cod": "69036",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "MOTORS J VEICULOS LTDA",
     "bairro": "VILA CURUCA",
@@ -5593,7 +5922,8 @@
     "ativo": true
   },
   {
-    "cnpj": "496878560001760",
+    "cnpj": "96878560001760",
+    "dealer_cod": "69198",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "FAV VEICULOS LTDA",
     "bairro": "TATUAPE",
@@ -5610,7 +5940,8 @@
     "ativo": true
   },
   {
-    "cnpj": "326422230001490",
+    "cnpj": "26422230001490",
+    "dealer_cod": "60387",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "LED AUTOMOVEIS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -5627,7 +5958,8 @@
     "ativo": true
   },
   {
-    "cnpj": "539818010001410",
+    "cnpj": "39818010001410",
+    "dealer_cod": "69506",
     "gcm": "MARCOS ALEXANDRE CUSTODIO",
     "razao_social": "PREFERENCIA VEICULOS MULTIMARCAS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -5644,7 +5976,8 @@
     "ativo": true
   },
   {
-    "cnpj": "350366210001000",
+    "cnpj": "50366210001000",
+    "dealer_cod": "60347",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "SEMPRE MAIS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA NORMA",
@@ -5661,7 +5994,8 @@
     "ativo": true
   },
   {
-    "cnpj": "238735420001740",
+    "cnpj": "38735420001740",
+    "dealer_cod": "60414",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "NICK COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA VERA",
@@ -5679,6 +6013,7 @@
   },
   {
     "cnpj": "94374140001570",
+    "dealer_cod": "60415",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "D R D CAR VEICULOS LTDA",
     "bairro": "JARDIM SAO SEBASTIAO",
@@ -5695,7 +6030,8 @@
     "ativo": true
   },
   {
-    "cnpj": "221100400001290",
+    "cnpj": "21100400001290",
+    "dealer_cod": "60427",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "SULLATO LESTE COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA CONSTANCA",
@@ -5712,7 +6048,8 @@
     "ativo": true
   },
   {
-    "cnpj": "140807770001180",
+    "cnpj": "40807770001180",
+    "dealer_cod": "60486",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "STOP MOTORS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA MARIETA",
@@ -5729,7 +6066,8 @@
     "ativo": true
   },
   {
-    "cnpj": "260735710001400",
+    "cnpj": "60735710001400",
+    "dealer_cod": "60550",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "TALITA ISVI DE JESUS E SILVA DOS SANTOS",
     "bairro": "VILA JACUI",
@@ -5746,7 +6084,8 @@
     "ativo": true
   },
   {
-    "cnpj": "393815740001920",
+    "cnpj": "93815740001920",
+    "dealer_cod": "60602",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "R F MOTORS LTDA",
     "bairro": "VILA JACUI",
@@ -5764,6 +6103,7 @@
   },
   {
     "cnpj": "86810230001100",
+    "dealer_cod": "60605",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "NOVA INFINITY COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA MARIETA",
@@ -5780,7 +6120,8 @@
     "ativo": true
   },
   {
-    "cnpj": "446609080001050",
+    "cnpj": "46609080001050",
+    "dealer_cod": "60614",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "M S L VEICULOS LTDA",
     "bairro": "VILA MARIETA",
@@ -5797,7 +6138,8 @@
     "ativo": true
   },
   {
-    "cnpj": "295878440001620",
+    "cnpj": "95878440001620",
+    "dealer_cod": "60655",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "SENHOOR AUTOMOVEIS LTDA",
     "bairro": "PENHA DE FRANCA",
@@ -5814,7 +6156,8 @@
     "ativo": true
   },
   {
-    "cnpj": "290018870001140",
+    "cnpj": "90018870001140",
+    "dealer_cod": "60679",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "TIQUATIRA AUTOMOVEIS LTDA",
     "bairro": "VILA RE",
@@ -5831,7 +6174,8 @@
     "ativo": true
   },
   {
-    "cnpj": "345238830001360",
+    "cnpj": "45238830001360",
+    "dealer_cod": "60732",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "LGM COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA MARIETA",
@@ -5849,6 +6193,7 @@
   },
   {
     "cnpj": "53590910001700",
+    "dealer_cod": "60743",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "1002 MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA MARIETA",
@@ -5865,7 +6210,8 @@
     "ativo": true
   },
   {
-    "cnpj": "420027550001750",
+    "cnpj": "20027550001750",
+    "dealer_cod": "60772",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "IMPERIO MOTORS COMERCIO VAREJISTA DE VEICULOS LTDA",
     "bairro": "VILA MARIETA",
@@ -5882,7 +6228,8 @@
     "ativo": true
   },
   {
-    "cnpj": "270774210001770",
+    "cnpj": "70774210001770",
+    "dealer_cod": "60788",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "RENATO MARTINS",
     "bairro": "VILA NORMA",
@@ -5899,7 +6246,8 @@
     "ativo": true
   },
   {
-    "cnpj": "247428930001090",
+    "cnpj": "47428930001090",
+    "dealer_cod": "60822",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "J FILHO JUNIOR VEICULOS",
     "bairro": "VILA MARIETA",
@@ -5916,7 +6264,8 @@
     "ativo": true
   },
   {
-    "cnpj": "208157090001520",
+    "cnpj": "08157090001520",
+    "dealer_cod": "61010",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "VOLICAR S VEICULOS LTDA",
     "bairro": "VILA CALIFORNIA",
@@ -5934,6 +6283,7 @@
   },
   {
     "cnpj": "83674690001750",
+    "dealer_cod": "61780",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "J E G DE MORAES AUTOS",
     "bairro": "VILA NOVA CURUCA",
@@ -5950,7 +6300,8 @@
     "ativo": true
   },
   {
-    "cnpj": "215220770001000",
+    "cnpj": "15220770001000",
+    "dealer_cod": "61807",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "FGA COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA MARIETA",
@@ -5967,7 +6318,8 @@
     "ativo": true
   },
   {
-    "cnpj": "216132790001590",
+    "cnpj": "16132790001590",
+    "dealer_cod": "61969",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "A10 AUTOMOVEIS LTDA",
     "bairro": "VILA JACUI",
@@ -5984,7 +6336,8 @@
     "ativo": true
   },
   {
-    "cnpj": "208708500001580",
+    "cnpj": "08708500001580",
+    "dealer_cod": "62090",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "CELESTIAL COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA JACUI",
@@ -6001,7 +6354,8 @@
     "ativo": true
   },
   {
-    "cnpj": "324037030001570",
+    "cnpj": "24037030001570",
+    "dealer_cod": "62382",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "CAIO WAGENKNECHT MATSUURA",
     "bairro": "VILA NORMA",
@@ -6018,7 +6372,8 @@
     "ativo": true
   },
   {
-    "cnpj": "396538660001370",
+    "cnpj": "96538660001370",
+    "dealer_cod": "63951",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "MEGA STORE COMERCIO E UTILITARIOS LTDA",
     "bairro": "VILA NOVA PAULICEIA",
@@ -6035,7 +6390,8 @@
     "ativo": true
   },
   {
-    "cnpj": "168951290001450",
+    "cnpj": "68951290001450",
+    "dealer_cod": "64278",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "DM COMERCIO DE VEICULOS LTDA",
     "bairro": "ANCHIETA",
@@ -6052,7 +6408,8 @@
     "ativo": true
   },
   {
-    "cnpj": "320935030001450",
+    "cnpj": "20935030001450",
+    "dealer_cod": "64934",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "EDMILA HONORIO DA SILVA LTDA",
     "bairro": "VILA NORMA",
@@ -6069,7 +6426,8 @@
     "ativo": true
   },
   {
-    "cnpj": "103501270001940",
+    "cnpj": "03501270001940",
+    "dealer_cod": "65012",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "EMV CAR S COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA MARIETA",
@@ -6086,7 +6444,8 @@
     "ativo": true
   },
   {
-    "cnpj": "395147620001410",
+    "cnpj": "95147620001410",
+    "dealer_cod": "65152",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "4F MOTORS COMERCIO DE VEICULOS E SERVICOS LTDA",
     "bairro": "VILA REGENTE FEIJO",
@@ -6104,6 +6463,7 @@
   },
   {
     "cnpj": "69652420001040",
+    "dealer_cod": "65762",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "TELMA MULTIMARCAS DE VEICULOS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -6120,7 +6480,8 @@
     "ativo": true
   },
   {
-    "cnpj": "418531120001720",
+    "cnpj": "18531120001720",
+    "dealer_cod": "65811",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "LS7 MULTIMARCAS LTDA",
     "bairro": "VILA NORMA",
@@ -6137,7 +6498,8 @@
     "ativo": true
   },
   {
-    "cnpj": "308996220001640",
+    "cnpj": "08996220001640",
+    "dealer_cod": "65946",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "WME SHALON LOCADORA DE VEICULOS LTDA",
     "bairro": "VILA NORMA",
@@ -6154,7 +6516,8 @@
     "ativo": true
   },
   {
-    "cnpj": "378050500001560",
+    "cnpj": "78050500001560",
+    "dealer_cod": "66011",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "JVECCHIO COMERCIO DE VEICULOS LTDA",
     "bairro": "TATUAPE",
@@ -6171,7 +6534,8 @@
     "ativo": true
   },
   {
-    "cnpj": "213446560001000",
+    "cnpj": "13446560001000",
+    "dealer_cod": "66540",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "TDB COMERCIO DE VEICULOS LTDA",
     "bairro": "PARQUE BOTURUSSU",
@@ -6188,7 +6552,8 @@
     "ativo": true
   },
   {
-    "cnpj": "530279510001100",
+    "cnpj": "30279510001100",
+    "dealer_cod": "66608",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "MCB MULTIMARCAS LTDA",
     "bairro": "CENTRO",
@@ -6205,7 +6570,8 @@
     "ativo": true
   },
   {
-    "cnpj": "456903170001350",
+    "cnpj": "56903170001350",
+    "dealer_cod": "67904",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "AUTO STYLE MOTORS LTDA",
     "bairro": "VILA REGENTE FEIJO",
@@ -6222,7 +6588,8 @@
     "ativo": true
   },
   {
-    "cnpj": "414922140001000",
+    "cnpj": "14922140001000",
+    "dealer_cod": "67972",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "ROTIEH COMERCIO DE VEICULOS MULTIMARCAS LTDA",
     "bairro": "PARQUE BOTURUSSU",
@@ -6240,6 +6607,7 @@
   },
   {
     "cnpj": "31001180001800",
+    "dealer_cod": "60446",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "SANTA PAULA VEICULOS LTDA",
     "bairro": "VILA NORMA",
@@ -6257,6 +6625,7 @@
   },
   {
     "cnpj": "28509810001910",
+    "dealer_cod": "62091",
     "gcm": "PAOLINE HELENA DE SOUZA AGUIAR",
     "razao_social": "NOVA MASTER VEICULOS LEVES E PESADOS LTDA",
     "bairro": "VILA NORMA",
@@ -6273,7 +6642,8 @@
     "ativo": true
   },
   {
-    "cnpj": "290882930001920",
+    "cnpj": "90882930001920",
+    "dealer_cod": "60403",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "IDEAL MULTIMARCAS SP LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -6290,7 +6660,8 @@
     "ativo": true
   },
   {
-    "cnpj": "682925800001710",
+    "cnpj": "82925800001710",
+    "dealer_cod": "60404",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "XAVIER AUTOMOVEIS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA MARIETA",
@@ -6307,7 +6678,8 @@
     "ativo": true
   },
   {
-    "cnpj": "121493870001210",
+    "cnpj": "21493870001210",
+    "dealer_cod": "60418",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "GLAUBER DE MACEDO PINHEIRO",
     "bairro": "ITAIM PAULISTA",
@@ -6324,7 +6696,8 @@
     "ativo": true
   },
   {
-    "cnpj": "271560630001980",
+    "cnpj": "71560630001980",
+    "dealer_cod": "60420",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "MAXXS MULTIMARCAS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -6342,6 +6715,7 @@
   },
   {
     "cnpj": "11315670001600",
+    "dealer_cod": "60442",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "HELIO BIANCHI AUTOMOVEIS",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -6358,7 +6732,8 @@
     "ativo": true
   },
   {
-    "cnpj": "262861670001540",
+    "cnpj": "62861670001540",
+    "dealer_cod": "60443",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "LUCAS ALVES VEICULOS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -6375,7 +6750,8 @@
     "ativo": true
   },
   {
-    "cnpj": "186152960001100",
+    "cnpj": "86152960001100",
+    "dealer_cod": "60485",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "EDSON SIMOES DOS SANTOS",
     "bairro": "ITAIM PAULISTA",
@@ -6392,7 +6768,8 @@
     "ativo": true
   },
   {
-    "cnpj": "146806940001600",
+    "cnpj": "46806940001600",
+    "dealer_cod": "60681",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "MARCUS VINICIUS JUVENAL",
     "bairro": "VILA MARIETA",
@@ -6410,6 +6787,7 @@
   },
   {
     "cnpj": "45184020001330",
+    "dealer_cod": "60878",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "ALIANCA MULTIMARCAS LTDA",
     "bairro": "JARDIM HELENA",
@@ -6426,7 +6804,8 @@
     "ativo": true
   },
   {
-    "cnpj": "107764260001950",
+    "cnpj": "07764260001950",
+    "dealer_cod": "60879",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "DEMIR CAR COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA RE",
@@ -6443,7 +6822,8 @@
     "ativo": true
   },
   {
-    "cnpj": "242380760001180",
+    "cnpj": "42380760001180",
+    "dealer_cod": "60886",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "NERES VEICULOS MULTIMARCAS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -6460,7 +6840,8 @@
     "ativo": true
   },
   {
-    "cnpj": "276360760001640",
+    "cnpj": "76360760001640",
+    "dealer_cod": "60904",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "NOVA OPCAO VEICULOS MULTIMARCAS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -6478,6 +6859,7 @@
   },
   {
     "cnpj": "12444960001010",
+    "dealer_cod": "60916",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "GRAND PORTO VEICULOS LTDA",
     "bairro": "JARDIM SILVA TELES",
@@ -6495,6 +6877,7 @@
   },
   {
     "cnpj": "77311090001480",
+    "dealer_cod": "60925",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "JET VEL COMERCIO DE VEICULOS LTDA",
     "bairro": "CANGAIBA",
@@ -6511,7 +6894,8 @@
     "ativo": true
   },
   {
-    "cnpj": "530813370001370",
+    "cnpj": "30813370001370",
+    "dealer_cod": "61055",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "ROCHA MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM SILVA TELES",
@@ -6528,7 +6912,8 @@
     "ativo": true
   },
   {
-    "cnpj": "334863430001670",
+    "cnpj": "34863430001670",
+    "dealer_cod": "61469",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "N2 VEICULOS MULTIMARCAS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -6546,6 +6931,7 @@
   },
   {
     "cnpj": "92415050001120",
+    "dealer_cod": "61509",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "MOURA & CARVALHO COMERCIO DE VEICULOS MULTIMARCAS LTDA",
     "bairro": "VILA BARBOSA",
@@ -6562,7 +6948,8 @@
     "ativo": true
   },
   {
-    "cnpj": "292284320001360",
+    "cnpj": "92284320001360",
+    "dealer_cod": "61533",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "SINAL VERDE MULTIMARCAS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -6580,6 +6967,7 @@
   },
   {
     "cnpj": "36738130001300",
+    "dealer_cod": "61801",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "CARVALHO E MOURA VEICULOS MULTIMARCAS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -6596,7 +6984,8 @@
     "ativo": true
   },
   {
-    "cnpj": "168973590001430",
+    "cnpj": "68973590001430",
+    "dealer_cod": "61819",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "ONIX MOTORS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -6614,6 +7003,7 @@
   },
   {
     "cnpj": "32091240001700",
+    "dealer_cod": "62093",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "MRBS COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM SILVA TELES",
@@ -6631,6 +7021,7 @@
   },
   {
     "cnpj": "45808470001430",
+    "dealer_cod": "62568",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "YOKOHAMA VEICULOS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -6648,6 +7039,7 @@
   },
   {
     "cnpj": "57805250001000",
+    "dealer_cod": "62651",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "LARANGEIRA IMPORTS LTDA",
     "bairro": "CHACARA SANTO ANTONIO ZONA LESTE",
@@ -6664,7 +7056,8 @@
     "ativo": true
   },
   {
-    "cnpj": "333446670001600",
+    "cnpj": "33446670001600",
+    "dealer_cod": "62688",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "ELTON PEDRO DUENHA BICUDO",
     "bairro": "VILA NORMA",
@@ -6682,6 +7075,7 @@
   },
   {
     "cnpj": "14740840001680",
+    "dealer_cod": "62743",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "V CAR AUTOMOVEIS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -6698,7 +7092,8 @@
     "ativo": true
   },
   {
-    "cnpj": "155878300001340",
+    "cnpj": "55878300001340",
+    "dealer_cod": "63063",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "SM AUTOMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA VESSONI",
@@ -6715,7 +7110,8 @@
     "ativo": true
   },
   {
-    "cnpj": "270013600001640",
+    "cnpj": "70013600001640",
+    "dealer_cod": "63307",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "NERIANE C BARBOSA COMERCIO DE AUTOMOVEIS",
     "bairro": "JARDIM MARINGA",
@@ -6733,13 +7129,14 @@
   },
   {
     "cnpj": "33843010001540",
+    "dealer_cod": "63353",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "SOLDANO COMERCIO DE VEICULOS E ADMINISTRACAO DE IMOVEIS LTDA",
     "bairro": "AGUA BRANCA",
     "cep": "05042000",
     "zona": "Zona Oeste",
-    "micro_regiao": "MR-O1",
-    "micro_regiao_nome": "Zona Oeste",
+    "micro_regiao": "MR-C1",
+    "micro_regiao_nome": "Centro · Zona Oeste",
     "porte": "D. 11-20 GRAVAMES",
     "contratos_geral": 17,
     "volume_geral": 1152420.03,
@@ -6749,7 +7146,8 @@
     "ativo": true
   },
   {
-    "cnpj": "137425860001010",
+    "cnpj": "37425860001010",
+    "dealer_cod": "63478",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "ELIAS GOMES DE OLIVEIRA VEICULOS",
     "bairro": "ITAIM PAULISTA",
@@ -6766,7 +7164,8 @@
     "ativo": true
   },
   {
-    "cnpj": "392972870001070",
+    "cnpj": "92972870001070",
+    "dealer_cod": "63656",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "A & E MULTIMARCAS LTDA",
     "bairro": "CIDADE NOVA SAO MIGUEL",
@@ -6783,7 +7182,8 @@
     "ativo": true
   },
   {
-    "cnpj": "281535150001400",
+    "cnpj": "81535150001400",
+    "dealer_cod": "63844",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "CLEBER TONIETTI FERREIRA VEICULOS NOVOS E USADOS LTDA",
     "bairro": "VILA AMERICANA",
@@ -6801,6 +7201,7 @@
   },
   {
     "cnpj": "88988140001050",
+    "dealer_cod": "64042",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "GLAUCIO GONCALVES LOPES COMERCIO DE VEICULOS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -6817,7 +7218,8 @@
     "ativo": true
   },
   {
-    "cnpj": "229315060001570",
+    "cnpj": "29315060001570",
+    "dealer_cod": "64055",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "ANDERSON FERREIRA NASCIMENTO OLIVEIRA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -6834,7 +7236,8 @@
     "ativo": true
   },
   {
-    "cnpj": "287214350001440",
+    "cnpj": "87214350001440",
+    "dealer_cod": "64080",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "HELDER MARTOS DE JORGE",
     "bairro": "VILA ESPERANCA",
@@ -6851,7 +7254,8 @@
     "ativo": true
   },
   {
-    "cnpj": "439846150001020",
+    "cnpj": "39846150001020",
+    "dealer_cod": "65293",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "R S VEICULOS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -6868,7 +7272,8 @@
     "ativo": true
   },
   {
-    "cnpj": "331205010001600",
+    "cnpj": "31205010001600",
+    "dealer_cod": "65818",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "M2 COMERCIO DE VEICULOS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -6885,7 +7290,8 @@
     "ativo": true
   },
   {
-    "cnpj": "350508560001560",
+    "cnpj": "50508560001560",
+    "dealer_cod": "65845",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "LUANA MULTIMARCAS LTDA",
     "bairro": "VILA NOVA CURUCA",
@@ -6902,7 +7308,8 @@
     "ativo": true
   },
   {
-    "cnpj": "388207100001300",
+    "cnpj": "88207100001300",
+    "dealer_cod": "65862",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "ROBERTO GOMES TORRALBO JUNIOR COMERCIO E LOCACAO DE VEICULOS LTDA",
     "bairro": "PENHA DE FRANCA",
@@ -6919,7 +7326,8 @@
     "ativo": true
   },
   {
-    "cnpj": "393619580001430",
+    "cnpj": "93619580001430",
+    "dealer_cod": "65988",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "CLERILSON SOARES PEREIRA COMERCIO DE VEICULOS LTDA",
     "bairro": "PARQUE BOTURUSSU",
@@ -6936,7 +7344,8 @@
     "ativo": true
   },
   {
-    "cnpj": "377523290001190",
+    "cnpj": "77523290001190",
+    "dealer_cod": "66538",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "MG IMPORTS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA DOM PEDRO I",
@@ -6953,7 +7362,8 @@
     "ativo": true
   },
   {
-    "cnpj": "301274600001460",
+    "cnpj": "01274600001460",
+    "dealer_cod": "66738",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "SAO MIGUEL COMERCIO DE VEICULOS LTDA",
     "bairro": "SAO MIGUEL PAULISTA",
@@ -6970,7 +7380,8 @@
     "ativo": true
   },
   {
-    "cnpj": "459891210001460",
+    "cnpj": "59891210001460",
+    "dealer_cod": "66745",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "SR DIVINO COMERCIO E LOCACAO DE VEICULOS LTDA",
     "bairro": "CANGAIBA",
@@ -6987,7 +7398,8 @@
     "ativo": true
   },
   {
-    "cnpj": "459554610001560",
+    "cnpj": "59554610001560",
+    "dealer_cod": "68649",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "SAMPA CARS COMERCIO DE VEICULOS LTDA",
     "bairro": "ITAIM PAULISTA",
@@ -7004,7 +7416,8 @@
     "ativo": true
   },
   {
-    "cnpj": "433289450001400",
+    "cnpj": "33289450001400",
+    "dealer_cod": "68743",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "MEGHA VEICULOS LTDA",
     "bairro": "ERMELINO MATARAZZO",
@@ -7021,7 +7434,8 @@
     "ativo": true
   },
   {
-    "cnpj": "242067340001900",
+    "cnpj": "42067340001900",
+    "dealer_cod": "69212",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "J ELOI COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA MARA",
@@ -7038,7 +7452,8 @@
     "ativo": true
   },
   {
-    "cnpj": "634404920001560",
+    "cnpj": "34404920001560",
+    "dealer_cod": "69237",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "ROCHA PRIME COMERCIO DE VEICULOS E INTERMEDIACOES LTDA",
     "bairro": "JARDIM SILVA TELES",
@@ -7055,14 +7470,15 @@
     "ativo": true
   },
   {
-    "cnpj": "627538440001600",
+    "cnpj": "27538440001600",
+    "dealer_cod": "69296",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "0",
     "bairro": "0",
     "cep": "00000000",
     "zona": "0",
-    "micro_regiao": "MR-L1",
-    "micro_regiao_nome": "Brás · Moóca · Tatuapé · Carrão",
+    "micro_regiao": "MR-C1",
+    "micro_regiao_nome": "Centro · Zona Oeste",
     "porte": "A. 1 GRAVAME",
     "contratos_geral": 1,
     "volume_geral": 43944.06,
@@ -7072,7 +7488,8 @@
     "ativo": true
   },
   {
-    "cnpj": "221130970001810",
+    "cnpj": "21130970001810",
+    "dealer_cod": "69508",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "C B BROKERS LTDA",
     "bairro": "MARANHAO",
@@ -7089,7 +7506,8 @@
     "ativo": true
   },
   {
-    "cnpj": "418266460001000",
+    "cnpj": "18266460001000",
+    "dealer_cod": "62322",
     "gcm": "RAFAELA GOES SILVA",
     "razao_social": "COMERCIO DE VEICULOS 1330 MOTORS LTDA",
     "bairro": "VILA REGENTE FEIJO",
@@ -7107,6 +7525,7 @@
   },
   {
     "cnpj": "19193380001040",
+    "dealer_cod": "61270",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "RCD MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA GALVAO",
@@ -7123,7 +7542,8 @@
     "ativo": true
   },
   {
-    "cnpj": "212956140001180",
+    "cnpj": "12956140001180",
+    "dealer_cod": "61278",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "ANDRE ROBCAR MULTIMARCAS LTDA",
     "bairro": "JARDIM SANTA MENA",
@@ -7141,6 +7561,7 @@
   },
   {
     "cnpj": "88908020001260",
+    "dealer_cod": "61302",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "KAIMAN COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA SAO JUDAS TADEU",
@@ -7157,7 +7578,8 @@
     "ativo": true
   },
   {
-    "cnpj": "242317620001670",
+    "cnpj": "42317620001670",
+    "dealer_cod": "61330",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "CONCEITOCAR COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA FLORIDA",
@@ -7174,7 +7596,8 @@
     "ativo": true
   },
   {
-    "cnpj": "308907980001550",
+    "cnpj": "08907980001550",
+    "dealer_cod": "61340",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "RODRIGO V MELO COSTA COMERCIO DE VEICULOS",
     "bairro": "VILA FLORIDA",
@@ -7191,7 +7614,8 @@
     "ativo": true
   },
   {
-    "cnpj": "337236720001840",
+    "cnpj": "37236720001840",
+    "dealer_cod": "61387",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "ACREDITA MULTIMARCAS COMERCIO DE AUTOMOVEIS LTDA",
     "bairro": "PARQUE CONTINENTAL I",
@@ -7208,7 +7632,8 @@
     "ativo": true
   },
   {
-    "cnpj": "171151850001820",
+    "cnpj": "71151850001820",
+    "dealer_cod": "61391",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "CM22 COMERCIO DE AUTOMOVEIS LTDA",
     "bairro": "VILA HULDA",
@@ -7226,6 +7651,7 @@
   },
   {
     "cnpj": "58597030001930",
+    "dealer_cod": "61393",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "MARCOS MELO COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA FLORIDA",
@@ -7242,7 +7668,8 @@
     "ativo": true
   },
   {
-    "cnpj": "290634280001650",
+    "cnpj": "90634280001650",
+    "dealer_cod": "61464",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "LOTUS MOTORS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA HULDA",
@@ -7259,7 +7686,8 @@
     "ativo": true
   },
   {
-    "cnpj": "272695240001390",
+    "cnpj": "72695240001390",
+    "dealer_cod": "61522",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "FE CAR MOTORS LTDA",
     "bairro": "JARDIM SANTA MENA",
@@ -7276,7 +7704,8 @@
     "ativo": true
   },
   {
-    "cnpj": "529281810001140",
+    "cnpj": "29281810001140",
+    "dealer_cod": "61731",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "MALAVAZI COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA FLORIDA",
@@ -7294,6 +7723,7 @@
   },
   {
     "cnpj": "74353630001070",
+    "dealer_cod": "61786",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "BECAR MULTIMARCAS LTDA",
     "bairro": "JARDIM SANTA MENA",
@@ -7310,7 +7740,8 @@
     "ativo": true
   },
   {
-    "cnpj": "104725620001910",
+    "cnpj": "04725620001910",
+    "dealer_cod": "61921",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "RUBENS BRAZ FERREIRA VEICULOS LTDA",
     "bairro": "VILA GALVAO",
@@ -7327,7 +7758,8 @@
     "ativo": true
   },
   {
-    "cnpj": "168794870001640",
+    "cnpj": "68794870001640",
+    "dealer_cod": "62015",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "D CARLO COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA FLORIDA",
@@ -7344,7 +7776,8 @@
     "ativo": true
   },
   {
-    "cnpj": "124727380001300",
+    "cnpj": "24727380001300",
+    "dealer_cod": "62021",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "MELLOS MULTIMARCAS LTDA",
     "bairro": "JARDIM SANTA MENA",
@@ -7361,7 +7794,8 @@
     "ativo": true
   },
   {
-    "cnpj": "295672040001900",
+    "cnpj": "95672040001900",
+    "dealer_cod": "62040",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "DETHECARS MULTIMARCAS LTDA",
     "bairro": "VILA HULDA",
@@ -7378,7 +7812,8 @@
     "ativo": true
   },
   {
-    "cnpj": "146249080001800",
+    "cnpj": "46249080001800",
+    "dealer_cod": "62200",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "SINAI MOTORS COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM TABATINGA",
@@ -7395,7 +7830,8 @@
     "ativo": true
   },
   {
-    "cnpj": "416811890001020",
+    "cnpj": "16811890001020",
+    "dealer_cod": "62431",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "AUTO MEET COMERCIO DE AUTOMOVEIS LTDA",
     "bairro": "CENTRO",
@@ -7412,7 +7848,8 @@
     "ativo": true
   },
   {
-    "cnpj": "227693220001320",
+    "cnpj": "27693220001320",
+    "dealer_cod": "62465",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "JOINHA VEICULOS LTDA",
     "bairro": "JARDIM SANTO EXPEDITO",
@@ -7429,7 +7866,8 @@
     "ativo": true
   },
   {
-    "cnpj": "410197260001530",
+    "cnpj": "10197260001530",
+    "dealer_cod": "62513",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "FAST MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM COCAIA",
@@ -7446,7 +7884,8 @@
     "ativo": true
   },
   {
-    "cnpj": "105488340001900",
+    "cnpj": "05488340001900",
+    "dealer_cod": "62565",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "RD VACCHIO MOTORS COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA HULDA",
@@ -7463,7 +7902,8 @@
     "ativo": true
   },
   {
-    "cnpj": "308621450001620",
+    "cnpj": "08621450001620",
+    "dealer_cod": "62647",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "S MOTORS COMERCIO DE VEICULOS E MOTOS LTDA",
     "bairro": "CIDADE SERODIO",
@@ -7480,7 +7920,8 @@
     "ativo": true
   },
   {
-    "cnpj": "336473610001830",
+    "cnpj": "36473610001830",
+    "dealer_cod": "63418",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "LR COMERCIO DE VEICULOS LTDA",
     "bairro": "JARDIM SAO GERALDO",
@@ -7497,7 +7938,8 @@
     "ativo": true
   },
   {
-    "cnpj": "658521620001010",
+    "cnpj": "58521620001010",
+    "dealer_cod": "63468",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "SRS AUTOMOVEIS LTDA",
     "bairro": "VILA FLORIDA",
@@ -7515,6 +7957,7 @@
   },
   {
     "cnpj": "81047140001510",
+    "dealer_cod": "63596",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "CONTINENTAL PARQUE AUTOMOVEIS LTDA",
     "bairro": "JARDIM BOM CLIMA",
@@ -7531,7 +7974,8 @@
     "ativo": true
   },
   {
-    "cnpj": "353802820001840",
+    "cnpj": "53802820001840",
+    "dealer_cod": "64587",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "CAMILA DE SIQUEIRA ALMEIDA COMERCIO DE VEICULOS LTDA",
     "bairro": "TUCURUVI",
@@ -7548,7 +7992,8 @@
     "ativo": true
   },
   {
-    "cnpj": "416402480001020",
+    "cnpj": "16402480001020",
+    "dealer_cod": "64635",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "TJ MULTIMARCAS GUARULHOS LTDA",
     "bairro": "JARDIM CUMBICA",
@@ -7565,7 +8010,8 @@
     "ativo": true
   },
   {
-    "cnpj": "385046130001390",
+    "cnpj": "85046130001390",
+    "dealer_cod": "64636",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "H ALVES VEICULOS LTDA",
     "bairro": "JARDIM ANNY",
@@ -7582,7 +8028,8 @@
     "ativo": true
   },
   {
-    "cnpj": "410613710001600",
+    "cnpj": "10613710001600",
+    "dealer_cod": "64643",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "ELITE MULTIMARCAS LTDA",
     "bairro": "PARQUE DAS NACOES",
@@ -7599,7 +8046,8 @@
     "ativo": true
   },
   {
-    "cnpj": "463301940001940",
+    "cnpj": "63301940001940",
+    "dealer_cod": "64737",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "ANDRADE COMERCIO DE VEICULOS LTDA",
     "bairro": "VILA VICENTINA",
@@ -7616,7 +8064,8 @@
     "ativo": true
   },
   {
-    "cnpj": "365109700001840",
+    "cnpj": "65109700001840",
+    "dealer_cod": "65076",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "AS CARS IMPORTS COMERCIO DE VEICULOS NOVOS E USADOS LTDA",
     "bairro": "JARDIM SANTA VICENCIA",
@@ -7633,7 +8082,8 @@
     "ativo": true
   },
   {
-    "cnpj": "454596600001730",
+    "cnpj": "54596600001730",
+    "dealer_cod": "65547",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "PLATAFORMA CAR SHOP LTDA",
     "bairro": "VILA HULDA",
@@ -7650,7 +8100,8 @@
     "ativo": true
   },
   {
-    "cnpj": "414668640001800",
+    "cnpj": "14668640001800",
+    "dealer_cod": "65718",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "LUZFRAN VEICULOS MULTIMARCAS LTDA",
     "bairro": "VILA FLORIDA",
@@ -7668,6 +8119,7 @@
   },
   {
     "cnpj": "88001280001410",
+    "dealer_cod": "66231",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "ADRIANO DE MELO TINTI VEICULOS LTDA",
     "bairro": "JARDIM PRESIDENTE DUTRA",
@@ -7684,7 +8136,8 @@
     "ativo": true
   },
   {
-    "cnpj": "225055510001400",
+    "cnpj": "25055510001400",
+    "dealer_cod": "66339",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "BRU CARS MULTIMARCAS LTDA",
     "bairro": "PARQUE JUREMA",
@@ -7701,7 +8154,8 @@
     "ativo": true
   },
   {
-    "cnpj": "379946600001450",
+    "cnpj": "79946600001450",
+    "dealer_cod": "66379",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "L M DE OLIVEIRA MULTIMARCAS",
     "bairro": "VILA HULDA",
@@ -7719,6 +8173,7 @@
   },
   {
     "cnpj": "06082830001590",
+    "dealer_cod": "66508",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "RODRINELLI VEICULOS LTDA",
     "bairro": "VILA FLORIDA",
@@ -7736,6 +8191,7 @@
   },
   {
     "cnpj": "43463680001670",
+    "dealer_cod": "66969",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "JOSE RAIMUNDO OLIVEIRA DE JESUS",
     "bairro": "CIDADE JARDIM CUMBICA",
@@ -7752,7 +8208,8 @@
     "ativo": true
   },
   {
-    "cnpj": "343141600001270",
+    "cnpj": "43141600001270",
+    "dealer_cod": "67349",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "MARIA AUGUSTA FERREIRA LIMIRO VEICULOS",
     "bairro": "VILA FLORIDA",
@@ -7769,7 +8226,8 @@
     "ativo": true
   },
   {
-    "cnpj": "467530090001740",
+    "cnpj": "67530090001740",
+    "dealer_cod": "67363",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "BIRELLO MULTIMARCAS LTDA",
     "bairro": "VILA HULDA",
@@ -7786,7 +8244,8 @@
     "ativo": true
   },
   {
-    "cnpj": "465554160001770",
+    "cnpj": "65554160001770",
+    "dealer_cod": "67453",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "MARQUES VEICULOS E UTILITARIOS LTDA",
     "bairro": "JARDIM ROSA DE FRANCA",
@@ -7803,7 +8262,8 @@
     "ativo": true
   },
   {
-    "cnpj": "474403250001590",
+    "cnpj": "74403250001590",
+    "dealer_cod": "67540",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "JOHNNY S CAR MOTORS LTDA",
     "bairro": "VILA FLORIDA",
@@ -7820,7 +8280,8 @@
     "ativo": true
   },
   {
-    "cnpj": "398166170001150",
+    "cnpj": "98166170001150",
+    "dealer_cod": "67568",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "VINI MULTIMARCAS LTDA",
     "bairro": "JARDIM SANTA MENA",
@@ -7838,6 +8299,7 @@
   },
   {
     "cnpj": "76596310001660",
+    "dealer_cod": "67706",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "MAXXI VEL MULTIMARCAS COMERCIO VAREJISTA DE VEICULOS LTDA",
     "bairro": "VILA HULDA",
@@ -7854,7 +8316,8 @@
     "ativo": true
   },
   {
-    "cnpj": "204391430001010",
+    "cnpj": "04391430001010",
+    "dealer_cod": "67926",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "J CARLOS FERREIRA VEICULOS",
     "bairro": "JARDIM DOS PIMENTAS",
@@ -7872,6 +8335,7 @@
   },
   {
     "cnpj": "35324160001490",
+    "dealer_cod": "68726",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "EDUARDO BOULHOSA PIRES",
     "bairro": "JARDIM BANDEIRANTES",
@@ -7888,7 +8352,8 @@
     "ativo": true
   },
   {
-    "cnpj": "435805590001400",
+    "cnpj": "35805590001400",
+    "dealer_cod": "68783",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "A G DA SILVA VEICULOS",
     "bairro": "JARDIM ALBERTINA",
@@ -7905,7 +8370,8 @@
     "ativo": true
   },
   {
-    "cnpj": "483497960001190",
+    "cnpj": "83497960001190",
+    "dealer_cod": "68940",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "PATULO MOTORS LTDA",
     "bairro": "JARDIM GUARULHOS",
@@ -7922,7 +8388,8 @@
     "ativo": true
   },
   {
-    "cnpj": "510931130001100",
+    "cnpj": "10931130001100",
+    "dealer_cod": "68948",
     "gcm": "RITA DE CASSIA DECHIUCIO",
     "razao_social": "AND CAR AUTOMOVEIS LTDA",
     "bairro": "VILA FLORIDA",
@@ -7940,6 +8407,7 @@
   },
   {
     "cnpj": "59691580001980",
+    "dealer_cod": "67441",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "GARAGE FP COMERCIO DE VEICULOS LTDA",
     "bairro": "LAUZANE PAULISTA",
@@ -7957,6 +8425,7 @@
   },
   {
     "cnpj": "51225270001020",
+    "dealer_cod": "60379",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "OPP MOTORS LTDA",
     "bairro": "VILA CONSTANCA",
@@ -7973,7 +8442,8 @@
     "ativo": true
   },
   {
-    "cnpj": "264816690001360",
+    "cnpj": "64816690001360",
+    "dealer_cod": "60386",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "FELAVE COMERCIO E INTERMEDIACAO DE VEICULOS LTDA",
     "bairro": "VILA CONSTANCA",
@@ -7990,7 +8460,8 @@
     "ativo": true
   },
   {
-    "cnpj": "297278910001640",
+    "cnpj": "97278910001640",
+    "dealer_cod": "60463",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "AMARALCAR LTDA",
     "bairro": "CANGAIBA",
@@ -8007,7 +8478,8 @@
     "ativo": true
   },
   {
-    "cnpj": "269939300001870",
+    "cnpj": "69939300001870",
+    "dealer_cod": "60508",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "NOVA AYRA CARANGOS RACING LTDA",
     "bairro": "LAUZANE PAULISTA",
@@ -8024,7 +8496,8 @@
     "ativo": true
   },
   {
-    "cnpj": "379942560001710",
+    "cnpj": "79942560001710",
+    "dealer_cod": "60578",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "A L A SILVA VEICULOS LTDA",
     "bairro": "JARDIM BRASIL ZONA NORTE",
@@ -8042,6 +8515,7 @@
   },
   {
     "cnpj": "49887410001830",
+    "dealer_cod": "60817",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "JD MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "IMIRIM",
@@ -8058,7 +8532,8 @@
     "ativo": true
   },
   {
-    "cnpj": "321102410001800",
+    "cnpj": "21102410001800",
+    "dealer_cod": "60845",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "MULTINORTE VEICULOS LTDA",
     "bairro": "IMIRIM",
@@ -8075,7 +8550,8 @@
     "ativo": true
   },
   {
-    "cnpj": "743633260001100",
+    "cnpj": "43633260001100",
+    "dealer_cod": "60852",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "BARROS COMERCIO DE VEICULOS LTDA",
     "bairro": "IMIRIM",
@@ -8092,7 +8568,8 @@
     "ativo": true
   },
   {
-    "cnpj": "667707100001090",
+    "cnpj": "67707100001090",
+    "dealer_cod": "60855",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "ZANIN MULTIMARCAS LTDA",
     "bairro": "IMIRIM",
@@ -8110,6 +8587,7 @@
   },
   {
     "cnpj": "60372090001060",
+    "dealer_cod": "60864",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "PLENTY CAR COMERCIO DE VEICULOS LTDA",
     "bairro": "AGUA FRIA",
@@ -8127,6 +8605,7 @@
   },
   {
     "cnpj": "52997910001160",
+    "dealer_cod": "60905",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "ALFREDO BOSSHARDT COMERCIO DE VEICULOS LTDA",
     "bairro": "CASA VERDE",
@@ -8143,7 +8622,8 @@
     "ativo": true
   },
   {
-    "cnpj": "112648700001940",
+    "cnpj": "12648700001940",
+    "dealer_cod": "61024",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "AUTONOVE MULTIMARCAS LTDA",
     "bairro": "IMIRIM",
@@ -8161,6 +8641,7 @@
   },
   {
     "cnpj": "42702440001450",
+    "dealer_cod": "61149",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "OTIMA VEICULOS LTDA",
     "bairro": "JARDIM MARACANA",
@@ -8178,6 +8659,7 @@
   },
   {
     "cnpj": "70670190001020",
+    "dealer_cod": "61301",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "DIRECT MOTORS LTDA",
     "bairro": "VILA PEREIRA CERCA",
@@ -8194,7 +8676,8 @@
     "ativo": true
   },
   {
-    "cnpj": "112405230001210",
+    "cnpj": "12405230001210",
+    "dealer_cod": "61440",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "ATTRACTIVE MULTIMARCAS LTDA",
     "bairro": "VILA PEREIRA CERCA",
@@ -8212,6 +8695,7 @@
   },
   {
     "cnpj": "48466860001970",
+    "dealer_cod": "61501",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "SERGIO ROBERTO MURAKAMI VEICULOS",
     "bairro": "JARDIM MARACANA",
@@ -8228,7 +8712,8 @@
     "ativo": true
   },
   {
-    "cnpj": "185365090001190",
+    "cnpj": "85365090001190",
+    "dealer_cod": "61577",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "FLASH COMERCIO DE VEICULOS MULTIMARCAS LTDA",
     "bairro": "JARDIM MARACANA",
@@ -8246,6 +8731,7 @@
   },
   {
     "cnpj": "93481050001000",
+    "dealer_cod": "61779",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "FSD FLAVIO AUTOMOVEIS LTDA",
     "bairro": "VILA ROMERO",
@@ -8262,7 +8748,8 @@
     "ativo": true
   },
   {
-    "cnpj": "109734860001060",
+    "cnpj": "09734860001060",
+    "dealer_cod": "61809",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "BOX 3 COMERCIO DE VEICULOS E TAXIS LTDA",
     "bairro": "BRAS",
@@ -8279,7 +8766,8 @@
     "ativo": true
   },
   {
-    "cnpj": "380007670001930",
+    "cnpj": "80007670001930",
+    "dealer_cod": "62714",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "R A D AUTO SOLUTION ASSESSORIA",
     "bairro": "SANTANA",
@@ -8296,7 +8784,8 @@
     "ativo": true
   },
   {
-    "cnpj": "196604130001200",
+    "cnpj": "96604130001200",
+    "dealer_cod": "63260",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "BASSO MULTIMARCAS LTDA",
     "bairro": "JARDIM MARACANA",
@@ -8313,7 +8802,8 @@
     "ativo": true
   },
   {
-    "cnpj": "595060480001190",
+    "cnpj": "95060480001190",
+    "dealer_cod": "63339",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "SALOCAR VEICULOS LTDA",
     "bairro": "LIMAO",
@@ -8330,7 +8820,8 @@
     "ativo": true
   },
   {
-    "cnpj": "433693520001210",
+    "cnpj": "33693520001210",
+    "dealer_cod": "63414",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "JM VEICULOS LTDA",
     "bairro": "VILA CARBONE",
@@ -8347,7 +8838,8 @@
     "ativo": true
   },
   {
-    "cnpj": "354604790001230",
+    "cnpj": "54604790001230",
+    "dealer_cod": "64670",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "LUCAS MARQUES VEICULOS",
     "bairro": "LIMAO",
@@ -8365,6 +8857,7 @@
   },
   {
     "cnpj": "08618660001970",
+    "dealer_cod": "65206",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "DECAROLLI VEICULOS LTDA",
     "bairro": "VILA ALBERTINA",
@@ -8382,6 +8875,7 @@
   },
   {
     "cnpj": "77254580001570",
+    "dealer_cod": "65214",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "OPENCAR COMERCIO DE VEICULOS LIMITADA",
     "bairro": "JARDIM MARACANA",
@@ -8399,6 +8893,7 @@
   },
   {
     "cnpj": "43206560001420",
+    "dealer_cod": "66665",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "CORET CAR COMERCIO DE VEICULOS LTDA",
     "bairro": "IMIRIM",
@@ -8415,7 +8910,8 @@
     "ativo": true
   },
   {
-    "cnpj": "678631830001400",
+    "cnpj": "78631830001400",
+    "dealer_cod": "66794",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "BASILE CENTER CAR VEICULOS LTDA",
     "bairro": "JARDIM MARACANA",
@@ -8432,7 +8928,8 @@
     "ativo": true
   },
   {
-    "cnpj": "438794500001090",
+    "cnpj": "38794500001090",
+    "dealer_cod": "66796",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "HU MANOS CAR COMERCIO DE VEICULOS LTDA",
     "bairro": "IMIRIM",
@@ -8449,7 +8946,8 @@
     "ativo": true
   },
   {
-    "cnpj": "107455240001650",
+    "cnpj": "07455240001650",
+    "dealer_cod": "66834",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "GARAGEM 7 MULTIMARCAS LTDA",
     "bairro": "JARDIM MARACANA",
@@ -8466,7 +8964,8 @@
     "ativo": true
   },
   {
-    "cnpj": "404817340001540",
+    "cnpj": "04817340001540",
+    "dealer_cod": "67101",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "RAPTOR MOTORS LTDA",
     "bairro": "IMIRIM",
@@ -8483,7 +8982,8 @@
     "ativo": true
   },
   {
-    "cnpj": "417379310001540",
+    "cnpj": "17379310001540",
+    "dealer_cod": "67237",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "CAIO LABONE DE OLIVEIRA VEICULOS",
     "bairro": "JARDIM MARACANA",
@@ -8501,6 +9001,7 @@
   },
   {
     "cnpj": "77783970001960",
+    "dealer_cod": "67293",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "REINALDO PEREIRA DE AGUIAR",
     "bairro": "MOINHO VELHO",
@@ -8517,7 +9018,8 @@
     "ativo": true
   },
   {
-    "cnpj": "179955950001650",
+    "cnpj": "79955950001650",
+    "dealer_cod": "67396",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "R CAR MULTIMARCAS COMERCIO DE VEICULOS LTDA",
     "bairro": "IMIRIM",
@@ -8534,7 +9036,8 @@
     "ativo": true
   },
   {
-    "cnpj": "252969720001040",
+    "cnpj": "52969720001040",
+    "dealer_cod": "67490",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "PERLUI VEICULOS LTDA",
     "bairro": "LIMAO",
@@ -8551,7 +9054,8 @@
     "ativo": true
   },
   {
-    "cnpj": "209834840001430",
+    "cnpj": "09834840001430",
+    "dealer_cod": "67729",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "HERMANOS MULTIMARCAS LTDA",
     "bairro": "CASA VERDE",
@@ -8568,7 +9072,8 @@
     "ativo": true
   },
   {
-    "cnpj": "220420790001560",
+    "cnpj": "20420790001560",
+    "dealer_cod": "67883",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "LUANA ALVES PUPE DE MORAIS",
     "bairro": "JARDIM BRASIL ZONA NORTE",
@@ -8585,7 +9090,8 @@
     "ativo": true
   },
   {
-    "cnpj": "438262590001070",
+    "cnpj": "38262590001070",
+    "dealer_cod": "68019",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "LEAO MOTORS REVENDEDORA DE VEICULOS LTDA",
     "bairro": "VILA GUSTAVO",
@@ -8602,7 +9108,8 @@
     "ativo": true
   },
   {
-    "cnpj": "285852910001460",
+    "cnpj": "85852910001460",
+    "dealer_cod": "68038",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "AOKAR COMERCIO E SERVICOS DE VEICULOS LTDA",
     "bairro": "JARDIM DAS LARANJEIRAS",
@@ -8619,7 +9126,8 @@
     "ativo": true
   },
   {
-    "cnpj": "311307910001060",
+    "cnpj": "11307910001060",
+    "dealer_cod": "68184",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "ALL EXPRESS COMERCIAL LTDA",
     "bairro": "VILA BARUEL",
@@ -8636,7 +9144,8 @@
     "ativo": true
   },
   {
-    "cnpj": "218932450001650",
+    "cnpj": "18932450001650",
+    "dealer_cod": "68297",
     "gcm": "RUBENS MAIA LEAL",
     "razao_social": "MULTIPLIKAR AUTOMOVEIS LTDA",
     "bairro": "VILA SAO GERALDO",
