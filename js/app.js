@@ -2,10 +2,9 @@
 // app.js — CARBANK · Potencial Leste/Norte/GRU
 // ============================================================
 
-window.CARBANK_CONFIG = {
-  supabaseUrl: 'https://rgutyxnpbucwipfvtybu.supabase.co',
-  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJndXR5eG5wYnVjd2lwZnZ0eWJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxNDE5NTgsImV4cCI6MjA4OTcxNzk1OH0.EGjSCaTN8y8jT9_4mU4jj9TBGNo-JjbjDGXwkmlBBY8',
-};
+const CFG      = window.CARBANK_CONFIG || {};
+const SUPA_URL = CFG.supabaseUrl || 'https://rgutyxnpbucwipfvtybu.supabase.co';
+const SUPA_KEY = CFG.supabaseKey || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJndXR5eG5wYnVjd2lwZnZ0eWJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxNDE5NTgsImV4cCI6MjA4OTcxNzk1OH0.EGjSCaTN8y8jT9_4mU4jj9TBGNo-JjbjDGXwkmlBBY8';
 
 const MR_META = {
   'MR-L1': { nome:'Brás · Moóca · Tatuapé · Carrão',                    zona:'Zona Leste',  cor:'#D85A30', bg:'#FAECE7', txt:'#712B13', lat:-23.548, lng:-46.590, scatter:0.025 },
@@ -51,14 +50,24 @@ function initSupabase() {
 async function loadLojas() {
   showLoading(true);
   try {
-    const { data, error } = await sb.from('lojas').select('*').order('gcm').order('razao_social');
+    // Timeout de 8 segundos para não travar
+    const timeout = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('timeout')), 8000)
+    );
+    const query = sb.from('lojas').select('*').order('gcm').order('razao_social');
+    const { data, error } = await Promise.race([query, timeout]);
     if (error) throw error;
     allLojas = data || [];
     processGCMColors();
     renderAll();
   } catch(e) {
-    showToast('Erro ao carregar: ' + e.message, 'error');
-    await loadSeed();
+    if (e.message === 'timeout') {
+      showToast('Supabase demorou — verifique config.js', 'error');
+    } else {
+      showToast('Erro: ' + e.message, 'error');
+    }
+    allLojas = [];
+    renderAll();
   } finally {
     showLoading(false);
   }
@@ -505,13 +514,13 @@ function switchPage(id) {
 
 // ── IMPORT ──
 async function importarSeed() {
-  if (!sb) { showToast('Supabase não configurado','error'); return; }
-  showLoading(true,'Importando dados...');
+  if (!sb) { showToast('Supabase não configurado', 'error'); return; }
+  showLoading(true, 'Importando dados...');
   try {
     const r = await fetch('data_seed.json');
+    if (!r.ok) throw new Error('data_seed.json não encontrado');
     const raw = await r.json();
 
-    // Remove duplicatas pelo CNPJ (mantém o primeiro)
     const seen = new Set();
     const data = raw.filter(l => {
       if (!l.cnpj || seen.has(l.cnpj)) return false;
@@ -519,13 +528,17 @@ async function importarSeed() {
       return true;
     });
 
-    // Importa em lotes de 100 para evitar timeout
-    const BATCH = 100;
+    // Limpa primeiro
+    showLoading(true, 'Limpando dados antigos...');
+    await sb.from('lojas').delete().neq('id', 0);
+
+    // Importa em lotes de 50
+    const BATCH = 50;
     let total = 0;
     for (let i = 0; i < data.length; i += BATCH) {
       const batch = data.slice(i, i + BATCH);
       showLoading(true, `Importando ${Math.min(i+BATCH, data.length)} de ${data.length}...`);
-      const { error } = await sb.from('lojas').upsert(batch, {onConflict:'cnpj'});
+      const { error } = await sb.from('lojas').insert(batch);
       if (error) throw error;
       total += batch.length;
     }
@@ -533,7 +546,7 @@ async function importarSeed() {
     showToast(`${total} lojas importadas ✓`, 'success');
     await loadLojas();
   } catch(e) {
-    showToast('Erro: '+e.message,'error');
+    showToast('Erro: ' + e.message, 'error');
   } finally {
     showLoading(false);
   }
