@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carbank · Potencial Leste/Norte/GRU</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <script src="config.js"></script>
+</head>
+<body>
+
+<div id="loading-overlay">
+  <div class="spinner"></div>
+  <span>Carregando dados...</span>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<div id="confirm-modal" class="modal-backdrop hidden">
+  <div class="modal-box">
+    <div class="modal-title">Confirmar ação</div>
+    <div class="modal-body" id="modal-msg"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="document.getElementById('confirm-modal').classList.add('hidden')">Cancelar</button>
+      <button class="btn btn-danger" id="modal-confirm-btn" onclick="executarToggle()">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar">
+  <a class="navbar-brand" href="#">
+    <div class="logo-dot" style="background:#D85A30;">CB</div>
+    Carbank · Potencial Leste/Norte/GRU
+  </a>
+  <div class="navbar-tabs">
+    <button class="nav-tab active" data-page="dashboard" onclick="switchPage('dashboard')">Dashboard</button>
+    <button class="nav-tab" data-page="gcm"       onclick="switchPage('gcm')">GCMs</button>
+    <button class="nav-tab" data-page="planilha"  onclick="switchPage('planilha')">Planilha</button>
+    <button class="nav-tab" data-page="mapa"      onclick="switchPage('mapa')">Mapa</button>
+  </div>
+  <div class="navbar-right">
+    <span id="badge-total" class="badge-total" style="background:#FAEEDA;color:#854F0B;">— lojas ativas</span>
+    <button class="btn btn-ghost btn-sm" onclick="importarSeed()">↑ Importar dados</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- DASHBOARD -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="page-dashboard" class="page active">
+
+  <div class="metrics-row">
+    <div class="metric-card" style="border-left:4px solid #D85A30;">
+      <div class="metric-label">Lojas ativas</div>
+      <div class="metric-value" id="m-lojas">—</div>
+      <div class="metric-sub" id="m-lojas-sub">em micro regiões</div>
+    </div>
+    <div class="metric-card" style="border-left:4px solid #534AB7;">
+      <div class="metric-label">Contratos Carbank</div>
+      <div class="metric-value" id="m-contratos">—</div>
+      <div class="metric-sub">total mapeado</div>
+    </div>
+    <div class="metric-card" style="border-left:4px solid #1D9E75;">
+      <div class="metric-label">Volume Carbank</div>
+      <div class="metric-value" id="m-volume">—</div>
+      <div class="metric-sub">potencial</div>
+    </div>
+    <div class="metric-card" style="border-left:4px solid #185FA5;">
+      <div class="metric-label">GCMs ativos</div>
+      <div class="metric-value" id="m-gcms">—</div>
+      <div class="metric-sub">colaboradores</div>
+    </div>
+  </div>
+
+  <!-- MR Cards -->
+  <div style="font-size:13px;font-weight:600;color:var(--gray-600);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;">Micro Regiões</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px;margin-bottom:24px;" id="mr-cards-dash"></div>
+
+  <!-- Comparativo + Porte -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-header"><span class="card-title">Volume Carbank por Micro Região</span></div>
+      <div class="card-body" id="comparativo-mr"></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">Distribuição por Porte</span></div>
+      <div class="card-body" id="porte-chart"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- GCMs -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="page-gcm" class="page">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;" id="gcm-cards"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PLANILHA -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="page-planilha" class="page">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span id="tbl-count" style="font-size:13px;color:var(--gray-600);">— registros</span>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <button class="btn btn-ghost btn-sm" onclick="location.reload()">↺ Atualizar</button>
+    </div>
+  </div>
+
+  <div class="filter-bar" style="margin-bottom:14px;">
+    <input type="text" id="f-busca" placeholder="Buscar razão social, bairro, GCM..." style="max-width:300px;"/>
+    <select id="f-zona" style="max-width:180px;">
+      <option value="">Todas as zonas</option>
+      <option>Zona Leste</option>
+      <option>Zona Norte</option>
+      <option>Guarulhos</option>
+      <option>Mogi das Cruzes</option>
+      <option>Suzano</option>
+      <option>Itaquaquecetuba</option>
+      <option>Ferraz De Vasconcelos</option>
+      <option>Arujá</option>
+      <option>Zona Sul</option>
+      <option>Centro</option>
+    </select>
+    <select id="f-mr" style="max-width:130px;">
+      <option value="">Todas as MRs</option>
+      <option>MR-L1</option><option>MR-L2</option><option>MR-L3</option><option>MR-L4</option>
+      <option>MR-N1</option><option>MR-N2</option>
+      <option>MR-G1</option><option>MR-G2</option>
+      <option>MR-M1</option><option>MR-M2</option><option>MR-M3</option>
+      <option>MR-S1</option><option>MR-C1</option>
+    </select>
+    <select id="f-gcm" style="max-width:220px;">
+      <option value="">Todos os GCMs</option>
+    </select>
+    <select id="f-porte" style="max-width:170px;">
+      <option value="">Todos os portes</option>
+      <option>F. > 30 GRAVAMES</option>
+      <option>E. 21-30 GRAVAMES</option>
+      <option>D. 11-20 GRAVAMES</option>
+      <option>C. 6-10 GRAVAMES</option>
+      <option>B. 2-5 GRAVAMES</option>
+      <option>A. 1 GRAVAME</option>
+    </select>
+    <select id="f-status" style="max-width:140px;">
+      <option value="ativo">Apenas ativas</option>
+      <option value="">Todas</option>
+      <option value="inativo">Apenas inativas</option>
+    </select>
+  </div>
+
+  <div class="table-wrap" style="max-height:calc(100vh - 280px);overflow-y:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>GCM</th>
+          <th>Razão Social</th>
+          <th>Bairro</th>
+          <th>Zona</th>
+          <th>MR</th>
+          <th>Porte</th>
+          <th style="text-align:center;">Contr. CB</th>
+          <th style="text-align:right;">Volume CB</th>
+          <th style="text-align:center;">Contr. Geral</th>
+          <th style="text-align:right;">Vol. Geral</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="lojas-tbody"></tbody>
+    </table>
+  </div>
+
+  <div id="paginacao" style="display:flex;align-items:center;gap:8px;margin-top:12px;justify-content:center;"></div>
+
+  <div style="margin-top:16px;padding:12px 16px;background:#EDE9FE;border-radius:8px;font-size:12px;color:#4C1D95;border:1px solid #C4B5FD;">
+    <strong>Planilha somente leitura.</strong> Os GCMs já estão atribuídos. Use os filtros para navegar e o botão <strong>✕</strong> para desativar lojas fora do perfil.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- MAPA -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="page-mapa" class="page">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center;">
+    <select id="mapa-mr-filter" style="max-width:140px;">
+      <option value="">Todas as MRs</option>
+      <option>MR-L1</option><option>MR-L2</option><option>MR-L3</option><option>MR-L4</option>
+      <option>MR-N1</option><option>MR-N2</option>
+      <option>MR-G1</option><option>MR-G2</option>
+      <option>MR-M1</option><option>MR-M2</option><option>MR-M3</option>
+      <option>MR-S1</option><option>MR-C1</option>
+    </select>
+    <select id="mapa-gcm-filter" style="max-width:240px;">
+      <option value="">Todos os GCMs</option>
+    </select>
+    <span style="font-size:12px;color:var(--gray-600);">· Clique nos pontos para detalhes</span>
+    <div style="margin-left:auto;display:flex;flex-wrap:wrap;gap:6px;" id="mapa-legend"></div>
+  </div>
+  <div id="mapa-container"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/app.js"></script>
+<style>
+  .leaflet-popup-content-wrapper{border-radius:10px!important;padding:0!important;box-shadow:0 4px 16px rgba(0,0,0,.15)!important;}
+  .leaflet-popup-content{margin:12px!important;}
+  .leaflet-popup-tip{display:none!important;}
+</style>
+</body>
+</html>
