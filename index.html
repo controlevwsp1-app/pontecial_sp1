@@ -42,6 +42,7 @@
     <button class="nav-tab" data-page="planilha"  onclick="switchPage('planilha')">Planilha</button>
     <button class="nav-tab" data-page="mapa"      onclick="switchPage('mapa')">Mapa</button>
     <button class="nav-tab" data-page="upload"    onclick="switchPage('upload')" style="color:#D85A30;font-weight:600;">↑ Atualizar</button>
+    <button class="nav-tab" data-page="geocode"   onclick="switchPage('geocode')" style="color:#185FA5;font-weight:600;">📍 Geocodificar</button>
   </div>
   <div class="navbar-right">
     <span id="badge-total" class="badge-total" style="background:#FAEEDA;color:#854F0B;">— lojas ativas</span>
@@ -237,6 +238,7 @@
     </div>
   </div>
 
+  <div id="geo-aviso" style="display:none;margin-bottom:10px;padding:8px 14px;background:#FEF9C3;border-radius:8px;font-size:12px;color:#854D0E;border:1px solid #FDE68A;"></div>
   <div id="mapa-container"></div>
 </div>
 
@@ -303,6 +305,72 @@
     <div id="import-log" style="margin-top:16px;display:none;">
       <div style="font-size:12px;font-weight:600;color:var(--gray-600);margin-bottom:6px;">LOG DE IMPORTAÇÃO</div>
       <div id="log-content" style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:12px;font-size:12px;font-family:monospace;max-height:200px;overflow-y:auto;color:var(--gray-800);white-space:pre-wrap;"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- GEOCODIFICAÇÃO -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="page-geocode" class="page">
+  <div style="max-width:680px;margin:0 auto;">
+
+    <div class="card" style="margin-bottom:16px;border-top:3px solid #185FA5;">
+      <div class="card-header">
+        <span class="card-title">📍 Geocodificar endereços</span>
+        <span id="geo-status-badge" style="font-size:12px;color:var(--gray-500);">Carregando...</span>
+      </div>
+      <div class="card-body">
+        <p style="font-size:13px;color:var(--gray-600);margin-bottom:16px;line-height:1.6;">
+          Este processo busca as coordenadas exatas (latitude/longitude) de cada loja usando o endereço da planilha.
+          Roda uma vez só e salva no banco — depois o mapa mostra os pontos no local correto.
+          <br/><br/>
+          Usa o <strong>Nominatim/OpenStreetMap</strong> (gratuito). Processa <strong>1 loja por segundo</strong> para respeitar o limite da API.
+        </p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px;">
+          <div class="metric" style="padding:10px;">
+            <div class="metric-label">Total de lojas</div>
+            <div class="metric-value" id="geo-total" style="font-size:20px;">—</div>
+          </div>
+          <div class="metric" style="padding:10px;">
+            <div class="metric-label">Já geocodificadas</div>
+            <div class="metric-value" id="geo-done" style="font-size:20px;color:#1D9E75;">—</div>
+          </div>
+          <div class="metric" style="padding:10px;">
+            <div class="metric-label">Pendentes</div>
+            <div class="metric-value" id="geo-pending" style="font-size:20px;color:#D85A30;">—</div>
+          </div>
+        </div>
+
+        <div class="progress" style="margin-bottom:16px;height:10px;">
+          <div id="geo-progress-bar" class="progress-fill" style="width:0%;background:#185FA5;transition:width .3s;"></div>
+        </div>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button id="btn-geo-start" class="btn btn-primary" style="background:#185FA5;border-color:#185FA5;" onclick="iniciarGeocodificacao()">
+            ▶ Iniciar geocodificação
+          </button>
+          <button id="btn-geo-pause" class="btn btn-ghost" onclick="pausarGeocodificacao()" style="display:none;">
+            ⏸ Pausar
+          </button>
+          <button class="btn btn-ghost btn-sm" onclick="carregarStatusGeo()">
+            ↺ Atualizar status
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Log em tempo real -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Log em tempo real</span>
+        <span id="geo-current" style="font-size:12px;color:var(--gray-500);max-width:400px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
+      </div>
+      <div class="card-body" style="padding:0;">
+        <div id="geo-log" style="background:var(--gray-50);padding:12px;font-size:11px;font-family:monospace;height:240px;overflow-y:auto;color:var(--gray-700);white-space:pre-wrap;border-radius:0 0 10px 10px;"></div>
+      </div>
     </div>
 
   </div>
