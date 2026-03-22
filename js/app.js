@@ -346,8 +346,8 @@ function renderTable() {
       <td>${porteBadge(l.porte)}</td>
       <td style="text-align:center;background:#f0faf3;">${prodQtdBadge(l.prod_qtd, l.contratos_carbank)}</td>
       <td style="text-align:right;background:#f0faf3;">${prodValorBadge(l.prod_valor, l.volume_carbank)}</td>
-      <td style="text-align:center;font-weight:600;color:#185FA5;">${l.contratos_carbank||0}</td>
-      <td style="text-align:right;font-weight:600;color:#185FA5;">${fmtBRL(l.volume_carbank)}</td>
+      <td style="text-align:center;font-weight:600;color:#185FA5;background:#EBF4FF;">${l.contratos_carbank||0}</td>
+      <td style="text-align:right;font-weight:600;color:#185FA5;background:#EBF4FF;">${fmtBRL(l.volume_carbank)}</td>
       <td style="text-align:center;color:var(--gray-600);">${l.contratos_geral||0}</td>
       <td style="text-align:right;color:var(--gray-600);">${fmtBRL(l.volume_geral)}</td>
     </tr>`;
@@ -782,16 +782,31 @@ async function executarImportAnalitico() {
       log(`✅ ${dealer.dealer_cod} - ${dealer.dealer_nome.slice(0,35)} → ${dealer.qtd} contratos / ${fmtBRL(dealer.valor)}`);
       ok++;
     } else {
-      // Tenta por nome
-      const nomeBusca = dealer.dealer_nome.toUpperCase().slice(0,20);
+      // Normaliza nome: maiúsculas, remove sufixos e caracteres especiais
+      const normName = s => s.toUpperCase()
+        .replace(/\b(LTDA|EIRELI|S\.?A\.?|ME|EPP|COM\b|DE\b|DO\b|DA\b|\bE\b)\b\.?/g, '')
+        .replace(/[^A-Z0-9\s]/g, ' ')
+        .replace(/\s+/g, ' ').trim().slice(0, 20);
+
+      const nBusca = normName(dealer.dealer_nome);
+      // Tenta com os primeiros 12 chars do nome normalizado
+      const busca  = dealer.dealer_nome.replace(/\b(ltda|eireli|s\.?a\.?|me|epp)\b\.?/gi,'').trim().slice(0,12);
+
       const { data: porNome } = await sb.from('lojas')
         .select('id, razao_social')
-        .ilike('razao_social', `%${nomeBusca}%`)
-        .limit(5);
+        .ilike('razao_social', `%${busca}%`)
+        .limit(10);
 
-      if (porNome && porNome.length > 0) {
-        for (const loja of porNome) {
-          // Aproveita para salvar o dealer_cod
+      // Filtra os que têm maior similaridade
+      const matched = porNome ? porNome.filter(loja => {
+        const lNorm = normName(loja.razao_social);
+        return lNorm.slice(0,12) === nBusca.slice(0,12) ||
+               nBusca.includes(lNorm.slice(0,10)) ||
+               lNorm.includes(nBusca.slice(0,10));
+      }) : [];
+
+      if (matched.length > 0) {
+        for (const loja of matched) {
           await sb.from('lojas').update({
             dealer_cod: dealer.dealer_cod,
             prod_qtd:   dealer.qtd,
@@ -799,10 +814,22 @@ async function executarImportAnalitico() {
             prod_mes:   mes,
           }).eq('id', loja.id);
         }
-        log(`🔍 ${dealer.dealer_cod} - ${dealer.dealer_nome.slice(0,35)} → encontrado por nome (${porNome[0].razao_social.slice(0,30)})`);
+        log(`🔍 ${dealer.dealer_cod} - ${dealer.dealer_nome.slice(0,35)} → por nome (${matched[0].razao_social.slice(0,30)})`);
+        ok++;
+      } else if (porNome && porNome.length > 0) {
+        // Fallback mais amplo — pega o primeiro resultado
+        for (const loja of porNome.slice(0,1)) {
+          await sb.from('lojas').update({
+            dealer_cod: dealer.dealer_cod,
+            prod_qtd:   dealer.qtd,
+            prod_valor: dealer.valor,
+            prod_mes:   mes,
+          }).eq('id', loja.id);
+        }
+        log(`🔎 ${dealer.dealer_cod} - ${dealer.dealer_nome.slice(0,35)} → fallback (${porNome[0].razao_social.slice(0,30)})`);
         ok++;
       } else {
-        log(`⚠️  ${dealer.dealer_cod} - ${dealer.dealer_nome.slice(0,35)} → não encontrado na base`);
+        log(`⚠️  ${dealer.dealer_cod} - ${dealer.dealer_nome.slice(0,35)} → não encontrado`);
         semMatch++;
       }
     }
