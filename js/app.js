@@ -814,3 +814,240 @@ function resetDropZone() {
     <div style="font-size:11px;color:var(--gray-400);margin-top:8px;">Aceita .xlsx e .xlsm</div>
     <input type="file" id="file-input" accept=".xlsx,.xlsm" style="display:none" onchange="handleFile(this.files[0])"/>`;
 }
+
+// ============================================================
+// MODO COMPARAÇÃO DE GCMs
+// ============================================================
+
+let modoComparacao = false;
+
+function toggleComparacao() {
+  modoComparacao = !modoComparacao;
+  const btnComp   = document.getElementById('btn-comparar');
+  const modoNorm  = document.getElementById('modo-normal');
+  const modoComp  = document.getElementById('modo-comparacao');
+  const compPanel = document.getElementById('comp-panel');
+
+  if (modoComparacao) {
+    modoNorm.style.display  = 'none';
+    modoComp.style.display  = 'flex';
+    btnComp.style.background = '#534AB720';
+    btnComp.textContent     = '⇄ Comparar GCMs';
+
+    // Popula os selects de comparação
+    const gcms = [...new Set(allLojas.filter(l=>l.ativo!==false).map(l=>l.gcm).filter(Boolean))].sort();
+    const optsA = gcms.map((g,i) => `<option value="${g}" ${i===0?'selected':''}>${g}</option>`).join('');
+    const optsB = gcms.map((g,i) => `<option value="${g}" ${i===1?'selected':''}>${g}</option>`).join('');
+    document.getElementById('gcm-comp-a').innerHTML = optsA;
+    document.getElementById('gcm-comp-b').innerHTML = optsB;
+    aplicarComparacao();
+  } else {
+    modoNorm.style.display  = 'flex';
+    modoComp.style.display  = 'none';
+    compPanel.style.display = 'none';
+    btnComp.style.background = '';
+    refreshMapa();
+  }
+}
+
+function aplicarComparacao() {
+  const gcmA = document.getElementById('gcm-comp-a').value;
+  const gcmB = document.getElementById('gcm-comp-b').value;
+  if (!gcmA || !gcmB) return;
+
+  const active = allLojas.filter(l => l.ativo !== false);
+  const lojasA = active.filter(l => l.gcm === gcmA);
+  const lojasB = active.filter(l => l.gcm === gcmB);
+  const corA   = gcmColorMap[gcmA] || '#D85A30';
+  const corB   = gcmColorMap[gcmB] || '#534AB7';
+
+  // MRs em comum
+  const mrsA      = new Set(lojasA.map(l => l.micro_regiao));
+  const mrsB      = new Set(lojasB.map(l => l.micro_regiao));
+  const mrsComuns = [...mrsA].filter(mr => mrsB.has(mr));
+
+  // Lojas nas MRs em comum
+  const lojasAcomuns = lojasA.filter(l => mrsComuns.includes(l.micro_regiao));
+  const lojasBcomuns = lojasB.filter(l => mrsComuns.includes(l.micro_regiao));
+
+  // Atualiza painel
+  document.getElementById('comp-panel').style.display = 'block';
+
+  const cardA = document.getElementById('comp-card-a');
+  cardA.innerHTML = `
+    <div style="padding:12px 14px;background:${corA}12;border-bottom:1px solid var(--gray-100);">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:32px;height:32px;border-radius:50%;background:${corA}25;color:${corA};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;">${gcmA.split(' ')[0][0]}${gcmA.split(' ')[1]?.[0]||''}</div>
+        <div style="font-size:12px;font-weight:600;color:${corA};line-height:1.2;">${gcmA}</div>
+      </div>
+    </div>
+    <div style="padding:12px 14px;">
+      ${statRow('Lojas totais', lojasA.length, corA)}
+      ${statRow('Contratos CB', lojasA.reduce((s,l)=>s+(l.contratos_carbank||0),0), corA)}
+      ${statRow('Volume CB', fmtK(lojasA.reduce((s,l)=>s+(l.volume_carbank||0),0)), corA)}
+      ${statRow('MRs atendidas', [...mrsA].join(', '), corA)}
+      <div style="margin-top:10px;padding:8px;background:${corA}10;border-radius:6px;font-size:11px;color:${corA};font-weight:500;">
+        ${lojasAcomuns.length} lojas em MRs compartilhadas
+      </div>
+    </div>`;
+
+  const cardB = document.getElementById('comp-card-b');
+  cardB.style.borderTopColor = corB;
+  cardB.innerHTML = `
+    <div style="padding:12px 14px;background:${corB}12;border-bottom:1px solid var(--gray-100);">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:32px;height:32px;border-radius:50%;background:${corB}25;color:${corB};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;">${gcmB.split(' ')[0][0]}${gcmB.split(' ')[1]?.[0]||''}</div>
+        <div style="font-size:12px;font-weight:600;color:${corB};line-height:1.2;">${gcmB}</div>
+      </div>
+    </div>
+    <div style="padding:12px 14px;">
+      ${statRow('Lojas totais', lojasB.length, corB)}
+      ${statRow('Contratos CB', lojasB.reduce((s,l)=>s+(l.contratos_carbank||0),0), corB)}
+      ${statRow('Volume CB', fmtK(lojasB.reduce((s,l)=>s+(l.volume_carbank||0),0)), corB)}
+      ${statRow('MRs atendidas', [...mrsB].join(', '), corB)}
+      <div style="margin-top:10px;padding:8px;background:${corB}10;border-radius:6px;font-size:11px;color:${corB};font-weight:500;">
+        ${lojasBcomuns.length} lojas em MRs compartilhadas
+      </div>
+    </div>`;
+
+  const overlap = document.getElementById('comp-card-overlap');
+  const temSobreposicao = mrsComuns.length > 0;
+  overlap.innerHTML = `
+    <div style="padding:12px 14px;background:#F1EFE8;border-bottom:1px solid var(--gray-100);">
+      <div style="font-size:12px;font-weight:600;color:#2C2C2A;">⇄ Análise de Remanejamento</div>
+    </div>
+    <div style="padding:12px 14px;">
+      ${temSobreposicao ? `
+        <div style="padding:8px;background:#FEF9C3;border-radius:6px;font-size:11px;color:#854D0E;font-weight:600;margin-bottom:10px;">
+          ⚠️ MRs em comum: ${mrsComuns.join(', ')}
+        </div>
+        <div style="font-size:11px;color:var(--gray-600);margin-bottom:8px;">Lojas que podem ser remanejadas entre os GCMs:</div>
+        ${mrsComuns.map(mr => {
+          const metaMR = MR_META[mr] || {};
+          const nA = lojasA.filter(l=>l.micro_regiao===mr).length;
+          const nB = lojasB.filter(l=>l.micro_regiao===mr).length;
+          return `<div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+            <span class="mr-pill" style="background:${metaMR.cor||'#888'};font-size:9px;">${mr}</span>
+            <span style="font-size:11px;color:${corA};font-weight:600;">${nA}</span>
+            <span style="font-size:10px;color:var(--gray-400);">↔</span>
+            <span style="font-size:11px;color:${corB};font-weight:600;">${nB}</span>
+          </div>`;
+        }).join('')}
+        <div style="margin-top:12px;font-size:11px;color:var(--gray-500);line-height:1.5;">
+          💡 Sugestão: considere transferir lojas da MR com mais concentração para equilibrar as carteiras.
+        </div>
+      ` : `
+        <div style="padding:12px;background:#F0FFF4;border-radius:6px;font-size:12px;color:#166534;font-weight:500;text-align:center;">
+          ✅ Sem sobreposição de MRs!<br/>
+          <span style="font-weight:400;font-size:11px;">Estes GCMs atendem regiões completamente distintas.</span>
+        </div>
+      `}
+    </div>`;
+
+  // Atualiza mapa com só esses 2 GCMs
+  renderMapaComparacao(gcmA, gcmB, corA, corB, mrsComuns);
+}
+
+function statRow(label, value, cor) {
+  return `<div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:12px;">
+    <span style="color:var(--gray-500);">${label}</span>
+    <span style="font-weight:600;color:${cor};">${value}</span>
+  </div>`;
+}
+
+function renderMapaComparacao(gcmA, gcmB, corA, corB, mrsComuns) {
+  if (!mapInstance) initMapa();
+  mapMarkers.forEach(m => m.remove());
+  mapMarkers = [];
+
+  const active = allLojas.filter(l => l.ativo !== false);
+  const lojasA = active.filter(l => l.gcm === gcmA);
+  const lojasB = active.filter(l => l.gcm === gcmB);
+
+  // Círculos de área por MR
+  const mrsTodas = [...new Set([...lojasA, ...lojasB].map(l => l.micro_regiao))];
+  mrsTodas.forEach(mr => {
+    const meta = MR_META[mr] || {};
+    if (!meta.lat) return;
+    const isComum = mrsComuns.includes(mr);
+    const c = L.circleMarker([meta.lat, meta.lng], {
+      radius: 28,
+      fillColor: isComum ? '#F59E0B' : meta.cor,
+      color: isComum ? '#D97706' : '#fff',
+      weight: isComum ? 2.5 : 1.5,
+      opacity: 1,
+      fillOpacity: isComum ? 0.22 : 0.10,
+      dashArray: isComum ? '6,3' : null,
+    }).addTo(mapInstance);
+    if (isComum) {
+      c.bindTooltip(`⚠️ ${mr} — MR compartilhada`, {permanent:false, direction:'top'});
+    }
+    mapMarkers.push(c);
+  });
+
+  // Pontos GCM A
+  lojasA.forEach(l => {
+    const meta = MR_META[l.micro_regiao] || {};
+    const jLat = meta.lat + (Math.random()-.5)*(meta.scatter||0.025);
+    const jLng = meta.lng + (Math.random()-.5)*((meta.scatter||0.025)*1.2);
+    const dot = L.circleMarker([jLat, jLng], {
+      radius:6, fillColor:corA, color:'#fff', weight:1.5, opacity:1, fillOpacity:0.9
+    }).addTo(mapInstance);
+    dot.bindPopup(popupLoja(l, corA, 'A'));
+    dot.on('mouseover',function(){this.setStyle({radius:8});});
+    dot.on('mouseout', function(){this.setStyle({radius:6});});
+    mapMarkers.push(dot);
+  });
+
+  // Pontos GCM B (quadrados via divIcon para diferenciar)
+  lojasB.forEach(l => {
+    const meta = MR_META[l.micro_regiao] || {};
+    const jLat = meta.lat + (Math.random()-.5)*(meta.scatter||0.025);
+    const jLng = meta.lng + (Math.random()-.5)*((meta.scatter||0.025)*1.2);
+    const dot = L.circleMarker([jLat, jLng], {
+      radius:6, fillColor:corB, color:'#fff', weight:1.5, opacity:1, fillOpacity:0.9
+    }).addTo(mapInstance);
+    dot.bindPopup(popupLoja(l, corB, 'B'));
+    dot.on('mouseover',function(){this.setStyle({radius:8});});
+    dot.on('mouseout', function(){this.setStyle({radius:6});});
+    mapMarkers.push(dot);
+  });
+
+  // Legend
+  const legEl = document.getElementById('mapa-legend');
+  if (legEl) {
+    legEl.innerHTML = `
+      <span style="display:inline-flex;align-items:center;gap:5px;background:${corA}18;color:${corA};font-size:11px;font-weight:600;padding:3px 10px;border-radius:12px;">
+        <span style="width:8px;height:8px;border-radius:50%;background:${corA};"></span>${gcmA.split(' ')[0]}
+      </span>
+      <span style="display:inline-flex;align-items:center;gap:5px;background:${corB}18;color:${corB};font-size:11px;font-weight:600;padding:3px 10px;border-radius:12px;">
+        <span style="width:8px;height:8px;border-radius:50%;background:${corB};"></span>${gcmB.split(' ')[0]}
+      </span>
+      ${mrsComuns.length ? `<span style="display:inline-flex;align-items:center;gap:5px;background:#FEF9C3;color:#854D0E;font-size:11px;font-weight:600;padding:3px 10px;border-radius:12px;">⚠️ MR compartilhada</span>` : ''}`;
+  }
+
+  // Fit bounds para mostrar os 2 GCMs
+  if (lojasA.length || lojasB.length) {
+    const allMrs = [...new Set([...lojasA,...lojasB].map(l=>l.micro_regiao))];
+    const coords = allMrs.map(mr=>MR_META[mr]).filter(m=>m&&m.lat).map(m=>[m.lat,m.lng]);
+    if (coords.length) mapInstance.fitBounds(L.latLngBounds(coords).pad(0.15));
+  }
+}
+
+function popupLoja(l, cor, gcmLabel) {
+  const meta = MR_META[l.micro_regiao] || {};
+  return `<div style="font-family:sans-serif;min-width:200px;">
+    <div style="background:${meta.bg||'#eee'};padding:8px 10px;border-radius:6px 6px 0 0;margin:-12px -12px 8px;">
+      <span style="background:${meta.cor};color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;">${l.micro_regiao}</span>
+      <span style="background:${cor};color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;margin-left:4px;">GCM ${gcmLabel}</span>
+      <div style="font-size:11px;font-weight:600;color:${meta.txt||'#333'};margin-top:4px;line-height:1.3;">${l.razao_social}</div>
+    </div>
+    <div style="font-size:11px;color:#777;margin-bottom:6px;">${l.bairro} · ${l.zona}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:11px;">
+      <div><span style="color:#aaa;">Contr. CB</span><br><strong style="color:${cor};">${l.contratos_carbank||0}</strong></div>
+      <div><span style="color:#aaa;">Vol. CB</span><br><strong style="color:${cor};">${fmtBRL(l.volume_carbank)}</strong></div>
+    </div>
+    <div style="margin-top:6px;font-size:11px;font-weight:600;color:${cor};">👤 ${l.gcm}</div>
+    ${porteBadge(l.porte)}
+  </div>`;
+}
