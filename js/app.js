@@ -485,7 +485,19 @@ function switchPage(id) {
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
   document.querySelector(`[data-page="${id}"]`).classList.add('active');
-  if (id==='mapa') setTimeout(initMapa,100);
+  if (id==='mapa') {
+    // Reseta modo comparação ao trocar de aba
+    if (modoComparacao) {
+      modoComparacao = false;
+      const modoNorm = document.getElementById('modo-normal');
+      const modoComp = document.getElementById('modo-comparacao');
+      const compPanel= document.getElementById('comp-panel');
+      if (modoNorm)  modoNorm.style.display  = 'flex';
+      if (modoComp)  modoComp.style.display  = 'none';
+      if (compPanel) compPanel.style.display = 'none';
+    }
+    setTimeout(initMapa, 100);
+  }
 }
 
 // ── IMPORT ──
@@ -827,25 +839,46 @@ function toggleComparacao() {
   const modoNorm  = document.getElementById('modo-normal');
   const modoComp  = document.getElementById('modo-comparacao');
   const compPanel = document.getElementById('comp-panel');
+  const separador = btnComp.previousElementSibling;
 
   if (modoComparacao) {
-    modoNorm.style.display  = 'none';
-    modoComp.style.display  = 'flex';
-    btnComp.style.background = '#534AB720';
-    btnComp.textContent     = '⇄ Comparar GCMs';
+    // Garante que o mapa foi iniciado
+    if (!mapaInitialized) initMapa();
 
-    // Popula os selects de comparação
-    const gcms = [...new Set(allLojas.filter(l=>l.ativo!==false).map(l=>l.gcm).filter(Boolean))].sort();
-    const optsA = gcms.map((g,i) => `<option value="${g}" ${i===0?'selected':''}>${g}</option>`).join('');
-    const optsB = gcms.map((g,i) => `<option value="${g}" ${i===1?'selected':''}>${g}</option>`).join('');
+    modoNorm.style.display   = 'none';
+    if (separador) separador.style.display = 'none';
+    modoComp.style.display   = 'flex';
+    btnComp.style.background = '#534AB720';
+    btnComp.style.color      = '#534AB7';
+
+    // Popula selects com GCMs ativos
+    const gcms = [...new Set(
+      allLojas.filter(l => l.ativo !== false).map(l => l.gcm).filter(Boolean)
+    )].sort();
+
+    if (gcms.length < 2) {
+      showToast('Precisa de pelo menos 2 GCMs para comparar', 'error');
+      toggleComparacao();
+      return;
+    }
+
+    const optsA = gcms.map((g, i) =>
+      `<option value="${g}" ${i===0?'selected':''}>${g}</option>`).join('');
+    const optsB = gcms.map((g, i) =>
+      `<option value="${g}" ${i===1?'selected':''}>${g}</option>`).join('');
+
     document.getElementById('gcm-comp-a').innerHTML = optsA;
     document.getElementById('gcm-comp-b').innerHTML = optsB;
+
     aplicarComparacao();
+
   } else {
-    modoNorm.style.display  = 'flex';
-    modoComp.style.display  = 'none';
-    compPanel.style.display = 'none';
+    modoNorm.style.display   = 'flex';
+    if (separador) separador.style.display = '';
+    modoComp.style.display   = 'none';
+    compPanel.style.display  = 'none';
     btnComp.style.background = '';
+    btnComp.style.color      = '#534AB7';
     refreshMapa();
   }
 }
