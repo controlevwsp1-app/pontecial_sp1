@@ -879,7 +879,7 @@ async function executarImportAnalitico() {
     qtd:         d.qtd,
     valor:       d.valor,
   }));
-  await sb.from('producao').upsert(histData, { onConflict: 'dealer_cod,mes' }).catch(() => {});
+  try { await sb.from('producao').upsert(histData, { onConflict: 'dealer_cod,mes' }); } catch(e) {}
 
   log('─'.repeat(40));
   log(`✅ ${ok} dealers atualizados, ${semMatch} sem correspondência.`);
