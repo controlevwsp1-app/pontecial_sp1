@@ -427,8 +427,6 @@ function renderTable() {
         <span style="background:${zmeta.bg};color:${zmeta.txt};font-size:10px;font-weight:600;padding:2px 7px;border-radius:8px;white-space:nowrap;">${l.zona || '—'}</span>
       </td>
       <td>${porteBadge(l.porte)}</td>
-      <td style="text-align:center;background:#EBF4FF;font-weight:600;color:#185FA5;">${l.contratos_perfil || 0}</td>
-      <td style="text-align:right;background:#EBF4FF;color:#185FA5;">${fmtBRL(l.volume_perfil)}</td>
       <td style="text-align:center;background:#f0faf3;">
         ${l.contratos_mes != null
           ? `<span style="background:${prodCor.bg};color:${prodCor.cor};font-size:11px;font-weight:700;padding:2px 7px;border-radius:6px;">${l.contratos_mes} <span style="font-size:10px;font-weight:400;">(${taxaProd}%)</span></span>`
@@ -439,6 +437,8 @@ function renderTable() {
           ? `<span style="font-size:11px;font-weight:600;color:${prodCor.cor};">${fmtBRL(l.producao_valor)}</span>`
           : '<span style="color:#ccc;font-size:11px;">—</span>'}
       </td>
+      <td style="text-align:center;background:#EBF4FF;font-weight:600;color:#185FA5;">${l.contratos_perfil || 0}</td>
+      <td style="text-align:right;background:#EBF4FF;color:#185FA5;">${fmtBRL(l.volume_perfil)}</td>
       <td style="text-align:center;color:var(--gray-600);">${l.contratos_geral || 0}</td>
       <td style="text-align:right;color:var(--gray-600);">${fmtBRL(l.volume_geral)}</td>
       <td style="text-align:center;">${statusBadge(l.status)}</td>
