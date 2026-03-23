@@ -129,7 +129,7 @@ function mostrarCardErro(titulo, detalhe) {
     '<div style="font-size:40px;margin-bottom:14px;">&#9888;&#65039;</div>' +
     '<div style="font-size:16px;font-weight:700;color:#1F2532;margin-bottom:8px;">' + titulo + '</div>' +
     '<div style="font-size:13px;color:#6B7280;margin-bottom:20px;line-height:1.6;">' + detalhe + '</div>' +
-    '<button class="btn btn-primary" style="font-size:14px;padding:10px 24px;" onclick="switchPage('upload')">&#8593; Ir para Atualizar</button>' +
+    '<button class="btn btn-primary" style="font-size:14px;padding:10px 24px;" onclick="switchPage(&apos;upload&apos;)">&#8593; Ir para Atualizar</button>' +
     '</div>';
 }
 
