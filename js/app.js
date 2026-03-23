@@ -507,6 +507,20 @@ function refreshMapa() {
     mapMarkers.push(c);
   });
 
+  // Injeta keyframes de pulso uma unica vez
+  if (!document.getElementById('cb-pulse-style')) {
+    const s = document.createElement('style');
+    s.id = 'cb-pulse-style';
+    s.textContent = '@keyframes cb-pulse {' +
+      '0%   { transform:translate(-50%,-50%) scale(1);   opacity:.8; }' +
+      '70%  { transform:translate(-50%,-50%) scale(2.8); opacity:0; }' +
+      '100% { transform:translate(-50%,-50%) scale(1);   opacity:0; } }';
+    document.head.appendChild(s);
+  }
+
+  // Modo individual: GCM especifico selecionado -> cor do ponto = faixa de producao
+  const modoGCM = !!filterGCM;
+
   // Pontos individuais com scatter por zona
   toPlot.forEach(l => {
     const geo    = ZONA_GEO[l.zona];
@@ -518,55 +532,95 @@ function refreshMapa() {
     const jLat = geo.lat + (Math.random() - 0.5) * sc;
     const jLng = geo.lng + (Math.random() - 0.5) * sc * 1.2;
 
-    const taxaProd = l.contratos_perfil > 0 ? Math.round((l.contratos_mes || 0) / l.contratos_perfil * 100) : -1;
+    const taxaProd = l.contratos_perfil > 0
+      ? Math.round((l.contratos_mes || 0) / l.contratos_perfil * 100)
+      : (l.contratos_mes != null ? 0 : -1);
     const prodInfo = l.contratos_mes != null ? prodFaixaCor(taxaProd, l.contratos_mes) : null;
 
-    const dot = L.circleMarker([jLat, jLng], {
-      radius:      6,
-      fillColor:   gcmCor,
-      color:       prodInfo ? prodInfo.cor : '#fff',
-      weight:      prodInfo ? 2 : 1.5,
-      opacity:     1,
-      fillOpacity: 0.88,
-    }).addTo(mapInstance);
+    // No modo GCM individual: fill = cor da faixa de producao; caso contrario = cor do GCM
+    const fillCor = (modoGCM && prodInfo) ? prodInfo.cor : gcmCor;
+    const isZero  = modoGCM && prodInfo && taxaProd === 0;
 
-    dot.bindPopup(`
-      <div style="font-family:sans-serif;min-width:215px;">
-        <div style="background:${zmeta.bg};padding:8px 10px;border-radius:6px 6px 0 0;margin:-12px -12px 8px;">
-          <span style="background:${zmeta.cor};color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;">${l.zona}</span>
-          <div style="font-size:11px;font-weight:600;color:${zmeta.txt};margin-top:4px;line-height:1.3;">${l.razao_social}</div>
-        </div>
-        <div style="font-size:11px;color:#777;margin-bottom:6px;">${l.bairro || ''}</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:11px;margin-bottom:6px;">
-          <div><span style="color:#aaa;">Contr. Perfil CB</span><br><strong style="color:#185FA5;">${l.contratos_perfil || 0}</strong></div>
-          <div><span style="color:#aaa;">Vol. Perfil CB</span><br><strong style="color:#185FA5;">${fmtBRL(l.volume_perfil)}</strong></div>
-        </div>
-        ${prodInfo ? `
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:11px;margin-bottom:6px;">
-          <div><span style="color:#aaa;">Prod. (qtd)</span><br><strong style="color:${prodInfo.cor};">${l.contratos_mes || 0} (${taxaProd}%)</strong></div>
-          <div><span style="color:#aaa;">Val. Financiado</span><br><strong style="color:${prodInfo.cor};">${fmtBRL(l.producao_valor)}</strong></div>
-        </div>` : ''}
-        <div style="background:${gcmCor}20;color:${gcmCor};font-size:11px;font-weight:600;padding:4px 8px;border-radius:6px;">${l.porte || '—'}</div>
-        ${l.gcm ? `<div style="margin-top:5px;font-size:11px;font-weight:600;color:${gcmCor};">👤 ${l.gcm}</div>` : ''}
-      </div>`, {offset:[0,-3]});
+    const taxaStr = taxaProd >= 0 ? taxaProd + '%' : '\u2014';
+    const popupHtml =
+      '<div style="font-family:sans-serif;min-width:215px;">' +
+        '<div style="background:' + zmeta.bg + ';padding:8px 10px;border-radius:6px 6px 0 0;margin:-12px -12px 8px;">' +
+          '<span style="background:' + zmeta.cor + ';color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;">' + l.zona + '</span>' +
+          '<div style="font-size:11px;font-weight:600;color:' + zmeta.txt + ';margin-top:4px;line-height:1.3;">' + l.razao_social + '</div>' +
+        '</div>' +
+        '<div style="font-size:11px;color:#777;margin-bottom:6px;">' + (l.bairro || '') + '</div>' +
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:11px;margin-bottom:6px;">' +
+          '<div><span style="color:#aaa;">Contr. Perfil CB</span><br><strong style="color:#185FA5;">' + (l.contratos_perfil || 0) + '</strong></div>' +
+          '<div><span style="color:#aaa;">Vol. Perfil CB</span><br><strong style="color:#185FA5;">' + fmtBRL(l.volume_perfil) + '</strong></div>' +
+        '</div>' +
+        (prodInfo ?
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:11px;margin-bottom:6px;">' +
+            '<div><span style="color:#aaa;">Prod. (qtd)</span><br><strong style="color:' + prodInfo.cor + ';">' + (l.contratos_mes || 0) + ' (' + taxaStr + ')</strong></div>' +
+            '<div><span style="color:#aaa;">Val. Financiado</span><br><strong style="color:' + prodInfo.cor + ';">' + fmtBRL(l.producao_valor) + '</strong></div>' +
+          '</div>' +
+          '<div style="background:' + prodInfo.cor + '22;color:' + prodInfo.cor + ';font-size:11px;font-weight:700;padding:4px 8px;border-radius:6px;margin-bottom:5px;">' +
+            taxaStr + ' do potencial' + (isZero ? ' \uD83D\uDD34 CRITICO' : '') +
+          '</div>'
+        : '') +
+        '<div style="background:' + gcmCor + '20;color:' + gcmCor + ';font-size:11px;font-weight:600;padding:4px 8px;border-radius:6px;">' + (l.porte || '\u2014') + '</div>' +
+        (l.gcm ? '<div style="margin-top:5px;font-size:11px;font-weight:600;color:' + gcmCor + ';">\uD83D\uDC64 ' + l.gcm + '</div>' : '') +
+      '</div>';
 
-    dot.on('mouseover', function() { this.setStyle({radius:8}); });
-    dot.on('mouseout',  function() { this.setStyle({radius:6}); });
+    let dot;
+    if (isZero) {
+      // Ponto pulsante vermelho para 0% critico
+      const icon = L.divIcon({
+        className: '',
+        html: '<div style="position:relative;width:22px;height:22px;">' +
+          '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);' +
+            'width:12px;height:12px;border-radius:50%;background:#C0392B;z-index:2;"></div>' +
+          '<div style="position:absolute;top:50%;left:50%;' +
+            'width:12px;height:12px;border-radius:50%;background:#C0392B;' +
+            'animation:cb-pulse 1.3s ease-out infinite;"></div>' +
+        '</div>',
+        iconSize:   [22, 22],
+        iconAnchor: [11, 11],
+      });
+      dot = L.marker([jLat, jLng], { icon: icon, zIndexOffset: 300 }).addTo(mapInstance);
+    } else {
+      dot = L.circleMarker([jLat, jLng], {
+        radius:      7,
+        fillColor:   fillCor,
+        color:       '#fff',
+        weight:      1.5,
+        opacity:     1,
+        fillOpacity: 0.92,
+      }).addTo(mapInstance);
+      dot.on('mouseover', function() { this.setStyle({radius:9}); });
+      dot.on('mouseout',  function() { this.setStyle({radius:7}); });
+    }
+
+    dot.bindPopup(popupHtml, {offset:[0,-3]});
     mapMarkers.push(dot);
   });
 
   // Legenda
   const legEl = document.getElementById('mapa-legend');
   if (legEl) {
-    const gcmList = [...new Set(toPlot.map(l => l.gcm).filter(Boolean))];
-    legEl.innerHTML = gcmList.map(g =>
-      `<span style="display:inline-flex;align-items:center;gap:5px;background:${gcmColorMap[g]}18;color:${gcmColorMap[g]};font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">
-        <span style="width:8px;height:8px;border-radius:50%;background:${gcmColorMap[g]};"></span>${g.split(' ')[0]}
-      </span>`
-    ).join('');
+    if (modoGCM) {
+      legEl.innerHTML =
+        '<div style="display:flex;flex-wrap:wrap;gap:5px;align-items:center;">' +
+        '<span style="font-size:10px;color:var(--gray-500);font-weight:600;margin-right:2px;">Performance:</span>' +
+        '<span style="display:inline-flex;align-items:center;gap:4px;background:#185FA520;color:#185FA5;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;"><span style="width:9px;height:9px;border-radius:50%;background:#185FA5;display:inline-block;"></span>&gt;15%</span>' +
+        '<span style="display:inline-flex;align-items:center;gap:4px;background:#1D9E7520;color:#1D9E75;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;"><span style="width:9px;height:9px;border-radius:50%;background:#1D9E75;display:inline-block;"></span>10-15%</span>' +
+        '<span style="display:inline-flex;align-items:center;gap:4px;background:#BA751720;color:#BA7517;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;"><span style="width:9px;height:9px;border-radius:50%;background:#BA7517;display:inline-block;"></span>6-9%</span>' +
+        '<span style="display:inline-flex;align-items:center;gap:4px;background:#D85A3020;color:#D85A30;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;"><span style="width:9px;height:9px;border-radius:50%;background:#D85A30;display:inline-block;"></span>1-5%</span>' +
+        '<span style="display:inline-flex;align-items:center;gap:4px;background:#C0392B20;color:#C0392B;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;"><span style="width:9px;height:9px;border-radius:50%;background:#C0392B;display:inline-block;animation:cb-pulse 1.3s ease-out infinite;"></span>0% cr\u00edtico</span>' +
+        '</div>';
+    } else {
+      const gcmList = [...new Set(toPlot.map(l => l.gcm).filter(Boolean))];
+      legEl.innerHTML = gcmList.map(function(g) {
+        return '<span style="display:inline-flex;align-items:center;gap:5px;background:' + gcmColorMap[g] + '18;color:' + gcmColorMap[g] + ';font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">' +
+          '<span style="width:8px;height:8px;border-radius:50%;background:' + gcmColorMap[g] + ';display:inline-block;"></span>' + g.split(' ')[0] +
+        '</span>';
+      }).join('');
+    }
   }
-}
-
 // ═══════════════════════════════════════════════
 // NAVEGAÇÃO
 // ═══════════════════════════════════════════════
