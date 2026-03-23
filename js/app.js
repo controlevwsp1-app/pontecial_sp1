@@ -89,45 +89,38 @@ function initSupabase() {
 async function loadLojas() {
   showLoading(true, 'Carregando lojas...');
   try {
-    // Supabase v2 nao rejeita nativamente, embrulha para o race funcionar
-    const result = await Promise.race([
-      (async () => {
-        const { data, error } = await sb.from('lojas_sp').select('*').order('gcm').order('razao_social');
-        if (error) throw error;
-        return data || [];
-      })(),
-      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 15000))
-    ]);
-    allLojas = result;
+    const { data, error } = await sb.from('lojas_sp').select('*').order('gcm').order('razao_social');
+    if (error) throw error;
+    allLojas = data || [];
     buildGCMColors();
     renderAll();
     if (allLojas.length === 0) {
       showToast('Tabela vazia -- faca upload da planilha na aba Atualizar', 'error');
-      const dash = document.getElementById('zona-cards-dash');
-      if (dash) dash.innerHTML =
-        '<div style="grid-column:1/-1;padding:32px;text-align:center;background:#fff;border-radius:12px;border:2px dashed #DDE0E8;">' +
-        '<div style="font-size:32px;margin-bottom:12px;">&#128202;</div>' +
-        '<div style="font-size:15px;font-weight:600;color:#1F2532;margin-bottom:8px;">Nenhuma loja encontrada</div>' +
-        '<div style="font-size:13px;color:#6B7280;margin-bottom:16px;">A tabela existe mas esta vazia. Faca o upload da planilha para popular os dados.</div>' +
-        '<button class="btn btn-primary" onclick="switchPage('upload')">&#8593; Ir para Atualizar</button></div>';
+      mostrarCardErro('Tabela vazia', 'A tabela <strong>lojas_sp</strong> existe mas esta vazia. Faca o upload da planilha para popular os dados.');
     }
   } catch(e) {
-    const msg = e.message === 'timeout'
-      ? 'Tabela nao encontrada ou Supabase nao respondeu'
-      : 'Erro: ' + e.message;
+    const msg = (e.message || '').includes('relation') || (e.message || '').includes('does not exist')
+      ? 'Tabela lojas_sp nao existe ainda'
+      : 'Erro ao carregar: ' + e.message;
     showToast(msg, 'error');
     allLojas = [];
     renderAll();
-    const dash = document.getElementById('zona-cards-dash');
-    if (dash) dash.innerHTML =
-      '<div style="grid-column:1/-1;padding:32px;text-align:center;background:#fff;border-radius:12px;border:2px dashed #DDE0E8;">' +
-      '<div style="font-size:32px;margin-bottom:12px;">&#9888;&#65039;</div>' +
-      '<div style="font-size:15px;font-weight:600;color:#1F2532;margin-bottom:8px;">' + msg + '</div>' +
-      '<div style="font-size:13px;color:#6B7280;margin-bottom:16px;">Rode o SQL da aba <strong>Atualizar</strong> no Supabase SQL Editor e depois faca o upload da planilha.</div>' +
-      '<button class="btn btn-primary" onclick="switchPage('upload')">&#8593; Ir para Atualizar</button></div>';
+    mostrarCardErro(msg, 'Rode o SQL da aba <strong>Atualizar</strong> no Supabase SQL Editor para criar a tabela, depois faca o upload da planilha.');
   } finally {
     showLoading(false);
   }
+}
+
+function mostrarCardErro(titulo, detalhe) {
+  const dash = document.getElementById('zona-cards-dash');
+  if (!dash) return;
+  dash.innerHTML =
+    '<div style="grid-column:1/-1;padding:40px 32px;text-align:center;background:#fff;border-radius:12px;border:2px dashed #DDE0E8;">' +
+    '<div style="font-size:40px;margin-bottom:14px;">&#9888;&#65039;</div>' +
+    '<div style="font-size:16px;font-weight:700;color:#1F2532;margin-bottom:8px;">' + titulo + '</div>' +
+    '<div style="font-size:13px;color:#6B7280;margin-bottom:20px;line-height:1.6;">' + detalhe + '</div>' +
+    '<button class="btn btn-primary" style="font-size:14px;padding:10px 24px;" onclick="switchPage('upload')">&#8593; Ir para Atualizar</button>' +
+    '</div>';
 }
 
 function buildGCMColors() {
