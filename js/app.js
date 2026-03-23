@@ -686,30 +686,43 @@ function handleFile(file) {
 function processarAnalitico(rows) {
   if (!rows.length) return [];
   const keys = Object.keys(rows[0]);
-  const findCol = (...names) => keys.find(k => names.some(n => k.toUpperCase().includes(n.toUpperCase()))) || '';
+  const findCol = (...names) => keys.find(k => names.some(n => k.toUpperCase().trim() === n.toUpperCase().trim())) 
+    || keys.find(k => names.some(n => k.toUpperCase().includes(n.toUpperCase()))) 
+    || '';
 
   const colDealer = findCol('DEALER');
   const colValor  = findCol('VLR FINANCIADO','VALOR FINANCIADO','VLR FIN');
   const colGCM    = findCol('GCM');
   const colMes    = findCol('PAGAMENTO','DATA','MES');
+  const colDN     = findCol('DN'); // coluna DN adicionada manualmente
+
+  console.log('Colunas detectadas:', {colDealer, colValor, colGCM, colMes, colDN});
 
   // Agrupa por dealer_cod
   const grouped = {};
   rows.forEach(r => {
-    const dealerRaw = String(r[colDealer]||'');
-    const parts     = dealerRaw.split('-');
-    const cod       = parts[0].trim();
-    const nome      = parts.slice(1).join('-').trim();
-    if (!cod || cod === 'nan') return;
+    // Prioriza coluna DN se existir e tiver valor; senão usa DEALER com split
+    let cod = '', nome = '';
+    if (colDN && r[colDN] && String(r[colDN]).trim() !== '' && String(r[colDN]).trim() !== 'nan') {
+      cod  = String(r[colDN]).trim().replace('.0','');
+      const dealerRaw = String(r[colDealer]||'');
+      nome = dealerRaw.includes('-') ? dealerRaw.split('-').slice(1).join('-').trim() : dealerRaw;
+    } else if (colDealer && r[colDealer]) {
+      const dealerRaw = String(r[colDealer]||'');
+      const parts     = dealerRaw.split('-');
+      cod  = parts[0].trim();
+      nome = parts.slice(1).join('-').trim();
+    }
+
+    if (!cod || cod === 'nan' || cod === '0') return;
 
     if (!grouped[cod]) {
-      grouped[cod] = { dealer_cod:cod, dealer_nome:nome,
-                       gcm: String(r[colGCM]||''), qtd:0, valor:0, mes:'' };
+      grouped[cod] = { dealer_cod: cod, dealer_nome: nome,
+                       gcm: String(r[colGCM]||''), qtd: 0, valor: 0, mes: '' };
     }
     grouped[cod].qtd++;
     grouped[cod].valor += parseFloat(r[colValor]||0)||0;
 
-    // Pega o mês do primeiro registro
     if (!grouped[cod].mes && r[colMes]) {
       const d = new Date(r[colMes]);
       if (!isNaN(d)) {
@@ -718,7 +731,9 @@ function processarAnalitico(rows) {
     }
   });
 
-  return Object.values(grouped).map(g => ({...g, valor: Math.round(g.valor*100)/100}));
+  const result = Object.values(grouped).map(g => ({...g, valor: Math.round(g.valor*100)/100}));
+  console.log(`processarAnalitico: ${result.length} dealers, ex:`, result.slice(0,3));
+  return result;
 }
 
 function mostrarPreviewAnalitico(data, filename) {
@@ -778,6 +793,7 @@ async function executarImportAnalitico() {
   log('Importando planilha analítica...');
   log(`Total de dealers: ${parsedData.length}`);
   log('─'.repeat(40));
+  console.log('parsedData sample:', parsedData.slice(0,3));
 
   let ok = 0, semMatch = 0;
   const mes = parsedData[0]?.mes || '';
