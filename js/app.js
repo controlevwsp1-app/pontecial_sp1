@@ -89,21 +89,42 @@ function initSupabase() {
 async function loadLojas() {
   showLoading(true, 'Carregando lojas...');
   try {
-    const timeout = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error('timeout')), 12000)
-    );
-    const query = sb.from('lojas_sp').select('*').order('gcm').order('razao_social');
-    const { data, error } = await Promise.race([query, timeout]);
-    if (error) throw error;
-    allLojas = data || [];
+    // Supabase v2 nao rejeita nativamente, embrulha para o race funcionar
+    const result = await Promise.race([
+      (async () => {
+        const { data, error } = await sb.from('lojas_sp').select('*').order('gcm').order('razao_social');
+        if (error) throw error;
+        return data || [];
+      })(),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 15000))
+    ]);
+    allLojas = result;
     buildGCMColors();
     renderAll();
+    if (allLojas.length === 0) {
+      showToast('Tabela vazia -- faca upload da planilha na aba Atualizar', 'error');
+      const dash = document.getElementById('zona-cards-dash');
+      if (dash) dash.innerHTML =
+        '<div style="grid-column:1/-1;padding:32px;text-align:center;background:#fff;border-radius:12px;border:2px dashed #DDE0E8;">' +
+        '<div style="font-size:32px;margin-bottom:12px;">&#128202;</div>' +
+        '<div style="font-size:15px;font-weight:600;color:#1F2532;margin-bottom:8px;">Nenhuma loja encontrada</div>' +
+        '<div style="font-size:13px;color:#6B7280;margin-bottom:16px;">A tabela existe mas esta vazia. Faca o upload da planilha para popular os dados.</div>' +
+        '<button class="btn btn-primary" onclick="switchPage('upload')">&#8593; Ir para Atualizar</button></div>';
+    }
   } catch(e) {
-    showToast(e.message === 'timeout'
-      ? 'Supabase demorou — verifique config.js'
-      : 'Erro: ' + e.message, 'error');
+    const msg = e.message === 'timeout'
+      ? 'Tabela nao encontrada ou Supabase nao respondeu'
+      : 'Erro: ' + e.message;
+    showToast(msg, 'error');
     allLojas = [];
     renderAll();
+    const dash = document.getElementById('zona-cards-dash');
+    if (dash) dash.innerHTML =
+      '<div style="grid-column:1/-1;padding:32px;text-align:center;background:#fff;border-radius:12px;border:2px dashed #DDE0E8;">' +
+      '<div style="font-size:32px;margin-bottom:12px;">&#9888;&#65039;</div>' +
+      '<div style="font-size:15px;font-weight:600;color:#1F2532;margin-bottom:8px;">' + msg + '</div>' +
+      '<div style="font-size:13px;color:#6B7280;margin-bottom:16px;">Rode o SQL da aba <strong>Atualizar</strong> no Supabase SQL Editor e depois faca o upload da planilha.</div>' +
+      '<button class="btn btn-primary" onclick="switchPage('upload')">&#8593; Ir para Atualizar</button></div>';
   } finally {
     showLoading(false);
   }
@@ -427,6 +448,8 @@ function renderTable() {
         <span style="background:${zmeta.bg};color:${zmeta.txt};font-size:10px;font-weight:600;padding:2px 7px;border-radius:8px;white-space:nowrap;">${l.zona || '—'}</span>
       </td>
       <td>${porteBadge(l.porte)}</td>
+      <td style="text-align:center;background:#EBF4FF;font-weight:600;color:#185FA5;">${l.contratos_perfil || 0}</td>
+      <td style="text-align:right;background:#EBF4FF;color:#185FA5;">${fmtBRL(l.volume_perfil)}</td>
       <td style="text-align:center;background:#f0faf3;">
         ${l.contratos_mes != null
           ? `<span style="background:${prodCor.bg};color:${prodCor.cor};font-size:11px;font-weight:700;padding:2px 7px;border-radius:6px;">${l.contratos_mes} <span style="font-size:10px;font-weight:400;">(${taxaProd}%)</span></span>`
@@ -437,8 +460,6 @@ function renderTable() {
           ? `<span style="font-size:11px;font-weight:600;color:${prodCor.cor};">${fmtBRL(l.producao_valor)}</span>`
           : '<span style="color:#ccc;font-size:11px;">—</span>'}
       </td>
-      <td style="text-align:center;background:#EBF4FF;font-weight:600;color:#185FA5;">${l.contratos_perfil || 0}</td>
-      <td style="text-align:right;background:#EBF4FF;color:#185FA5;">${fmtBRL(l.volume_perfil)}</td>
       <td style="text-align:center;color:var(--gray-600);">${l.contratos_geral || 0}</td>
       <td style="text-align:right;color:var(--gray-600);">${fmtBRL(l.volume_geral)}</td>
       <td style="text-align:center;">${statusBadge(l.status)}</td>
@@ -511,14 +532,11 @@ function refreshMapa() {
   if (!document.getElementById('cb-pulse-style')) {
     const s = document.createElement('style');
     s.id = 'cb-pulse-style';
-    s.textContent = '@keyframes cb-pulse {' +
-      '0%   { transform:translate(-50%,-50%) scale(1);   opacity:.8; }' +
-      '70%  { transform:translate(-50%,-50%) scale(2.8); opacity:0; }' +
-      '100% { transform:translate(-50%,-50%) scale(1);   opacity:0; } }';
+    s.textContent = '@keyframes cb-pulse { 0% { transform:translate(-50%,-50%) scale(1); opacity:.8; } 70% { transform:translate(-50%,-50%) scale(2.8); opacity:0; } 100% { transform:translate(-50%,-50%) scale(1); opacity:0; } }';
     document.head.appendChild(s);
   }
 
-  // Modo individual: GCM especifico selecionado -> cor do ponto = faixa de producao
+  // Modo individual: GCM especifico selecionado -> cor = faixa de producao
   const modoGCM = !!filterGCM;
 
   // Pontos individuais com scatter por zona
@@ -537,11 +555,11 @@ function refreshMapa() {
       : (l.contratos_mes != null ? 0 : -1);
     const prodInfo = l.contratos_mes != null ? prodFaixaCor(taxaProd, l.contratos_mes) : null;
 
-    // No modo GCM individual: fill = cor da faixa de producao; caso contrario = cor do GCM
+    // Cor do ponto: modo GCM individual usa cor da faixa; geral usa cor do GCM
     const fillCor = (modoGCM && prodInfo) ? prodInfo.cor : gcmCor;
     const isZero  = modoGCM && prodInfo && taxaProd === 0;
+    const taxaStr = taxaProd >= 0 ? (taxaProd + '%') : '--';
 
-    const taxaStr = taxaProd >= 0 ? taxaProd + '%' : '\u2014';
     const popupHtml =
       '<div style="font-family:sans-serif;min-width:215px;">' +
         '<div style="background:' + zmeta.bg + ';padding:8px 10px;border-radius:6px 6px 0 0;margin:-12px -12px 8px;">' +
@@ -559,42 +577,31 @@ function refreshMapa() {
             '<div><span style="color:#aaa;">Val. Financiado</span><br><strong style="color:' + prodInfo.cor + ';">' + fmtBRL(l.producao_valor) + '</strong></div>' +
           '</div>' +
           '<div style="background:' + prodInfo.cor + '22;color:' + prodInfo.cor + ';font-size:11px;font-weight:700;padding:4px 8px;border-radius:6px;margin-bottom:5px;">' +
-            taxaStr + ' do potencial' + (isZero ? ' \uD83D\uDD34 CRITICO' : '') +
+            taxaStr + ' do potencial' + (isZero ? ' CRITICO' : '') +
           '</div>'
         : '') +
-        '<div style="background:' + gcmCor + '20;color:' + gcmCor + ';font-size:11px;font-weight:600;padding:4px 8px;border-radius:6px;">' + (l.porte || '\u2014') + '</div>' +
-        (l.gcm ? '<div style="margin-top:5px;font-size:11px;font-weight:600;color:' + gcmCor + ';">\uD83D\uDC64 ' + l.gcm + '</div>' : '') +
+        '<div style="background:' + gcmCor + '20;color:' + gcmCor + ';font-size:11px;font-weight:600;padding:4px 8px;border-radius:6px;">' + (l.porte || '--') + '</div>' +
+        (l.gcm ? '<div style="margin-top:5px;font-size:11px;font-weight:600;color:' + gcmCor + ';">GCM: ' + l.gcm + '</div>' : '') +
       '</div>';
 
     let dot;
     if (isZero) {
-      // Ponto pulsante vermelho para 0% critico
       const icon = L.divIcon({
         className: '',
         html: '<div style="position:relative;width:22px;height:22px;">' +
-          '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);' +
-            'width:12px;height:12px;border-radius:50%;background:#C0392B;z-index:2;"></div>' +
-          '<div style="position:absolute;top:50%;left:50%;' +
-            'width:12px;height:12px;border-radius:50%;background:#C0392B;' +
-            'animation:cb-pulse 1.3s ease-out infinite;"></div>' +
+          '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:12px;height:12px;border-radius:50%;background:#C0392B;z-index:2;"></div>' +
+          '<div style="position:absolute;top:50%;left:50%;width:12px;height:12px;border-radius:50%;background:#C0392B;animation:cb-pulse 1.3s ease-out infinite;"></div>' +
         '</div>',
-        iconSize:   [22, 22],
-        iconAnchor: [11, 11],
+        iconSize: [22, 22], iconAnchor: [11, 11],
       });
       dot = L.marker([jLat, jLng], { icon: icon, zIndexOffset: 300 }).addTo(mapInstance);
     } else {
       dot = L.circleMarker([jLat, jLng], {
-        radius:      7,
-        fillColor:   fillCor,
-        color:       '#fff',
-        weight:      1.5,
-        opacity:     1,
-        fillOpacity: 0.92,
+        radius: 7, fillColor: fillCor, color: '#fff', weight: 1.5, opacity: 1, fillOpacity: 0.92,
       }).addTo(mapInstance);
       dot.on('mouseover', function() { this.setStyle({radius:9}); });
       dot.on('mouseout',  function() { this.setStyle({radius:7}); });
     }
-
     dot.bindPopup(popupHtml, {offset:[0,-3]});
     mapMarkers.push(dot);
   });
@@ -605,22 +612,22 @@ function refreshMapa() {
     if (modoGCM) {
       legEl.innerHTML =
         '<div style="display:flex;flex-wrap:wrap;gap:5px;align-items:center;">' +
-        '<span style="font-size:10px;color:var(--gray-500);font-weight:600;margin-right:2px;">Performance:</span>' +
+        '<span style="font-size:10px;color:#6B7280;font-weight:600;margin-right:2px;">Performance:</span>' +
         '<span style="display:inline-flex;align-items:center;gap:4px;background:#185FA520;color:#185FA5;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;"><span style="width:9px;height:9px;border-radius:50%;background:#185FA5;display:inline-block;"></span>&gt;15%</span>' +
         '<span style="display:inline-flex;align-items:center;gap:4px;background:#1D9E7520;color:#1D9E75;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;"><span style="width:9px;height:9px;border-radius:50%;background:#1D9E75;display:inline-block;"></span>10-15%</span>' +
         '<span style="display:inline-flex;align-items:center;gap:4px;background:#BA751720;color:#BA7517;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;"><span style="width:9px;height:9px;border-radius:50%;background:#BA7517;display:inline-block;"></span>6-9%</span>' +
         '<span style="display:inline-flex;align-items:center;gap:4px;background:#D85A3020;color:#D85A30;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;"><span style="width:9px;height:9px;border-radius:50%;background:#D85A30;display:inline-block;"></span>1-5%</span>' +
-        '<span style="display:inline-flex;align-items:center;gap:4px;background:#C0392B20;color:#C0392B;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;"><span style="width:9px;height:9px;border-radius:50%;background:#C0392B;display:inline-block;animation:cb-pulse 1.3s ease-out infinite;"></span>0% cr\u00edtico</span>' +
+        '<span style="display:inline-flex;align-items:center;gap:4px;background:#C0392B20;color:#C0392B;font-size:10px;font-weight:700;padding:3px 9px;border-radius:10px;"><span style="width:9px;height:9px;border-radius:50%;background:#C0392B;display:inline-block;animation:cb-pulse 1.3s ease-out infinite;"></span>0% critico</span>' +
         '</div>';
     } else {
       const gcmList = [...new Set(toPlot.map(l => l.gcm).filter(Boolean))];
       legEl.innerHTML = gcmList.map(function(g) {
-        return '<span style="display:inline-flex;align-items:center;gap:5px;background:' + gcmColorMap[g] + '18;color:' + gcmColorMap[g] + ';font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">' +
-          '<span style="width:8px;height:8px;border-radius:50%;background:' + gcmColorMap[g] + ';display:inline-block;"></span>' + g.split(' ')[0] +
-        '</span>';
+        return '<span style="display:inline-flex;align-items:center;gap:5px;background:' + gcmColorMap[g] + '18;color:' + gcmColorMap[g] + ';font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;"><span style="width:8px;height:8px;border-radius:50%;background:' + gcmColorMap[g] + ';display:inline-block;"></span>' + g.split(' ')[0] + '</span>';
       }).join('');
     }
   }
+}
+
 // ═══════════════════════════════════════════════
 // NAVEGAÇÃO
 // ═══════════════════════════════════════════════
