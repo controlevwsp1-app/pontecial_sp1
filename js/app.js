@@ -88,8 +88,17 @@ function initSupabase() {
 // ── LOAD LOJAS ──
 async function loadLojas() {
   showLoading(true, 'Carregando lojas...');
+  // Seguranca: garante que loading some em no maximo 20s
+  const loadingKill = setTimeout(() => {
+    showLoading(false);
+    mostrarCardErro('Tempo esgotado', 'O Supabase nao respondeu em 20 segundos. Verifique se o RLS esta desativado e se as credenciais estao corretas.');
+  }, 20000);
   try {
+    console.log('[CB] Conectando ao Supabase...');
+    showLoading(true, 'Conectando ao Supabase...');
     const { data, error } = await sb.from('lojas_sp').select('*').order('gcm').order('razao_social');
+    console.log('[CB] Resposta:', { data: data ? data.length + ' registros' : null, error });
+    clearTimeout(loadingKill);
     if (error) throw error;
     allLojas = data || [];
     buildGCMColors();
@@ -107,6 +116,7 @@ async function loadLojas() {
     renderAll();
     mostrarCardErro(msg, 'Rode o SQL da aba <strong>Atualizar</strong> no Supabase SQL Editor para criar a tabela, depois faca o upload da planilha.');
   } finally {
+    clearTimeout(loadingKill);
     showLoading(false);
   }
 }
